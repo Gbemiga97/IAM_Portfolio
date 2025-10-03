@@ -1,6 +1,6 @@
 📌 Scenario
 
-A mid-sized financial services company, FinSecure Corp, was facing growing risks from weak passwords, unmanaged privileged accounts, and suspicious sign-in attempts from risky locations.
+A mid-sized financial services company, Cousera, was facing growing risks from weak passwords, unmanaged privileged accounts, and suspicious sign-in attempts from risky locations.
 As an Identity and Access Management Intern, I was tasked to design and implement security-first IAM practices using Microsoft Entra ID (formerly Azure AD).
 🎯 Objectives
 
@@ -13,7 +13,7 @@ Protect user accounts from suspicious sign-ins and identity-based attacks using 
 🔧 Implementation Steps
 1. Microsoft Entra Password Protection
 
-Configured a custom banned password list (e.g., “Welcome123”, company name, season+year).
+Configured a custom banned password list (e.g.,Welcome123, Cousera, ).
 
 Enforced password complexity rules across hybrid environment (on-premises AD + Entra ID).
 
