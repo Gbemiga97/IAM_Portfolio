@@ -1,7 +1,7 @@
 📌 Scenario
 
 A mid-sized financial services company, Cousera, was facing growing risks from weak passwords, unmanaged privileged accounts, and suspicious sign-in attempts from risky locations.
-As an Identity and Access Management Intern, I was tasked to design and implement security-first IAM practices using Microsoft Entra ID (formerly Azure AD).
+As an Identity and Access Management Intern, I was tasked with designing and implementing security-first IAM practices using Microsoft Entra ID (formerly Azure AD).
 🎯 Objectives
 
 Eliminate the use of weak or common passwords across all employees.
