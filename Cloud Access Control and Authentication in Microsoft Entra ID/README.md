@@ -66,15 +66,13 @@ Export the report and visualize it in Excel or Power BI.
 ## 🧱 Phase 1: Implement Secure Authentication (MFA & Conditional Access)
 ### Step 1️⃣ – Create Test Users and Groups
 
-Go to Microsoft Entra Admin Center → Users → New User → Create new user.
+1. Go to Microsoft Entra Admin Center → Users → New User → Create new users
 
-**Example**:
+  - alice@cousera894.onmicrosoft.com (HR Manager)
 
-alice@cousera894.onmicrosoft.com (HR Manager)
+  - bob@cousera894.onmicrosoft.com (Developer)
 
-bob@cousera894.onmicrosoft.com (Developer)
-
-carol@cousera894.onmicrosoft.com (Finance)
+  - carol@cousera894.onmicrosoft.com (Finance)
 
 Assign each a temporary password.
 
@@ -86,5 +84,10 @@ Assign each a temporary password.
 <img width="300" height="400" alt="Screenshot 2025-10-23 131813" src="https://github.com/user-attachments/assets/a0233b88-789b-4afd-9618-1c5db1be0ab8" />
 
 
+2. Create a dynamic group called "Cousera All Employees" and add all **Internal** and **B2B** users.
+   
+📸 **Screenshots:**
 
-Create a group called Fabrikam All Employees and add all users.
+<img width="300" height="400" alt="Screenshot 2025-10-24 171204" src="https://github.com/user-attachments/assets/ac1068f5-953e-4d24-94ee-5d8eeb95822f" />
+<img width="600" height="700" alt="Screenshot 2025-10-24 171132" src="https://github.com/user-attachments/assets/b76dd041-270e-4944-b595-66665e13a05b" />
+
