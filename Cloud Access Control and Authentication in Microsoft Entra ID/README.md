@@ -81,8 +81,9 @@ Assign each a temporary password.
 📸 **Screenshots:** 
 
 
-<img width="531" height="872" alt="Screenshot 2025-10-23 131538" src="https://github.com/user-attachments/assets/b78c491c-08ca-4cb7-8a9d-44bbebcf0085" /><img width="537" height="813" alt="Screenshot 2025-10-23 132156" src="https://github.com/user-attachments/assets/d5905b48-aa9d-4eab-aac1-2fe4bd4a188c" />
-<img width="544" height="815" alt="Screenshot 2025-10-23 131813" src="https://github.com/user-attachments/assets/a0233b88-789b-4afd-9618-1c5db1be0ab8" />
+<img width="300" height="400" alt="Screenshot 2025-10-23 131538" src="https://github.com/user-attachments/assets/b78c491c-08ca-4cb7-8a9d-44bbebcf0085" />
+<img width="300" height="400" alt="Screenshot 2025-10-23 132156" src="https://github.com/user-attachments/assets/d5905b48-aa9d-4eab-aac1-2fe4bd4a188c" />
+<img width="300" height="400" alt="Screenshot 2025-10-23 131813" src="https://github.com/user-attachments/assets/a0233b88-789b-4afd-9618-1c5db1be0ab8" />
 
 
 
