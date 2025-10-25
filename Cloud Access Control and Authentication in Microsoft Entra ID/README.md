@@ -69,7 +69,8 @@ You’ve been brought in as a Microsoft Entra ID Administrator to strengthen aut
 
   - carol@cousera894.onmicrosoft.com (Finance)
 
-Assign each a temporary password.
+**2. Assign each a temporary password.**  
+**3. Create a dynamic group called "Cousera All Employees" and add all Internal and B2B users.**
 
 📸 **Screenshots:** 
 
@@ -78,9 +79,6 @@ Assign each a temporary password.
 <img width="300" height="400" alt="Screenshot 2025-10-23 132156" src="https://github.com/user-attachments/assets/d5905b48-aa9d-4eab-aac1-2fe4bd4a188c" />
 <img width="300" height="400" alt="Screenshot 2025-10-23 131813" src="https://github.com/user-attachments/assets/a0233b88-789b-4afd-9618-1c5db1be0ab8" />
 </div>  
-2. Create a dynamic group called "Cousera All Employees" and add all Internal and B2B users.
-   
-📸 **Screenshots:**
 <div style="display: flex; justify-content: top;">
 <img width="300" height="400" alt="Screenshot 2025-10-24 171204" src="https://github.com/user-attachments/assets/ac1068f5-953e-4d24-94ee-5d8eeb95822f" />
 <img width="600" height="700" alt="Screenshot 2025-10-24 171132" src="https://github.com/user-attachments/assets/b76dd041-270e-4944-b595-66665e13a05b" />
