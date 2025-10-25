@@ -1,4 +1,3 @@
-
 # “Designing and Implementing Secure Authentication and Authorization for Cousera Cloud Services Using Microsoft Entra ID”
 
 ## 🏢 Scenario Overview:
@@ -7,66 +6,62 @@ Cousera Cloud Services, a technology consulting startup with 150 employees, has 
 
 They rely on Microsoft Entra ID to manage user access to:
 
-Microsoft 365 (for productivity apps),
+- Microsoft 365 (for productivity apps),
 
-GitHub Enterprise,
+- GitHub Enterprise,
 
-Salesforce, and
+- Salesforce, and
 
-A custom-built HR Web App (hosted on Azure App Service).
+- A custom-built HR Web App (hosted on Azure App Service).
 
 However, Cousera’s leadership is concerned about unauthorized access and inconsistent user permissions.
 You’ve been brought in as a Microsoft Entra ID Administrator to strengthen authentication and authorization controls — ensuring secure, seamless access for employees, contractors, and admins.
 
 ## 🧠 Project Objectives:
+**1. Implement Secure Authentication in Microsoft Entra ID**
+- Enforce Multi-Factor Authentication (MFA) for all users.
+- Configure Conditional Access Policies for location-based sign-in.
+- Enable Sign-in risk detection and User risk policies using Entra ID Identity Protection.
 
-Implement Secure Authentication in Microsoft Entra ID
+**2. Set Up Role-Based Authorization**
 
-Enforce Multi-Factor Authentication (MFA) for all users.
+- Create custom Entra roles (e.g., App Manager, HR Admin, Developer).
 
-Configure Conditional Access Policies for location-based sign-in.
+- Assign least privilege access using built-in and custom roles.
 
-Enable Sign-in risk detection and User risk policies using Entra ID Identity Protection.
+- Use Administrative Units (AUs) to delegate permissions by department.
 
-Set Up Role-Based Authorization
+**3. Configure and Test Access to Enterprise Applications**
 
-Create custom Entra roles (e.g., App Manager, HR Admin, Developer).
+- Register a custom HR web application in Microsoft Entra ID.
 
-Assign least privilege access using built-in and custom roles.
+- Assign app roles (e.g., HR.User, HR.Admin) to users and groups.
 
-Use Administrative Units (AUs) to delegate permissions by department.
+- Test OAuth 2.0 / OpenID Connect authentication flow (using Postman or app registration portal).
 
-Configure and Test Access to Enterprise Applications
+- Integrate another app (e.g., Salesforce or GitHub Enterprise Cloud) via SAML or OIDC SSO.
 
-Register a custom HR web application in Microsoft Entra ID.
+**3. Set Up Privileged Identity Management (PIM)**
 
-Assign app roles (e.g., HR.User, HR.Admin) to users and groups.
+- Enable PIM for directory roles.
 
-Test OAuth 2.0 / OpenID Connect authentication flow (using Postman or app registration portal).
+- Configure “Just-in-Time” (JIT) activation for Global Administrator and Application Administrator roles.
 
-Integrate another app (e.g., Salesforce or GitHub Enterprise Cloud) via SAML or OIDC SSO.
+- Require MFA for PIM activation and add justification notes.
 
-Set Up Privileged Identity Management (PIM)
+**4. Audit and Monitor Authentication Events**
 
-Enable PIM for directory roles.
+- Review sign-in logs and audit logs in Microsoft Entra ID.
 
-Configure “Just-in-Time” (JIT) activation for Global Administrator and Application Administrator roles.
+- Generate a security report showing successful MFA challenges, blocked sign-ins, and risk detections.
 
-Require MFA for PIM activation and add justification notes.
-
-Audit and Monitor Authentication Events
-
-Review sign-in logs and audit logs in Microsoft Entra ID.
-
-Generate a security report showing successful MFA challenges, blocked sign-ins, and risk detections.
-
-Export the report and visualize it in Excel or Power BI.
+- Export the report and visualize it in Excel or Power BI.
    
 
 ## 🧱 Phase 1: Implement Secure Authentication (MFA & Conditional Access)
 ### Step 1️⃣ – Create Test Users and Groups
 
-1. Go to Microsoft Entra Admin Center → Users → New User → Create new users
+**1. Go to Microsoft Entra Admin Center → Users → New User → Create new users**
 
   - alice@cousera894.onmicrosoft.com (HR Manager)
 
@@ -78,16 +73,15 @@ Assign each a temporary password.
 
 📸 **Screenshots:** 
 
-<p align="start">
+<div>
 <img width="300" height="400" alt="Screenshot 2025-10-23 131538" src="https://github.com/user-attachments/assets/b78c491c-08ca-4cb7-8a9d-44bbebcf0085" />
 <img width="300" height="400" alt="Screenshot 2025-10-23 132156" src="https://github.com/user-attachments/assets/d5905b48-aa9d-4eab-aac1-2fe4bd4a188c" />
 <img width="300" height="400" alt="Screenshot 2025-10-23 131813" src="https://github.com/user-attachments/assets/a0233b88-789b-4afd-9618-1c5db1be0ab8" />
-</p>
-
-2. Create a dynamic group called "Cousera All Employees" and add all **Internal** and **B2B** users.
+</div>  
+2. Create a dynamic group called "Cousera All Employees" and add all Internal and B2B users.
    
 📸 **Screenshots:**
-<p align="top">
+<div style="display: flex; justify-content: top;">
 <img width="300" height="400" alt="Screenshot 2025-10-24 171204" src="https://github.com/user-attachments/assets/ac1068f5-953e-4d24-94ee-5d8eeb95822f" />
 <img width="600" height="700" alt="Screenshot 2025-10-24 171132" src="https://github.com/user-attachments/assets/b76dd041-270e-4944-b595-66665e13a05b" />
-</p>
+</div>
