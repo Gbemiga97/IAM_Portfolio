@@ -98,7 +98,7 @@ You’ve been brought in as a Microsoft Entra ID Administrator to strengthen aut
 4. Test: Have one user (e.g., Alice) log in to https://portal.office.com
  — they should be prompted for MFA setup.
 
-📸 **Screenshots:**
+📸 **Screenshot of the MFA enforcement policy and the user MFA registration prompt**
 <div>
 <img width="900" height="422" alt="Screenshot 2025-10-26 152039" src="https://github.com/user-attachments/assets/7b2fe219-3706-4453-bd22-4cffdb6b2c5d" />
 <img width="900" height="452" alt="Screenshot 2025-10-26 154921" src="https://github.com/user-attachments/assets/f518405b-3f6f-47b9-9d28-20a1d87859ec" />
@@ -141,4 +141,31 @@ You’ve been brought in as a Microsoft Entra ID Administrator to strengthen aut
 
 **5.** 🧪 Test: Try logging in from a different network or use a VPN — access should be blocked.
 
-📸 Screenshot of Conditional Access policy summary.
+**📸 Screenshot of Conditional Access policy summary.**
+<div>
+   <img width="300" height="400" alt="Screenshot 2025-10-27 125137" src="https://github.com/user-attachments/assets/4470e13a-ddce-4c89-9411-48dbe470aa98" />
+   <img width="300" height="508" alt="Screenshot 2025-10-27 125835" src="https://github.com/user-attachments/assets/f1318682-1291-4d78-a185-5d525a9c8bc4" />
+<img width="300" height="553" alt="Screenshot 2025-10-27 125850" src="https://github.com/user-attachments/assets/b10ace23-f027-443a-a659-64f904adaaed" />
+</div>
+
+
+
+## 🧰 Phase 2: Configure Role-Based Authorization
+### Step 4️⃣ – Assign Built-in Roles
+
+**1.** Go to Entra ID → Roles & administrators.
+
+**2.** Assign:
+
+- Alice → User Administrator
+
+- Bob →Cloud Application Administrator
+
+- Carol → Billing Administrator
+
+**📸 Screenshot of role assignments.**
+<div>
+   <img width="300" height="753" alt="Screenshot 2025-10-27 132838" src="https://github.com/user-attachments/assets/0ff2e2f1-625a-49cd-a19a-24e05e8810e0" />
+  <img width="300" height="759" alt="Screenshot 2025-10-27 133313" src="https://github.com/user-attachments/assets/63cf774e-517d-4403-957b-fb702a579c21" />
+<img width="300" height="761" alt="Screenshot 2025-10-27 133415" src="https://github.com/user-attachments/assets/ff4d1d4c-2d39-4692-9b77-3f75dea8c76d" />
+</div>
