@@ -169,3 +169,40 @@ You’ve been brought in as a Microsoft Entra ID Administrator to strengthen aut
   <img width="300" height="759" alt="Screenshot 2025-10-27 133313" src="https://github.com/user-attachments/assets/63cf774e-517d-4403-957b-fb702a579c21" />
 <img width="300" height="761" alt="Screenshot 2025-10-27 133415" src="https://github.com/user-attachments/assets/ff4d1d4c-2d39-4692-9b77-3f75dea8c76d" />
 </div>
+
+### Step 5️⃣ – Create a Custom Role
+
+**1.** Go to Roles & administrators → + New custom role.
+
+- Name: `Cousera HR Manager`
+
+- Permissions:
+
+  - `microsoft.directory/users/standard/read`
+
+  - `microsoft.directory/groups/standard/read`
+
+**2.** Save and assign it to Alice.
+
+**📸 Screenshot of the custom role definition and assignment**
+<div>
+<img width="600" height="501" alt="Screenshot 2025-10-27 141735" src="https://github.com/user-attachments/assets/dfccdd19-481e-457f-880d-33bd5378d746" />
+<img width="300" height="756" alt="Screenshot 2025-10-27 141933" src="https://github.com/user-attachments/assets/26cbca00-9393-402a-9327-61c5f3687f8a" />
+</div>
+
+### Step 6️⃣ – Use Administrative Units (AUs)
+
+**1.** Go to Administrative Units → + Add → name it `HR Department`.
+
+**2.** Add user Alice as an Admin Unit Administrator.
+
+**3.** Add Bob and Carol as Members only.
+
+**📸 Screenshot of AU and assigned users.**
+<div>
+   <img width="300" height="406" alt="Screenshot 2025-10-27 142850" src="https://github.com/user-attachments/assets/d49bc749-c120-4a0c-b790-6abc66cf5cd7" />
+<img width="300" height="797" alt="Screenshot 2025-10-27 143325" src="https://github.com/user-attachments/assets/a5927d59-1e1f-41f3-8429-b5d7931cdb44" />
+<img width="300" height="747" alt="Screenshot 2025-10-27 143259" src="https://github.com/user-attachments/assets/0c780957-bead-4787-b76a-eabcc89c6199" />
+ <img width="900" height="352" alt="Screenshot 2025-10-27 143429" src="https://github.com/user-attachments/assets/4119542c-ac8f-40b6-9b1b-ec874c1d6428" />
+   <img width="900" height="460" alt="Screenshot 2025-10-27 143519" src="https://github.com/user-attachments/assets/1cdec8c4-6336-4812-b1a1-01af58feea53" />
+</div>
