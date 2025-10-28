@@ -206,3 +206,16 @@ You’ve been brought in as a Microsoft Entra ID Administrator to strengthen aut
  <img width="900" height="352" alt="Screenshot 2025-10-27 143429" src="https://github.com/user-attachments/assets/4119542c-ac8f-40b6-9b1b-ec874c1d6428" />
    <img width="900" height="460" alt="Screenshot 2025-10-27 143519" src="https://github.com/user-attachments/assets/1cdec8c4-6336-4812-b1a1-01af58feea53" />
 </div>
+
+🌐 Phase 3: App Registration & Access Control
+Step 7️⃣ – Register a Custom Web App (Simulated HR App)
+
+**1.** Go to Entra ID → App registrations → New registration.
+
+**2.** Name: FabrikamHRApp
+
+**3.** Redirect URI: https://jwt.ms (for testing).
+
+**4.** Click Register.
+
+**📸 Screenshot of the App registration overview.**
