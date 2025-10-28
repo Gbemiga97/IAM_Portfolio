@@ -296,3 +296,46 @@ client_id={your-client-id}
    <img width="300" height="400" alt="Screenshot 2025-10-28 134845" src="https://github.com/user-attachments/assets/95907e27-bfc0-4a45-830d-de7e220ca255" />
    <img width="600" height="400" alt="Screenshot 2025-10-28 135531" src="https://github.com/user-attachments/assets/b0311293-56e3-4c1c-840e-97324353de1d" />
 </div>
+
+## 🛡️ Phase 4: Enable Privileged Identity Management (PIM)
+### Step 11️⃣ – Enable PIM
+
+**1.** Go to Entra ID → Identity Governance → Privileged Identity Management.
+
+**2.** Choose Microsft Entra roles → Discover roles → Enable PIM.
+
+**3.** Assign Alice as Eligible for Global Reader
+
+**📸 Screenshot of PIM eligible assignment**
+
+<div>
+   <img width="600" height="400" alt="Screenshot 2025-10-28 142015" src="https://github.com/user-attachments/assets/909aee3c-5f6d-48c0-82fe-f448ab4ea7cb" />
+   <img width="300" height="400" alt="Screenshot 2025-10-28 142457" src="https://github.com/user-attachments/assets/ad1bd803-d33b-46de-97b4-43727428eb30" />
+</div>
+
+### Step 12️⃣ – Configure Activation Requirements
+
+**1.** Select the role → Settings → Edit.
+
+**2.** Require:
+
+- MFA
+
+- Justification
+
+- Approval (optional)
+
+**📸 Screenshot of activation policy.**
+
+<div>
+   <img width="839" height="761" alt="Screenshot 2025-10-28 143406" src="https://github.com/user-attachments/assets/218a8a8c-af96-444e-8bdc-18c98b9eb0f1" />
+</div>
+
+
+### Step 13️⃣ – Test Activation
+
+**1.** Log in as Alice → navigate to My roles in Entra.
+
+**2.** Activate the Global Reader role → verify MFA and justification prompt.
+
+**📸 Screenshot of activation confirmation.**
