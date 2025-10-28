@@ -207,15 +207,64 @@ You’ve been brought in as a Microsoft Entra ID Administrator to strengthen aut
    <img width="900" height="460" alt="Screenshot 2025-10-27 143519" src="https://github.com/user-attachments/assets/1cdec8c4-6336-4812-b1a1-01af58feea53" />
 </div>
 
-🌐 Phase 3: App Registration & Access Control
-Step 7️⃣ – Register a Custom Web App (Simulated HR App)
+## 🌐 Phase 3: App Registration & Access Control
+### Step 7️⃣ – Register a Custom Web App (Simulated HR App)
 
 **1.** Go to Entra ID → App registrations → New registration.
 
-**2.** Name: FabrikamHRApp
+**2.** Name: `CouseraHRApp`
 
-**3.** Redirect URI: https://jwt.ms (for testing).
+**3.** Redirect URI: `https://jwt.ms` (for testing).
 
 **4.** Click Register.
 
 **📸 Screenshot of the App registration overview.**
+<div>
+   <img width="300" height="600" alt="Screenshot 2025-10-28 122850" src="https://github.com/user-attachments/assets/4578021e-7cdf-400a-a782-d12940c97462" />
+   <img width="600" height="300" alt="Screenshot 2025-10-28 122933" src="https://github.com/user-attachments/assets/4278c571-a39f-4548-9f48-71df8e4b0d0a" />
+</div>
+
+### Step 8️⃣ – Define App Roles
+
+In the App → Manifest, add roles under "appRoles":
+```bash
+"appRoles": [
+    {
+        "allowedMemberTypes": ["User"],
+        "description": "Can read employee data",
+        "displayName": "HR User",
+        "id": "d1a1cdd1-2345-6789-9876-1234567890aa",
+        "isEnabled": true,
+        "value": "HR.User"
+    },
+    {
+        "allowedMemberTypes": ["User"],
+        "description": "Can manage employee data",
+        "displayName": "HR Admin",
+        "id": "d1a1cdd1-2345-6789-9876-1234567890bb",
+        "isEnabled": true,
+        "value": "HR.Admin"
+    }
+]
+```
+**2.** Save the manifest.
+
+**📸 Screenshot of app roles in manifest.**
+<div>
+   <img width="600" height="400" alt="Screenshot 2025-10-28 123855" src="https://github.com/user-attachments/assets/efbc4718-7eae-4281-b75d-e2c6fb1d236a" />
+</div>
+
+### Step 9️⃣ – Assign App Roles
+
+**1.** Go to the app → Enterprise Applications → Users and groups → Add user.
+
+**2.** Assign:
+
+- Alice → HR.Admin
+
+- Bob → HR.User
+
+**📸 Screenshot of role assignments.**
+<div>
+  <img width="1844" height="476" alt="Screenshot 2025-10-28 124648" src="https://github.com/user-attachments/assets/c7aa7a0b-be8f-4df0-81aa-d46fba6b3c9c" />
+</div>
