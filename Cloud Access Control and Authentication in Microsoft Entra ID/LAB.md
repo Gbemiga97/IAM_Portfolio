@@ -328,7 +328,7 @@ client_id={your-client-id}
 **📸 Screenshot of activation policy.**
 
 <div>
-   <img width="839" height="761" alt="Screenshot 2025-10-28 143406" src="https://github.com/user-attachments/assets/218a8a8c-af96-444e-8bdc-18c98b9eb0f1" />
+   <img width="600" height="400" alt="Screenshot 2025-10-28 143406" src="https://github.com/user-attachments/assets/218a8a8c-af96-444e-8bdc-18c98b9eb0f1" />
 </div>
 
 
@@ -339,3 +339,33 @@ client_id={your-client-id}
 **2.** Activate the Global Reader role → verify MFA and justification prompt.
 
 **📸 Screenshot of activation confirmation.**
+
+<div>
+   <img width="600" height="400" alt="Screenshot 2025-10-28 145259" src="https://github.com/user-attachments/assets/a51cfbeb-796c-4984-872b-896d51675028" />
+</div>
+
+## 📊 Phase 5: Monitor & Report
+### Step 14️⃣ – View Sign-in Logs
+
+**1.** Go to Entra ID → Monitoring → Sign-in logs.
+
+**2.** Filter by Alice → export report to CSV.
+
+**📸 Screenshot of sign-in logs showing MFA challenge and app access.**
+
+<div>
+   <img width="900" height="400" alt="Screenshot 2025-10-28 160755" src="https://github.com/user-attachments/assets/5435f619-57e4-44ff-b578-c5f74be9a90b" />
+</div>
+
+
+### Step 15️⃣ – Analyze Risky Sign-ins
+
+**1.** Go to Protection → Identity Protection → Risky sign-ins.
+
+**2.** Review user risk and configure automatic risk-based policy.
+
+**📸 Screenshot of risky sign-ins or risk policy configuration.**
+
+<div>
+   <img width="900" height="400" alt="Screenshot 2025-10-28 161507" src="https://github.com/user-attachments/assets/014aaf98-a7e9-46f6-8281-7f90f972ab13" />
+</div>
