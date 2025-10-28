@@ -268,3 +268,31 @@ In the App → Manifest, add roles under "appRoles":
 <div>
   <img width="1844" height="476" alt="Screenshot 2025-10-28 124648" src="https://github.com/user-attachments/assets/c7aa7a0b-be8f-4df0-81aa-d46fba6b3c9c" />
 </div>
+
+
+### Step 🔟 – Test OAuth 2.0 Authentication
+
+**1.** Go to App → Overview and copy Application (client) ID and Directory (tenant) ID.
+
+**2.** Construct the Authorization URL:
+- Build this URL in your browser 
+``` 
+https://login.microsoftonline.com/{tenant-id}/oauth2/v2.0/authorize?
+client_id={your-client-id}
+&response_type=id_token
+&redirect_uri=https://jwt.ms
+&response_mode=fragment
+&scope=openid
+&nonce=anyRandomStringHere123
+&state=12345
+```
+- Replace `tenant-id` and `client_id` with your actual values.
+  
+**3.** Sign in with Alice, it will authenticate via Entra ID and return an ID token with app role claims.
+
+📸 Screenshot of jwt.ms output showing role claim (e.g., "roles": ["HR.Admin"]).
+
+<div>
+   <img width="300" height="400" alt="Screenshot 2025-10-28 134845" src="https://github.com/user-attachments/assets/95907e27-bfc0-4a45-830d-de7e220ca255" />
+   <img width="600" height="400" alt="Screenshot 2025-10-28 135531" src="https://github.com/user-attachments/assets/b0311293-56e3-4c1c-840e-97324353de1d" />
+</div>
