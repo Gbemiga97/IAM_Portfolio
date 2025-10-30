@@ -49,7 +49,7 @@ client_id={client-id}
 ```
 
 **After (Fixed):**
-```
+```http
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
 client_id={client-id}
 &response_type=id_token
@@ -85,7 +85,7 @@ client_id={client-id}
 ---
 
 #### **Final Working Template (for future use)**
-```
+```http
 https://login.microsoftonline.com/{tenant-id}/oauth2/v2.0/authorize?
 client_id={your-client-id}
 &response_type=id_token
