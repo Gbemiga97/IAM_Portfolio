@@ -61,16 +61,16 @@ You’ve been brought in as a Microsoft Entra ID Administrator to strengthen aut
 ## 🧱 Phase 1: Implement Secure Authentication (MFA & Conditional Access)
 ### Step 1️⃣ – Create Test Users and Groups
 
-**1.** Go to Microsoft Entra Admin Center → Users → New User → Create new users
+1. Go to Microsoft Entra Admin Center → Users → New User → Create new users.
 
-  - alice@cousera894.onmicrosoft.com (HR Manager)
+    -  alice@cousera894.onmicrosoft.com (HR Manager)
 
-  - bob@cousera894.onmicrosoft.com (Developer)
+   - bob@cousera894.onmicrosoft.com (Developer)
 
-  - carol@cousera894.onmicrosoft.com (Finance)
+   - carol@cousera894.onmicrosoft.com (Finance)
 
-**2.** Assign each a temporary password.  
-**3.** Create a dynamic group called "Cousera All Employees" and add all Internal and B2B users.
+2. Assign each a temporary password.  
+3.   Create a dynamic group called "Cousera All Employees" and add all **Internal** and **B2B** users.
 
 📸 **Screenshots:** 
 
@@ -121,25 +121,25 @@ You’ve been brought in as a Microsoft Entra ID Administrator to strengthen aut
 
 ### Step 3️⃣ – Configure Conditional Access
 
-**1.** Go to Microsoft Entra ID → Protection → Conditional Access → New Policy.
+1. Go to Microsoft Entra ID → Protection → Conditional Access → New Policy.
 
-**2.** Name: Block access from non-compliant locations.
+2. Name: Block access from non-compliant locations.
 
-**3.** Assign:
+3. Assign:
 
-- Users: All Employees,
+   - Users: All Employees,
 
-- Cloud apps: All cloud apps,
+   - Cloud apps: All cloud apps,
 
-**3.** Conditions:
+4. Conditions:
 
-- Locations → Exclude trusted locations (e.g., your office IP)
+   - Locations → Exclude trusted locations (e.g., your office IP)
 
-- Grant → Block access
+   - Grant → Block access
 
-**4.** Enable the policy.
+5. Enable the policy.
 
-**5.** 🧪 Test: Try logging in from a different network or use a VPN — access should be blocked.
+🧪 Test: Try logging in from a different network or use a VPN — access should be blocked.
 
 **📸 Screenshot of Conditional Access policy summary.**
 <div>
@@ -153,15 +153,15 @@ You’ve been brought in as a Microsoft Entra ID Administrator to strengthen aut
 ## 🧰 Phase 2: Configure Role-Based Authorization
 ### Step 4️⃣ – Assign Built-in Roles
 
-**1.** Go to Entra ID → Roles & administrators.
+1. Go to Entra ID → Roles & administrators.
 
-**2.** Assign:
+2. Assign:
 
-- Alice → User Administrator
+   - Alice → User Administrator
 
-- Bob →Cloud Application Administrator
+   - Bob →Cloud Application Administrator
 
-- Carol → Billing Administrator
+   - Carol → Billing Administrator
 
 **📸 Screenshot of role assignments.**
 <div>
@@ -172,17 +172,17 @@ You’ve been brought in as a Microsoft Entra ID Administrator to strengthen aut
 
 ### Step 5️⃣ – Create a Custom Role
 
-**1.** Go to Roles & administrators → + New custom role.
+1. Go to Roles & administrators → + New custom role.
 
-- Name: `Cousera HR Manager`
+   - Name: `Cousera HR Manager`
 
-- Permissions:
+   - Permissions:
 
-  - `microsoft.directory/users/standard/read`
+      - `microsoft.directory/users/standard/read`
 
-  - `microsoft.directory/groups/standard/read`
+      - `microsoft.directory/groups/standard/read`
 
-**2.** Save and assign it to Alice.
+2. Save and assign it to Alice.
 
 **📸 Screenshot of the custom role definition and assignment**
 <div>
@@ -192,11 +192,11 @@ You’ve been brought in as a Microsoft Entra ID Administrator to strengthen aut
 
 ### Step 6️⃣ – Use Administrative Units (AUs)
 
-**1.** Go to Administrative Units → + Add → name it `HR Department`.
+1. Go to Administrative Units → + Add → name it `HR Department`.
 
-**2.** Add user Alice as an Admin Unit Administrator.
+2. Add user Alice as an Admin Unit Administrator.
 
-**3.** Add Bob and Carol as Members only.
+3. Add Bob and Carol as Members only.
 
 **📸 Screenshot of AU and assigned users.**
 <div>
@@ -210,13 +210,13 @@ You’ve been brought in as a Microsoft Entra ID Administrator to strengthen aut
 ## 🌐 Phase 3: App Registration & Access Control
 ### Step 7️⃣ – Register a Custom Web App (Simulated HR App)
 
-**1.** Go to Entra ID → App registrations → New registration.
+1. Go to Entra ID → App registrations → New registration.
 
-**2.** Name: `CouseraHRApp`
+2. Name: `CouseraHRApp`
 
-**3.** Redirect URI: `https://jwt.ms` (for testing).
+3. Redirect URI: `https://jwt.ms` (for testing).
 
-**4.** Click Register.
+4. Click Register.
 
 **📸 Screenshot of the App registration overview.**
 <div>
@@ -226,28 +226,28 @@ You’ve been brought in as a Microsoft Entra ID Administrator to strengthen aut
 
 ### Step 8️⃣ – Define App Roles
 
-In the App → Manifest, add roles under "appRoles":
-```bash
-"appRoles": [
-    {
-        "allowedMemberTypes": ["User"],
-        "description": "Can read employee data",
-        "displayName": "HR User",
-        "id": "d1a1cdd1-2345-6789-9876-1234567890aa",
-        "isEnabled": true,
-        "value": "HR.User"
-    },
-    {
-        "allowedMemberTypes": ["User"],
-        "description": "Can manage employee data",
-        "displayName": "HR Admin",
-        "id": "d1a1cdd1-2345-6789-9876-1234567890bb",
-        "isEnabled": true,
-        "value": "HR.Admin"
-    }
-]
-```
-**2.** Save the manifest.
+1. In the App → Manifest, add roles under "appRoles":
+     ```json
+   "appRoles": [
+       {
+           "allowedMemberTypes": ["User"],
+           "description": "Can read employee data",
+           "displayName": "HR User",
+           "id": "d1a1cdd1-2345-6789-9876-1234567890aa",
+           "isEnabled": true,
+           "value": "HR.User"
+       },
+       {
+           "allowedMemberTypes": ["User"],
+           "description": "Can manage employee data",
+           "displayName": "HR Admin",
+           "id": "d1a1cdd1-2345-6789-9876-1234567890bb",
+           "isEnabled": true,
+           "value": "HR.Admin"
+       }
+   ]
+     ```
+2. Save the manifest.
 
 **📸 Screenshot of app roles in manifest.**
 <div>
@@ -256,13 +256,13 @@ In the App → Manifest, add roles under "appRoles":
 
 ### Step 9️⃣ – Assign App Roles
 
-**1.** Go to the app → Enterprise Applications → Users and groups → Add user.
+1. Go to the app → Enterprise Applications → Users and groups → Add user.
 
-**2.** Assign:
+2. Assign:
 
-- Alice → HR.Admin
+   - Alice → HR.Admin
 
-- Bob → HR.User
+   - Bob → HR.User
 
 **📸 Screenshot of role assignments.**
 <div>
@@ -272,23 +272,23 @@ In the App → Manifest, add roles under "appRoles":
 
 ### Step 🔟 – Test OAuth 2.0 Authentication
 
-**1.** Go to App → Overview and copy Application (client) ID and Directory (tenant) ID.
+1. Go to App → Overview and copy Application (client) ID and Directory (tenant) ID.
 
-**2.** Construct the Authorization URL:
-- Build this URL in your browser 
-``` 
-https://login.microsoftonline.com/{tenant-id}/oauth2/v2.0/authorize?
-client_id={your-client-id}
-&response_type=id_token
-&redirect_uri=https://jwt.ms
-&response_mode=fragment
-&scope=openid
-&nonce=anyRandomStringHere123
-&state=12345
-```
-- Replace `tenant-id` and `client_id` with your actual values.
+2. Construct the Authorization URL:
+   - Build this URL in your browser 
+      ```http
+      https://login.microsoftonline.com/{tenant-id}/oauth2/v2.0/authorize?
+      client_id={your-client-id}
+      &response_type=id_token
+      &redirect_uri=https://jwt.ms
+      &response_mode=fragment
+      &scope=openid
+      &nonce=anyRandomStringHere123
+      &state=12345
+      ```
+   - Replace `tenant-id` and `client_id` with your actual values.
   
-**3.** Sign in with Alice, it will authenticate via Entra ID and return an ID token with app role claims.
+3. Sign in with Alice, it will authenticate via Entra ID and return an ID token with app role claims.
 
 📸 Screenshot of jwt.ms output showing role claim (e.g., "roles": ["HR.Admin"]).
 
@@ -300,11 +300,11 @@ client_id={your-client-id}
 ## 🛡️ Phase 4: Enable Privileged Identity Management (PIM)
 ### Step 11️⃣ – Enable PIM
 
-**1.** Go to Entra ID → Identity Governance → Privileged Identity Management.
+1. Go to Entra ID → Identity Governance → Privileged Identity Management.
 
-**2.** Choose Microsft Entra roles → Discover roles → Enable PIM.
+2. Choose Microsft Entra roles → Discover roles → Enable PIM.
 
-**3.** Assign Alice as Eligible for Global Reader
+3. Assign Alice as Eligible for Global Reader
 
 **📸 Screenshot of PIM eligible assignment**
 
@@ -315,15 +315,15 @@ client_id={your-client-id}
 
 ### Step 12️⃣ – Configure Activation Requirements
 
-**1.** Select the role → Settings → Edit.
+1. Select the role → Settings → Edit.
 
-**2.** Require:
+2. Require:
 
-- MFA
+   - MFA
 
-- Justification
+   - Justification
 
-- Approval (optional)
+   - Approval (optional)
 
 **📸 Screenshot of activation policy.**
 
@@ -334,9 +334,9 @@ client_id={your-client-id}
 
 ### Step 13️⃣ – Test Activation
 
-**1.** Log in as Alice → navigate to My roles in Entra.
+1. Log in as Alice → navigate to My roles in Entra.
 
-**2.** Activate the Global Reader role → verify MFA and justification prompt.
+2. Activate the Global Reader role → verify MFA and justification prompt.
 
 **📸 Screenshot of activation confirmation.**
 
@@ -347,9 +347,9 @@ client_id={your-client-id}
 ## 📊 Phase 5: Monitor & Report
 ### Step 14️⃣ – View Sign-in Logs
 
-**1.** Go to Entra ID → Monitoring → Sign-in logs.
+1. Go to Entra ID → Monitoring → Sign-in logs.
 
-**2.** Filter by Alice → export report to CSV.
+2. Filter by Alice → export report to CSV.
 
 **📸 Screenshot of sign-in logs showing MFA challenge and app access.**
 
@@ -360,9 +360,9 @@ client_id={your-client-id}
 
 ### Step 15️⃣ – Analyze Risky Sign-ins
 
-**1.** Go to Protection → Identity Protection → Risky sign-ins.
+1. Go to Protection → Identity Protection → Risky sign-ins.
 
-**2.** Review user risk and configure automatic risk-based policy.
+2. Review user risk and configure automatic risk-based policy.
 
 **📸 Screenshot of risky sign-ins or risk policy configuration.**
 
