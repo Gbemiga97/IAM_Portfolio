@@ -15,7 +15,7 @@ They rely on Microsoft Entra ID to manage user access to:
 - A custom-built HR Web App (hosted on Azure App Service).
 
 However, Cousera’s leadership is concerned about unauthorized access and inconsistent user permissions.
-You’ve been brought in as a Microsoft Entra ID Administrator to strengthen authentication and authorization controls — ensuring secure, seamless access for employees, contractors, and admins.
+I was brought in as a Microsoft Entra ID Administrator to strengthen authentication and authorization controls, ensuring secure and seamless access for employees, contractors, and administrators.
 
 ## 🧠 Project Objectives:
 **1. Implement Secure Authentication in Microsoft Entra ID**
@@ -96,7 +96,7 @@ You’ve been brought in as a Microsoft Entra ID Administrator to strengthen aut
 3. Then go to Users → Per-user MFA → enable MFA for All Employees.
 
 4. Test: Have one user (e.g., Alice) log in to https://portal.office.com
- — they should be prompted for MFA setup.
+ — They should be prompted for MFA setup.
 
 📸 **Screenshot of the MFA enforcement policy and the user MFA registration prompt**
 <div>
@@ -139,7 +139,7 @@ You’ve been brought in as a Microsoft Entra ID Administrator to strengthen aut
 
 5. Enable the policy.
 
-🧪 Test: Try logging in from a different network or use a VPN — access should be blocked.
+🧪 Test: Try logging in from a different network or using a VPN — access should be blocked.
 
 **📸 Screenshot of Conditional Access policy summary.**
 <div>
