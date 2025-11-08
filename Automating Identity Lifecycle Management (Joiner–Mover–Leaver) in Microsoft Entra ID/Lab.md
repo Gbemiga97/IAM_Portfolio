@@ -1,46 +1,200 @@
+# Project: Automating Identity Lifecycle Management (Joiner–Mover–Leaver) in Microsoft Entra ID (Cloud-Only)
 
-# “Automated Identity Lifecycle Management (Joiner–Mover–Leaver Process) for Cousera Ltd.”
-
-
-
-## 🏢 Scenario Overview
-
-**Company:** Cousera Ltd.  
-**Industry:** Technology Consulting  
-**Environment:** Microsoft 365 + Entra ID  
-**Challenge:** HR manually creates and removes accounts — prone to errors, delays, and license waste.  
-**Goal:** Automate provisioning, updates, and deprovisioning from a mock HR database into Entra ID.  
+---
 
 ## Project Overview
-This scenario-based project guides you through implementing automated Joiner-Mover-Leaver (JML) processes using Microsoft Entra ID's Lifecycle Workflows. The goal is to reduce manual administrative tasks, ensure compliance, and streamline user access management. This Lab simulates a real-world deployment for a fictional mid-sized tech company, "Cousera Ltd," which has 500 employees, uses Microsoft 365 for productivity, and integrates with an HR system like Workday for employee data.
-## 🎯 Objective
+Automate **Joiner**, **Mover**, and **Leaver** processes using **Microsoft Entra ID Lifecycle Workflows** and **PowerShell** to simulate HR events.
 
-**Design and implement a cloud-based identity lifecycle management (ILM) solution that:**
+| Goal | Method |
+|------|--------|
+| **Joiner** | Trigger on `employeeHireDate` → add to group and add a license |
+| **Mover** | Trigger on `department` change → update group |
+| **Leaver** | Trigger on `employeeLeaveDateTime` → disable account |
 
-- Automatically provisions new users in Entra ID (Joiners).
+**No HR system required** (Workday or SuccessFactors) — all attributes set via **PowerShell**.
 
-- Assigns access based on department and job role (RBAC).
+---
 
-- Updates permissions when users move departments (Movers).
+## Prerequisites (Free / Trial)
+| Item | How to Get |
+|------|-----------|
+| **Entra ID P1/P2** | Visit [P1/P2 pricing](https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing) (free 30-days) |
+| **Entra ID Governance** | Visit [ID Governance Pricing](https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing#x9679557068c545e7828fd44ad150736e) (free 30-days) |
+| **Microsoft.Graph module** | `Install-Module Microsoft.Graph` |
 
-- Revokes access and licenses automatically when users leave the company (Leavers).
-  
-- Integrate with HR-driven attributes for triggers.
+---
 
-- Test the workflows for reliability.
+## Step  1️⃣: Set Up Test Environment
 
-  
-## Scenario Description
-InnoTech is expanding its engineering team and facing challenges with manual user management. New hires often wait days for access to tools like GitHub or internal apps. Department changes lead to outdated permissions, risking security gaps. Departures sometimes leave active accounts, posing compliance risks. To address this,  Lifecycle Workflows will be deployed to automate these processes, triggered by HR data synced to Entra ID attributes.
+### 1.1 Create 10 Test Users & Groups
+Save these files in `C:\JML-Practice\`
 
-**For example:**
+#### `bulk-create-users.csv`
+```csv
+userPrincipalName,displayName,givenName,surname,mailNickname,password,department,employeeHireDate,employeeLeaveDateTime
+alice.joiner@Cousera669.onmicrosoft.com,Alice Joiner,Alice,Joiner,alice.joiner,TempPass123!,DevOps,2025-11-05,
+bob.mover@Cousera669.onmicrosoft.com,Bob Mover,Bob,Mover,bob.mover,TempPass123!,Marketing,,
+charlie.leaver@Cousera669.onmicrosoft.com,Charlie Leaver,Charlie,Leaver,charlie.leaver,TempPass123!,Finance,,2025-11-04T17:00:00Z
+diana.joiner@Cousera669.onmicrosoft.com,Diana Joiner,Diana,Joiner,diana.joiner,TempPass123!,Engineering,2025-11-06,
+eve.mover@Cousera669.onmicrosoft.com,Eve Mover,Eve,Mover,eve.mover,TempPass123!,HR,,,
+frank.leaver@Cousera669.onmicrosoft.com,Frank Leaver,Frank,Leaver,frank.leaver,TempPass123!,Sales,,2025-11-05T12:00:00Z
+grace.joiner@Cousera669.onmicrosoft.com,Grace Joiner,Grace,Joiner,grace.joiner,TempPass123!,Support,2025-11-07,
+hank.mover@Cousera669.onmicrosoft.com,Hank Mover,Hank,Mover,hank.mover,TempPass123!,IT,,,
+ivy.leaver@Cousera669.onmicrosoft.com,Ivy Leaver,Ivy,Leaver,ivy.leaver,TempPass123!,Legal,,2025-11-06T09:00:00Z
+jack.joiner@Cousera669.onmicrosoft.com,Jack Joiner,Jack,Joiner,jack.joiner,TempPass123!,Product,2025-11-08,
+```
 
-**Joiner:** A new software engineer, Annie, joins the DevOps team.  
-**Mover:**  Brian transfers from Marketing to Sales.  
-**Leaver:** Charlie resigns, requiring immediate access revocation.  
+> Replace `Cousera669.onmicrosoft.com` with your actual tenant.
 
-Three workflows will be created: one for each JML phase, using predefined tasks like email notifications, group assignments, and license management.
+---
 
+### 1.2 Run Setup Script
 
+#### `JML-Setup.ps1`
+```powershell
+# Install module
+Install-Module Microsoft.Graph -Scope CurrentUser -Force
 
+# Connect with correct scopes
+Disconnect-MgGraph -ErrorAction SilentlyContinue
+Connect-MgGraph -Scopes "User.ReadWrite.All","User-LifeCycleInfo.ReadWrite.All","Group.ReadWrite.All"
 
+# Create groups
+$groups = "DevOps-Team","Sales-Team","HR-Team","Finance-Team","Engineering-Team","Support-Team","IT-Team","Legal-Team","Product-Team"
+foreach ($g in $groups) {
+    try { New-MgGroup -DisplayName $g -MailEnabled:$false -SecurityEnabled:$true -MailNickname $g.Replace(" ","") }
+    catch { Write-Host "Group $g exists" -ForegroundColor Gray }
+}
+
+# Create users
+$users = Import-Csv "C:\JML-Practice\bulk-create-users.csv"
+foreach ($u in $users) {
+    $pass = @{ password = $u.password; forceChangePasswordNextSignIn = $true }
+    try {
+        New-MgUser -UserPrincipalName $u.userPrincipalName -DisplayName $u.displayName -GivenName $u.givenName -Surname $u.surname -MailNickname $u.mailNickname -PasswordProfile $pass -AccountEnabled $true -UsageLocation "US" -ErrorAction Stop
+        Write-Host "Created: $($u.userPrincipalName)" -ForegroundColor Green
+    } catch { Write-Warning "Failed: $($u.userPrincipalName)" }
+}
+
+# Set JML attributes
+foreach ($u in $users) {
+    $body = @{}
+    if ($u.employeeHireDate) { $body.employeeHireDate = $u.employeeHireDate }
+    if ($u.department) { $body.department = $u.department }
+    if ($u.employeeLeaveDateTime) { $body.employeeLeaveDateTime = $u.employeeLeaveDateTime }
+    if ($body.Count -gt 0) { Update-MgUser -UserId $u.userPrincipalName -BodyParameter $body }
+}
+Write-Host "`nSetup Complete! Users + Groups + JML Attributes Set." -ForegroundColor Yellow
+```
+
+**Run:**
+```powershell
+cd C:\JML-Practice
+.\JML-Setup.ps1
+```
+
+---
+
+## Step 2: Create Lifecycle Workflows (Entra Portal)
+
+Go to: **https://entra.microsoft.com** → **Identity Governance** → **Lifecycle workflows**
+
+---
+
+### Workflow 1: **Joiner** – Onboard New Hire
+
+| Field | Value |
+|------|-------|
+| **Template** | `Onboard pre-hire employee` |
+| **Name** | `JML - Joiner (Auto-Onboard)` |
+| **Trigger** | `Scheduled`, `-1 day`, `employeeHireDate` |
+| **Condition** | `employeeHireDate is not null` |
+| **Tasks** |  
+| → Add user to group | `DevOps-Team` (or dynamic via custom task) |
+| → Send welcome email | To user |
+| → Generate TAP | 1 hour |
+
+**Test:** Run on demand → Select **Alice Joiner**
+
+---
+
+### Workflow 2: **Mover** – Department Change
+
+| Field | Value |
+|------|-------|
+| **Template** | `Custom workflow` |
+| **Name** | `JML - Mover (Dept Change)` |
+| **Trigger** | `On attribute change`, `department`, `Last 1 day` |
+| **Tasks** |  
+| → Remove from group | `Marketing-Team` |
+| → Add to group | `Sales-Team` |
+
+**Test:**  
+```powershell
+Update-MgUser -UserId "bob.mover@yourtenant.onmicrosoft.com" -department "Sales"
+```
+→ Wait 5 mins or **Run on demand**
+
+---
+
+### Workflow 3: **Leaver** – Offboard Employee
+
+| Field | Value |
+|------|-------|
+| **Template** | `Offboard leaver employee` |
+| **Name** | `JML - Leaver (Auto-Offboard)` |
+| **Trigger** | `Scheduled`, `0 days`, `employeeLeaveDateTime` |
+| **Condition** | `employeeLeaveDateTime is not null` |
+| **Tasks** |  
+| → Disable account | |
+| → Remove from all groups | |
+| → Remove all licenses | |
+| → Send email | To HR |
+
+**Test:**  
+```powershell
+Update-MgUser -UserId "charlie.leaver@yourtenant.onmicrosoft.com" -employeeLeaveDateTime "2025-11-04T17:00:00Z"
+```
+→ **Run on demand**
+
+---
+
+## Step 3: Verify Everything Works
+
+### 3.1 Check Attributes (PowerShell)
+```powershell
+Get-MgUser -UserId "charlie.leaver@yourtenant.onmicrosoft.com" -Property EmployeeLeaveDateTime | Select -Expand EmployeeLeaveDateTime
+```
+
+### 3.2 Check Workflow History
+- **Entra admin center** → **Lifecycle workflows** → **Workflow history**
+- Filter by user → See **Completed** status
+
+### 3.3 Final State
+| User | Group | Account |
+|------|------|--------|
+| Alice | `DevOps-Team` | Enabled |
+| Bob | `Sales-Team` | Enabled |
+| Charlie | No groups | **Disabled** |
+
+---
+
+## Cleanup (Optional)
+```powershell
+# Delete all test users
+Get-MgUser -Filter "mailNickname startsWith 'alice' or mailNickname startsWith 'bob' or mailNickname startsWith 'charlie'" | Remove-MgUser -Confirm:$false
+```
+
+---
+
+## Summary: What You’ve Built
+
+| Feature | Tool |
+|-------|------|
+| Users & Groups | PowerShell |
+| JML Attributes | `employeeHireDate`, `department`, `employeeLeaveDateTime` |
+| Automation | Lifecycle Workflows |
+| HR Simulation | PowerShell updates |
+| Verification | Graph + Workflow History |
+
+---
