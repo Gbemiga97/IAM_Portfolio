@@ -117,18 +117,20 @@ cd C:\JML-Practice
 .\JML-Setup.ps1
 ```
 ### 1.3 Alternatively, Run the Setup Script Step by Step after Installing Microsoft Graph
-1.   ```pwsh
+1. Connect with corrcr scopes
+     ```pwsh
               # Connect with correct scopes
             Connect-MgGraph -Scopes "User.ReadWrite.All","User-LifeCycleInfo.ReadWrite.All","Group.ReadWrite.All"
      ```
       📸 **Screenshots of Permissions requested and the expected output:**  
 
-       <div>
+   <div>
             <img width="300" height="791" alt="Screenshot 2025-11-11 150023" src="https://github.com/user-attachments/assets/adfa5dc5-17a6-441a-94dd-70ef838cb3d6" />
            <img width="600" height="264" alt="Screenshot 2025-11-11 161243" src="https://github.com/user-attachments/assets/4115f7d1-6343-4a00-8648-6aa4f07f991e" />
-       </div>  
+     </div>  
   
-2.   ```pwsh
+3. Create multiple groups
+      ```pwsh
          # Create groups
             $groups = "DevOps-Team","Sales-Team","HR-Team","Finance-Team","Engineering-Team","Support-Team","IT-Team","Legal-Team","Product-Team"
             foreach ($g in $groups) {
@@ -143,44 +145,47 @@ cd C:\JML-Practice
             <img width="450" height="658" alt="Screenshot 2025-11-11 161742" src="https://github.com/user-attachments/assets/2146ec78-6635-4130-8f2c-917373e17902" />
             <img width="450" height="803" alt="Screenshot 2025-11-11 161807" src="https://github.com/user-attachments/assets/2e1ab024-95a8-4b29-8a42-9e24cadf659b" />
        </div>
-3.   ```pwsh
-           # Create users
-        $csvPath = "C:\JML-Practice\bulk-create-users.csv"
-        $users   = Import-Csv $csvPath
-        foreach ($u in $users) {
-            if (Get-MgUser -UserId $u.userPrincipalName -ErrorAction SilentlyContinue) {
-                Write-Host "Skipping: $($u.userPrincipalName)" -ForegroundColor Cyan
-                continue
-            }
-        
-            $pass = @{ password = $u.password; forceChangePasswordNextSignIn = $true}
-        
-           try {
-                New-MgUser `
-                    -UserPrincipalName $u.userPrincipalName `
-                    -DisplayName       $u.displayName `
-                    -GivenName         $u.givenName `
-                    -Surname           $u.surname `
-                    -MailNickname      $u.mailNickname `
-                    -UsageLocation     "NG" `
-                    -PasswordProfile   $pass -AccountEnabled `
-                    -ErrorAction Stop 
-        
-                Write-Host "Created: $($u.userPrincipalName)" -ForegroundColor Green
-            }
-            catch {
-            Write-Warning "Failed: $($u.userPrincipalName) - $($_.Exception.Message)"
-          }
-        }   
-     ```
-       📸 **Screenshots of users created in PowerShell and Entra Portal:**
+       
+5. Create bulk users
+   ```pwsh
+               # Create users
+            $csvPath = "C:\JML-Practice\bulk-create-users.csv"
+            $users   = Import-Csv $csvPath
+            foreach ($u in $users) {
+                if (Get-MgUser -UserId $u.userPrincipalName -ErrorAction SilentlyContinue) {
+                    Write-Host "Skipping: $($u.userPrincipalName)" -ForegroundColor Cyan
+                    continue
+                }
+            
+                $pass = @{ password = $u.password; forceChangePasswordNextSignIn = $true}
+            
+               try {
+                    New-MgUser `
+                        -UserPrincipalName $u.userPrincipalName `
+                        -DisplayName       $u.displayName `
+                        -GivenName         $u.givenName `
+                        -Surname           $u.surname `
+                        -MailNickname      $u.mailNickname `
+                        -UsageLocation     "NG" `
+                        -PasswordProfile   $pass -AccountEnabled `
+                        -ErrorAction Stop 
+            
+                    Write-Host "Created: $($u.userPrincipalName)" -ForegroundColor Green
+                }
+                catch {
+                Write-Warning "Failed: $($u.userPrincipalName) - $($_.Exception.Message)"
+              }
+            }   
+   ```
+   📸 **Screenshots of users created in PowerShell and Entra Portal:**
     
-       <div>
+      <div>
            <img width="450" height="934" alt="Screenshot 2025-11-11 162510" src="https://github.com/user-attachments/assets/89eed462-58e7-4870-accd-bc24169da603" />
            <img width="450" height="806" alt="Screenshot 2025-11-11 162627" src="https://github.com/user-attachments/assets/0f779f43-1f81-45ce-b7b3-c353b13d6945" />
-       </div>
+      </div>
        
-4.  ```pwsh
+7. Set JML attributes for the users
+     ```pwsh
      # Set JML attributes for the users
     foreach ($u in $users) {
     $body = @{}
@@ -194,10 +199,10 @@ cd C:\JML-Practice
       }
     }
     ```
-    📸 **Screenshots of users created in PowerShell and Entra Portal:**
+    📸 **Screenshot of JML attributes for users:**
 
     <div>
-        <img width="759" height="534" alt="Screenshot 2025-11-11 170419" src="https://github.com/user-attachments/assets/852c7ce5-1d45-4b80-b16a-79315abedfbc" />
+        <img width="600" height="400" alt="Screenshot 2025-11-11 170419" src="https://github.com/user-attachments/assets/852c7ce5-1d45-4b80-b16a-79315abedfbc" />
     </div>
 ---
 
