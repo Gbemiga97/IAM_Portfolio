@@ -30,7 +30,7 @@ Automate **Joiner**, **Mover**, and **Leaver** processes using **Microsoft Entra
 Save these files in `C:\JML-Practice\`
 
 #### `bulk-create-users.csv`
-```csv
+```pwsh
 userPrincipalName,displayName,givenName,surname,mailNickname,password,department,employeeHireDate,employeeLeaveDateTime
 alice.joiner@Cousera669.onmicrosoft.com,Alice Joiner,Alice,Joiner,alice.joiner,TempPass123!,DevOps,2025-11-05,
 bob.mover@Cousera669.onmicrosoft.com,Bob Mover,Bob,Mover,bob.mover,TempPass123!,Marketing,,
@@ -99,10 +99,14 @@ foreach ($u in $users) {
 # Set JML attributes
 foreach ($u in $users) {
     $body = @{}
-    if ($u.employeeHireDate) { $body.employeeHireDate = $u.employeeHireDate }
-    if ($u.department) { $body.department = $u.department }
+    if ($u.employeeHireDate)      { $body.employeeHireDate      = $u.employeeHireDate }
+    if ($u.department)            { $body.department            = $u.department }
     if ($u.employeeLeaveDateTime) { $body.employeeLeaveDateTime = $u.employeeLeaveDateTime }
-    if ($body.Count -gt 0) { Update-MgUser -UserId $u.userPrincipalName -BodyParameter $body }
+
+    if ($body.Count -gt 0) {
+        Update-MgUser -UserId $u.userPrincipalName -BodyParameter $body
+        Write-Host "JML set: $($u.userPrincipalName)" -ForegroundColor Magenta
+    }
 }
 Write-Host "`nSetup Complete! Users + Groups + JML Attributes Set." -ForegroundColor Yellow
 ```
@@ -140,41 +144,61 @@ cd C:\JML-Practice
             <img width="450" height="803" alt="Screenshot 2025-11-11 161807" src="https://github.com/user-attachments/assets/2e1ab024-95a8-4b29-8a42-9e24cadf659b" />
        </div>
 3.   ```pwsh
-             # Create users
-                $csvPath = "C:\JML-Practice\bulk-create-users.csv"
-                $users   = Import-Csv $csvPath
-                foreach ($u in $users) {
-                    if (Get-MgUser -UserId $u.userPrincipalName -ErrorAction SilentlyContinue) {
-                        Write-Host "Skipping: $($u.userPrincipalName)" -ForegroundColor Cyan
-                        continue
-                    }
-                
-                    $pass = @{ password = $u.password; forceChangePasswordNextSignIn = $true}
-                
-                   try {
-                        New-MgUser `
-                            -UserPrincipalName $u.userPrincipalName `
-                            -DisplayName       $u.displayName `
-                            -GivenName         $u.givenName `
-                            -Surname           $u.surname `
-                            -MailNickname      $u.mailNickname `
-                            -UsageLocation     "NG" `
-                            -PasswordProfile   $pass -AccountEnabled `
-                            -ErrorAction Stop 
-                
-                        Write-Host "Created: $($u.userPrincipalName)" -ForegroundColor Green
-                    }
-                    catch {
-                        Write-Warning "Failed: $($u.userPrincipalName) - $($_.Exception.Message)"
-                    }
-                }
+           # Create users
+        $csvPath = "C:\JML-Practice\bulk-create-users.csv"
+        $users   = Import-Csv $csvPath
+        foreach ($u in $users) {
+            if (Get-MgUser -UserId $u.userPrincipalName -ErrorAction SilentlyContinue) {
+                Write-Host "Skipping: $($u.userPrincipalName)" -ForegroundColor Cyan
+                continue
+            }
+        
+            $pass = @{ password = $u.password; forceChangePasswordNextSignIn = $true}
+        
+           try {
+                New-MgUser `
+                    -UserPrincipalName $u.userPrincipalName `
+                    -DisplayName       $u.displayName `
+                    -GivenName         $u.givenName `
+                    -Surname           $u.surname `
+                    -MailNickname      $u.mailNickname `
+                    -UsageLocation     "NG" `
+                    -PasswordProfile   $pass -AccountEnabled `
+                    -ErrorAction Stop 
+        
+                Write-Host "Created: $($u.userPrincipalName)" -ForegroundColor Green
+            }
+            catch {
+            Write-Warning "Failed: $($u.userPrincipalName) - $($_.Exception.Message)"
+          }
+        }   
      ```
-   📸 **Screenshots of users created in PowerShell and Entra Portal:**
+       📸 **Screenshots of users created in PowerShell and Entra Portal:**
+    
+       <div>
+           <img width="450" height="934" alt="Screenshot 2025-11-11 162510" src="https://github.com/user-attachments/assets/89eed462-58e7-4870-accd-bc24169da603" />
+           <img width="450" height="806" alt="Screenshot 2025-11-11 162627" src="https://github.com/user-attachments/assets/0f779f43-1f81-45ce-b7b3-c353b13d6945" />
+       </div>
+       
+4.  ```pwsh
+     # Set JML attributes for the users
+    foreach ($u in $users) {
+    $body = @{}
+    if ($u.employeeHireDate)      { $body.employeeHireDate      = $u.employeeHireDate }
+    if ($u.department)            { $body.department            = $u.department }
+    if ($u.employeeLeaveDateTime) { $body.employeeLeaveDateTime = $u.employeeLeaveDateTime }
 
-   <div>
-       <img width="450" height="934" alt="Screenshot 2025-11-11 162510" src="https://github.com/user-attachments/assets/89eed462-58e7-4870-accd-bc24169da603" />
-       <img width="450" height="806" alt="Screenshot 2025-11-11 162627" src="https://github.com/user-attachments/assets/0f779f43-1f81-45ce-b7b3-c353b13d6945" />
-   </div>
+    if ($body.Count -gt 0) {
+        Update-MgUser -UserId $u.userPrincipalName -BodyParameter $body
+        Write-Host "JML set: $($u.userPrincipalName)" -ForegroundColor Magenta
+      }
+    }
+    ```
+    📸 **Screenshots of users created in PowerShell and Entra Portal:**
+
+    <div>
+        <img width="759" height="534" alt="Screenshot 2025-11-11 170419" src="https://github.com/user-attachments/assets/852c7ce5-1d45-4b80-b16a-79315abedfbc" />
+    </div>
 ---
 
 ## Step 2: Create Lifecycle Workflows (Entra Portal)
