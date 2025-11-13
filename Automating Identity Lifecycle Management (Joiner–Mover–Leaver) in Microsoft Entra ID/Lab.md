@@ -32,16 +32,16 @@ Save these files in `C:\JML-Practice\`
 #### `bulk-create-users.csv`
 ```pwsh
 userPrincipalName,displayName,givenName,surname,mailNickname,password,department,employeeHireDate,employeeLeaveDateTime
-alice.joiner@Cousera669.onmicrosoft.com,Alice Joiner,Alice,Joiner,alice.joiner,TempPass123!,DevOps,2025-11-05,
+alice.joiner@Cousera669.onmicrosoft.com,Alice Joiner,Alice,Joiner,alice.joiner,TempPass123!,DevOps,2025-11-13,
 bob.mover@Cousera669.onmicrosoft.com,Bob Mover,Bob,Mover,bob.mover,TempPass123!,Marketing,,
-charlie.leaver@Cousera669.onmicrosoft.com,Charlie Leaver,Charlie,Leaver,charlie.leaver,TempPass123!,Finance,,2025-11-04T17:00:00Z
-diana.joiner@Cousera669.onmicrosoft.com,Diana Joiner,Diana,Joiner,diana.joiner,TempPass123!,Engineering,2025-11-06,
+charlie.leaver@Cousera669.onmicrosoft.com,Charlie Leaver,Charlie,Leaver,charlie.leaver,TempPass123!,Finance,,2026-11-04T17:00:00Z
+diana.joiner@Cousera669.onmicrosoft.com,Diana Joiner,Diana,Joiner,diana.joiner,TempPass123!,Engineering,2025-11-26,
 eve.mover@Cousera669.onmicrosoft.com,Eve Mover,Eve,Mover,eve.mover,TempPass123!,HR,,,
-frank.leaver@Cousera669.onmicrosoft.com,Frank Leaver,Frank,Leaver,frank.leaver,TempPass123!,Sales,,2025-11-05T12:00:00Z
-grace.joiner@Cousera669.onmicrosoft.com,Grace Joiner,Grace,Joiner,grace.joiner,TempPass123!,Support,2025-11-07,
+frank.leaver@Cousera669.onmicrosoft.com,Frank Leaver,Frank,Leaver,frank.leaver,TempPass123!,Sales,,2026-11-05T12:00:00Z
+grace.joiner@Cousera669.onmicrosoft.com,Grace Joiner,Grace,Joiner,grace.joiner,TempPass123!,Support,2025-11-17,
 hank.mover@Cousera669.onmicrosoft.com,Hank Mover,Hank,Mover,hank.mover,TempPass123!,IT,,,
-ivy.leaver@Cousera669.onmicrosoft.com,Ivy Leaver,Ivy,Leaver,ivy.leaver,TempPass123!,Legal,,2025-11-06T09:00:00Z
-jack.joiner@Cousera669.onmicrosoft.com,Jack Joiner,Jack,Joiner,jack.joiner,TempPass123!,Product,2025-11-08,
+ivy.leaver@Cousera669.onmicrosoft.com,Ivy Leaver,Ivy,Leaver,ivy.leaver,TempPass123!,Legal,,2026-11-06T09:00:00Z
+jack.joiner@Cousera669.onmicrosoft.com,Jack Joiner,Jack,Joiner,jack.joiner,TempPass123!,Product,2025-11-18,
 ```
 
 > Replace `Cousera669.onmicrosoft.com` with your actual tenant.
@@ -180,7 +180,7 @@ cd C:\JML-Practice
    📸 **Screenshots of users created in PowerShell and Entra Portal:**
     
       <div>
-           <img width="450" height="934" alt="Screenshot 2025-11-11 162510" src="https://github.com/user-attachments/assets/89eed462-58e7-4870-accd-bc24169da603" />
+           <img width="450" height="923" alt="Screenshot 2025-11-13 114801" src="https://github.com/user-attachments/assets/0215e1be-9ffa-4b6c-b024-00ddfe4035cd" />
            <img width="450" height="806" alt="Screenshot 2025-11-11 162627" src="https://github.com/user-attachments/assets/0f779f43-1f81-45ce-b7b3-c353b13d6945" />
       </div>
        
@@ -199,10 +199,10 @@ cd C:\JML-Practice
       }
     }
     ```
-    📸 **Screenshot of JML attributes for users:**
+    📸 **Screenshot of JML attributes output for the users:**
 
     <div>
-        <img width="600" height="400" alt="Screenshot 2025-11-11 170419" src="https://github.com/user-attachments/assets/852c7ce5-1d45-4b80-b16a-79315abedfbc" />
+        <img width="400" height="391" alt="Screenshot 2025-11-11 170419" src="https://github.com/user-attachments/assets/bafabd96-17f5-4473-a989-5f7e0082c786" />
     </div>
 ---
 
