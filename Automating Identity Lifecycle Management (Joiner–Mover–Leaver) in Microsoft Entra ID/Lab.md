@@ -32,7 +32,7 @@ Save these files in `C:\JML-Practice\`
 #### `bulk-create-users.csv`
 ```pwsh
 userPrincipalName,displayName,givenName,surname,mailNickname,password,department,employeeHireDate,employeeLeaveDateTime
-alice.joiner@Cousera669.onmicrosoft.com,Alice Joiner,Alice,Joiner,alice.joiner,TempPass123!,DevOps,2025-11-13,
+alice.joiner@Cousera669.onmicrosoft.com,Alice Joiner,Alice,Joiner,alice.joiner,TempPass123!,DevOps,2025-11-19,
 bob.mover@Cousera669.onmicrosoft.com,Bob Mover,Bob,Mover,bob.mover,TempPass123!,Marketing,,
 charlie.leaver@Cousera669.onmicrosoft.com,Charlie Leaver,Charlie,Leaver,charlie.leaver,TempPass123!,Finance,,2026-11-04T17:00:00Z
 diana.joiner@Cousera669.onmicrosoft.com,Diana Joiner,Diana,Joiner,diana.joiner,TempPass123!,Engineering,2025-11-26,
@@ -59,7 +59,7 @@ Install-Module Microsoft.Graph -Scope CurrentUser -Force
 Connect-MgGraph -Scopes "User.ReadWrite.All","User-LifeCycleInfo.ReadWrite.All","Group.ReadWrite.All"
 
 # Create groups
-$groups = "DevOps-Team","Sales-Team","HR-Team","Finance-Team","Engineering-Team","Support-Team","IT-Team","Legal-Team","Product-Team"
+$groups = "DevOps-Team","Sales-Team","HR-Team","Finance-Team","Engineering-Team","Support-Team","IT-Team","Legal-Team","Product-Team,Marketing-Team"
 foreach ($g in $groups) {
     if (-not (Get-MgGroup -Filter "displayName eq '$g'" -ErrorAction SilentlyContinue)) {
         New-MgGroup -DisplayName $g -MailEnabled:$false -SecurityEnabled:$true -MailNickname ($g -replace ' ','')
@@ -72,24 +72,33 @@ $csvPath = "C:\JML-Practice\bulk-create-users.csv"
 $users   = Import-Csv $csvPath
 foreach ($u in $users) {
     if (Get-MgUser -UserId $u.userPrincipalName -ErrorAction SilentlyContinue) {
-        Write-Host "Skipping: $($u.userPrincipalName)" -ForegroundColor Cyan
+        Write-Host "Skip: $($u.userPrincipalName)" -ForegroundColor Cyan
         continue
     }
 
-    $pass = @{ password = $u.password; forceChangePasswordNextSignIn = $true}
+    $pass = @{
+        password = $u.password
+        forceChangePasswordNextSignIn = $true
+    }
 
-   try {
-        New-MgUser `
-            -UserPrincipalName $u.userPrincipalName `
-            -DisplayName       $u.displayName `
-            -GivenName         $u.givenName `
-            -Surname           $u.surname `
-            -MailNickname      $u.mailNickname `
-            -UsageLocation     "NG" `
-            -PasswordProfile   $pass -AccountEnabled `
-            -ErrorAction Stop 
+    # JOINER = has employeeHireDate → DISABLED
+    $accountEnabled = [string]::IsNullOrWhiteSpace($u.employeeHireDate)
 
-        Write-Host "Created: $($u.userPrincipalName)" -ForegroundColor Green
+    $newUserParams = @{
+        UserPrincipalName = $u.userPrincipalName
+        DisplayName       = $u.displayName
+        GivenName         = $u.givenName
+        Surname           = $u.surname
+        MailNickname      = $u.mailNickname
+        UsageLocation     = "NG"
+        PasswordProfile   = $pass
+        AccountEnabled    = $accountEnabled
+    }
+
+    try {
+        New-MgUser @newUserParams -ErrorAction Stop
+        $status = if ($accountEnabled) { "ENABLED" } else { "DISABLED" }
+        Write-Host "Created [$status]: $($u.userPrincipalName)" -ForegroundColor $(if ($accountEnabled) { "Green" } else { "Red" })
     }
     catch {
         Write-Warning "Failed: $($u.userPrincipalName) - $($_.Exception.Message)"
@@ -119,8 +128,8 @@ cd C:\JML-Practice
 ### 1.3 Alternatively, Run the Setup Script Step by Step after Installing Microsoft Graph
 1. Connect with corrcr scopes
      ```pwsh
-              # Connect with correct scopes
-            Connect-MgGraph -Scopes "User.ReadWrite.All","User-LifeCycleInfo.ReadWrite.All","Group.ReadWrite.All"
+     # Connect with correct scopes
+    Connect-MgGraph -Scopes "User.ReadWrite.All","User-LifeCycleInfo.ReadWrite.All","Group.ReadWrite.All"
      ```
       📸 **Screenshots of Permissions requested and the expected output:**  
 
@@ -131,14 +140,14 @@ cd C:\JML-Practice
   
 3. Create multiple groups
       ```pwsh
-         # Create groups
-            $groups = "DevOps-Team","Sales-Team","HR-Team","Finance-Team","Engineering-Team","Support-Team","IT-Team","Legal-Team","Product-Team"
-            foreach ($g in $groups) {
-                if (-not (Get-MgGroup -Filter "displayName eq '$g'" -ErrorAction SilentlyContinue)) {
-                    New-MgGroup -DisplayName $g -MailEnabled:$false -SecurityEnabled:$true -MailNickname ($g -replace ' ','')
-                    Write-Host "Group created: $g" -ForegroundColor Green
-                }
-            }
+    # Create groups
+    $groups = "DevOps-Team","Sales-Team","HR-Team","Finance-Team","Engineering-Team","Support-Team","IT-Team","Legal-Team","Product-Team,Marketing-Team"
+    foreach ($g in $groups) {
+        if (-not (Get-MgGroup -Filter "displayName eq '$g'" -ErrorAction SilentlyContinue)) {
+            New-MgGroup -DisplayName $g -MailEnabled:$false -SecurityEnabled:$true -MailNickname ($g -replace ' ','')
+            Write-Host "Group created: $g" -ForegroundColor Green
+        }
+    }
      ```
       📸 **Screenshots of groups created in PowerShell and Entra Portal:**
        <div>
@@ -146,36 +155,42 @@ cd C:\JML-Practice
             <img width="450" height="803" alt="Screenshot 2025-11-11 161807" src="https://github.com/user-attachments/assets/2e1ab024-95a8-4b29-8a42-9e24cadf659b" />
        </div>
        
-5. Create bulk users
+5. Create bulk users and disable joiners, e.g `alice.joiner@Cousera669.onmicrosoft.com`
    ```pwsh
-               # Create users
-            $csvPath = "C:\JML-Practice\bulk-create-users.csv"
-            $users   = Import-Csv $csvPath
-            foreach ($u in $users) {
-                if (Get-MgUser -UserId $u.userPrincipalName -ErrorAction SilentlyContinue) {
-                    Write-Host "Skipping: $($u.userPrincipalName)" -ForegroundColor Cyan
-                    continue
-                }
-            
-                $pass = @{ password = $u.password; forceChangePasswordNextSignIn = $true}
-            
-               try {
-                    New-MgUser `
-                        -UserPrincipalName $u.userPrincipalName `
-                        -DisplayName       $u.displayName `
-                        -GivenName         $u.givenName `
-                        -Surname           $u.surname `
-                        -MailNickname      $u.mailNickname `
-                        -UsageLocation     "NG" `
-                        -PasswordProfile   $pass -AccountEnabled `
-                        -ErrorAction Stop 
-            
-                    Write-Host "Created: $($u.userPrincipalName)" -ForegroundColor Green
-                }
-                catch {
-                Write-Warning "Failed: $($u.userPrincipalName) - $($_.Exception.Message)"
-              }
-            }   
+   foreach ($u in $users) {
+      if (Get-MgUser -UserId $u.userPrincipalName -ErrorAction SilentlyContinue) {
+        Write-Host "Skip: $($u.userPrincipalName)" -ForegroundColor Cyan
+        continue
+    }
+
+    $pass = @{
+        password = $u.password
+        forceChangePasswordNextSignIn = $true
+    }
+
+    # JOINER = has employeeHireDate → DISABLED
+    $accountEnabled = [string]::IsNullOrWhiteSpace($u.employeeHireDate)
+
+    $newUserParams = @{
+        UserPrincipalName = $u.userPrincipalName
+        DisplayName       = $u.displayName
+        GivenName         = $u.givenName
+        Surname           = $u.surname
+        MailNickname      = $u.mailNickname
+        UsageLocation     = "NG"
+        PasswordProfile   = $pass
+        AccountEnabled    = $accountEnabled
+    }
+
+    try {
+        New-MgUser @newUserParams -ErrorAction Stop
+        $status = if ($accountEnabled) { "ENABLED" } else { "DISABLED" }
+        Write-Host "Created [$status]: $($u.userPrincipalName)" -ForegroundColor $(if ($accountEnabled) { "Green" } else { "Red" })
+    }
+    catch {
+        Write-Warning "Failed: $($u.userPrincipalName) - $($_.Exception.Message)"
+       }
+   }  
    ```
    📸 **Screenshots of users created in PowerShell and Entra Portal:**
     
