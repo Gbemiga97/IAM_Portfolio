@@ -30,18 +30,18 @@ Automate **Joiner**, **Mover**, and **Leaver** processes using **Microsoft Entra
 Save these files in `C:\JML-Practice\`
 
 #### `bulk-create-users.csv`
-```pwsh
+```csv
 userPrincipalName,displayName,givenName,surname,mailNickname,password,department,employeeHireDate,employeeLeaveDateTime
-alice.joiner@Cousera669.onmicrosoft.com,Alice Joiner,Alice,Joiner,alice.joiner,TempPass123!,DevOps,2025-11-19,
+alice.joiner@Cousera669.onmicrosoft.com,Alice Joiner,Alice,Joiner,alice.joiner,TempPass123!,DevOps,2025-11-20,
 bob.mover@Cousera669.onmicrosoft.com,Bob Mover,Bob,Mover,bob.mover,TempPass123!,Marketing,,
 charlie.leaver@Cousera669.onmicrosoft.com,Charlie Leaver,Charlie,Leaver,charlie.leaver,TempPass123!,Finance,,2026-11-04T17:00:00Z
 diana.joiner@Cousera669.onmicrosoft.com,Diana Joiner,Diana,Joiner,diana.joiner,TempPass123!,Engineering,2025-11-26,
 eve.mover@Cousera669.onmicrosoft.com,Eve Mover,Eve,Mover,eve.mover,TempPass123!,HR,,,
 frank.leaver@Cousera669.onmicrosoft.com,Frank Leaver,Frank,Leaver,frank.leaver,TempPass123!,Sales,,2026-11-05T12:00:00Z
-grace.joiner@Cousera669.onmicrosoft.com,Grace Joiner,Grace,Joiner,grace.joiner,TempPass123!,Support,2025-11-17,
+grace.joiner@Cousera669.onmicrosoft.com,Grace Joiner,Grace,Joiner,grace.joiner,TempPass123!,Support,2025-11-29,
 hank.mover@Cousera669.onmicrosoft.com,Hank Mover,Hank,Mover,hank.mover,TempPass123!,IT,,,
 ivy.leaver@Cousera669.onmicrosoft.com,Ivy Leaver,Ivy,Leaver,ivy.leaver,TempPass123!,Legal,,2026-11-06T09:00:00Z
-jack.joiner@Cousera669.onmicrosoft.com,Jack Joiner,Jack,Joiner,jack.joiner,TempPass123!,Product,2025-11-18,
+jack.joiner@Cousera669.onmicrosoft.com,Jack Joiner,Jack,Joiner,jack.joiner,TempPass123!,Product,2025-11-21,
 ```
 
 > Replace `Cousera669.onmicrosoft.com` with your actual tenant.
@@ -59,7 +59,7 @@ Install-Module Microsoft.Graph -Scope CurrentUser -Force
 Connect-MgGraph -Scopes "User.ReadWrite.All","User-LifeCycleInfo.ReadWrite.All","Group.ReadWrite.All"
 
 # Create groups
-$groups = "DevOps-Team","Sales-Team","HR-Team","Finance-Team","Engineering-Team","Support-Team","IT-Team","Legal-Team","Product-Team,Marketing-Team"
+$groups = "DevOps-Team","Sales-Team","HR-Team","Finance-Team","Engineering-Team","Support-Team","IT-Team","Legal-Team","Product-Team","Marketing-Team"
 foreach ($g in $groups) {
     if (-not (Get-MgGroup -Filter "displayName eq '$g'" -ErrorAction SilentlyContinue)) {
         New-MgGroup -DisplayName $g -MailEnabled:$false -SecurityEnabled:$true -MailNickname ($g -replace ' ','')
@@ -81,7 +81,7 @@ foreach ($u in $users) {
         forceChangePasswordNextSignIn = $true
     }
 
-    # JOINER = has employeeHireDate → DISABLED
+    # JOINER = has employeeHireDate → DISABLED(Joiners account will be disabled)
     $accountEnabled = [string]::IsNullOrWhiteSpace($u.employeeHireDate)
 
     $newUserParams = @{
@@ -126,7 +126,7 @@ cd C:\JML-Practice
 .\JML-Setup.ps1
 ```
 ### 1.3 Alternatively, Run the Setup Script Step by Step after Installing Microsoft Graph
-1. Connect with corrcr scopes
+1. Connect with the correct scopes
      ```pwsh
      # Connect with correct scopes
     Connect-MgGraph -Scopes "User.ReadWrite.All","User-LifeCycleInfo.ReadWrite.All","Group.ReadWrite.All"
@@ -141,7 +141,7 @@ cd C:\JML-Practice
 3. Create multiple groups
       ```pwsh
     # Create groups
-    $groups = "DevOps-Team","Sales-Team","HR-Team","Finance-Team","Engineering-Team","Support-Team","IT-Team","Legal-Team","Product-Team,Marketing-Team"
+    $groups = "DevOps-Team","Sales-Team","HR-Team","Finance-Team","Engineering-Team","Support-Team","IT-Team","Legal-Team","Product-Team","Marketing-Team"
     foreach ($g in $groups) {
         if (-not (Get-MgGroup -Filter "displayName eq '$g'" -ErrorAction SilentlyContinue)) {
             New-MgGroup -DisplayName $g -MailEnabled:$false -SecurityEnabled:$true -MailNickname ($g -replace ' ','')
@@ -151,12 +151,13 @@ cd C:\JML-Practice
      ```
       📸 **Screenshots of groups created in PowerShell and Entra Portal:**
        <div>
-            <img width="450" height="658" alt="Screenshot 2025-11-11 161742" src="https://github.com/user-attachments/assets/2146ec78-6635-4130-8f2c-917373e17902" />
-            <img width="450" height="803" alt="Screenshot 2025-11-11 161807" src="https://github.com/user-attachments/assets/2e1ab024-95a8-4b29-8a42-9e24cadf659b" />
+           <img width="450" height="579" alt="Screenshot 2025-11-17 183530" src="https://github.com/user-attachments/assets/27b24bb0-a4ed-4e15-8965-c9ce11e33d38" />
+            <img width="450" height="748" alt="Screenshot 2025-11-17 183952" src="https://github.com/user-attachments/assets/110c0c2b-5c3d-4eb1-8217-9cd8b796a1b5" />
        </div>
        
-5. Create bulk users and disable joiners, e.g `alice.joiner@Cousera669.onmicrosoft.com`
+5. Create bulk users and disable joiners account, e.g `alice.joiner@Cousera669.onmicrosoft.com`
    ```pwsh
+   # JOINER = has employeeHireDate → DISABLED(Joiners account will be disabled)
    foreach ($u in $users) {
       if (Get-MgUser -UserId $u.userPrincipalName -ErrorAction SilentlyContinue) {
         Write-Host "Skip: $($u.userPrincipalName)" -ForegroundColor Cyan
@@ -192,11 +193,13 @@ cd C:\JML-Practice
        }
    }  
    ```
-   📸 **Screenshots of users created in PowerShell and Entra Portal:**
+   📸 **Screenshots of users created in PowerShell and Entra Portal, and account disabled for joiners and enabled for other users:**
     
       <div>
-           <img width="450" height="923" alt="Screenshot 2025-11-13 114801" src="https://github.com/user-attachments/assets/0215e1be-9ffa-4b6c-b024-00ddfe4035cd" />
-           <img width="450" height="806" alt="Screenshot 2025-11-11 162627" src="https://github.com/user-attachments/assets/0f779f43-1f81-45ce-b7b3-c353b13d6945" />
+          <img width="450" height="948" alt="Screenshot 2025-11-17 184608" src="https://github.com/user-attachments/assets/df8baa99-0763-4562-bcc5-f731462711ec" />
+          <img width="450" height="838" alt="Screenshot 2025-11-17 184738" src="https://github.com/user-attachments/assets/50568b61-79fa-4ca0-80d9-6fa16d963579" />
+          <img width="450" height="740" alt="Screenshot 2025-11-17 185103" src="https://github.com/user-attachments/assets/08c0138c-edd2-419d-9273-70ea71e23b7a" />
+          <img width="450" height="735" alt="Screenshot 2025-11-17 185121" src="https://github.com/user-attachments/assets/eea7d3d0-8edb-42b0-bea7-936d9ec5bdfd" />
       </div>
        
 7. Set JML attributes for the users
