@@ -220,7 +220,10 @@ cd C:\JML-Practice
     📸 **Screenshot of JML attributes output for the users:**
 
     <div>
-        <img width="400" height="391" alt="Screenshot 2025-11-11 170419" src="https://github.com/user-attachments/assets/bafabd96-17f5-4473-a989-5f7e0082c786" />
+        <img width="450" height="391" alt="Screenshot 2025-11-11 170419" src="https://github.com/user-attachments/assets/bafabd96-17f5-4473-a989-5f7e0082c786" />
+        <img width="450" height="878" alt="Screenshot 2025-11-18 100843" src="https://github.com/user-attachments/assets/09d362cc-585f-47dd-892d-0add5df71877" />
+        <img width="450" height="859" alt="Screenshot 2025-11-18 100915" src="https://github.com/user-attachments/assets/2f30c74d-c551-4592-a4a5-5a7ca12eebe7" />
+        <img width="450" height="161" alt="Screenshot 2025-11-18 101453" src="https://github.com/user-attachments/assets/8a2a2e87-af7a-4822-b67d-59565ee88fb8" />
     </div>
 ---
 
