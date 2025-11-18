@@ -26,12 +26,13 @@ Automate **Joiner**, **Mover**, and **Leaver** processes using **Microsoft Entra
 
 ## Step  1️⃣: Set Up Test Environment
 
-### 1.1 Create 10 Test Users & Groups
+### 1.1 Create 11 Test Users & Groups
 Save these files in `C:\JML-Practice\`
 
 #### `bulk-create-users.csv`
 ```csv
 userPrincipalName,displayName,givenName,surname,mailNickname,password,department,employeeHireDate,employeeLeaveDateTime
+hr.manager@Cousera669.onmicrosoft.com,HR Manager,Harry,Manager,hr.manager,TempPass123!,HR,,,
 alice.joiner@Cousera669.onmicrosoft.com,Alice Joiner,Alice,Joiner,alice.joiner,TempPass123!,DevOps,2025-11-20,
 bob.mover@Cousera669.onmicrosoft.com,Bob Mover,Bob,Mover,bob.mover,TempPass123!,Marketing,,
 charlie.leaver@Cousera669.onmicrosoft.com,Charlie Leaver,Charlie,Leaver,charlie.leaver,TempPass123!,Finance,,2026-11-04T17:00:00Z
@@ -155,7 +156,7 @@ cd C:\JML-Practice
             <img width="450" height="748" alt="Screenshot 2025-11-17 183952" src="https://github.com/user-attachments/assets/110c0c2b-5c3d-4eb1-8217-9cd8b796a1b5" />
        </div>
        
-5. Create bulk users and disable joiners account, e.g `alice.joiner@Cousera669.onmicrosoft.com`
+4. Create bulk users and disable joiners' accounts, e.g `alice.joiner@Cousera669.onmicrosoft.com`
    ```pwsh
    # JOINER = has employeeHireDate → DISABLED(Joiners account will be disabled)
    foreach ($u in $users) {
@@ -196,13 +197,13 @@ cd C:\JML-Practice
    📸 **Screenshots of users created in PowerShell and Entra Portal, and account disabled for joiners and enabled for other users:**
     
       <div>
-          <img width="450" height="948" alt="Screenshot 2025-11-17 184608" src="https://github.com/user-attachments/assets/df8baa99-0763-4562-bcc5-f731462711ec" />
-          <img width="450" height="838" alt="Screenshot 2025-11-17 184738" src="https://github.com/user-attachments/assets/50568b61-79fa-4ca0-80d9-6fa16d963579" />
-          <img width="450" height="740" alt="Screenshot 2025-11-17 185103" src="https://github.com/user-attachments/assets/08c0138c-edd2-419d-9273-70ea71e23b7a" />
-          <img width="450" height="735" alt="Screenshot 2025-11-17 185121" src="https://github.com/user-attachments/assets/eea7d3d0-8edb-42b0-bea7-936d9ec5bdfd" />
+        <img width="450" height="967" alt="Screenshot 2025-11-18 175341" src="https://github.com/user-attachments/assets/b520c576-46dc-474e-bca5-739f892590c8" />
+        <img width="450" height="889" alt="Screenshot 2025-11-18 175437" src="https://github.com/user-attachments/assets/7c72daf7-15f7-4d6f-b3a3-c8c3583515b8" />
+        <img width="450" height="739" alt="Screenshot 2025-11-18 175631" src="https://github.com/user-attachments/assets/64c293de-4137-4faa-b8fb-d7eea20c0ca4" />
+        <img width="450" height="740" alt="Screenshot 2025-11-18 175700" src="https://github.com/user-attachments/assets/1c6e3baf-f945-43a3-9ea9-7e0efaf9b5b3" />
       </div>
        
-7. Set JML attributes for the users
+5. Set JML attributes for the users
      ```pwsh
      # Set JML attributes for the users
     foreach ($u in $users) {
@@ -220,11 +221,16 @@ cd C:\JML-Practice
     📸 **Screenshot of JML attributes output for the users:**
 
     <div>
-        <img width="450" height="391" alt="Screenshot 2025-11-11 170419" src="https://github.com/user-attachments/assets/bafabd96-17f5-4473-a989-5f7e0082c786" />
+        <img width="450" height="488" alt="Screenshot 2025-11-18 180355" src="https://github.com/user-attachments/assets/60307571-ce02-46fa-8711-6ed8b7c2a0fe" />
         <img width="450" height="878" alt="Screenshot 2025-11-18 100843" src="https://github.com/user-attachments/assets/09d362cc-585f-47dd-892d-0add5df71877" />
         <img width="450" height="859" alt="Screenshot 2025-11-18 100915" src="https://github.com/user-attachments/assets/2f30c74d-c551-4592-a4a5-5a7ca12eebe7" />
         <img width="450" height="161" alt="Screenshot 2025-11-18 101453" src="https://github.com/user-attachments/assets/8a2a2e87-af7a-4822-b67d-59565ee88fb8" />
     </div>
+6. Assign joiners a Manager so that the onboard workflow can generate TAP and send the Manager an email, e.g `hr.manager@Cousera669.onmicrosoft.com`
+   <div>
+       <img width="450" height="848" alt="Screenshot 2025-11-18 180928" src="https://github.com/user-attachments/assets/d2c02f33-ee03-405d-a80f-d0a382263a68" />
+       <img width="450" height="807" alt="Screenshot 2025-11-18 181729" src="https://github.com/user-attachments/assets/2d2a10c8-4532-4b3c-8335-379b5bbef1f4" />
+   </div>
 ---
 
 ## Step 2: Create Lifecycle Workflows (Entra Portal)
@@ -232,6 +238,7 @@ cd C:\JML-Practice
 Go to: **https://entra.microsoft.com** → **Identity Governance** → **Lifecycle workflows**
 
 ---
+
 
 ### Workflow 1: **Joiner** – Onboard New Hire
 
