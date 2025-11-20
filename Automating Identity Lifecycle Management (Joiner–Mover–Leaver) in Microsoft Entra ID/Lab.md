@@ -265,6 +265,8 @@ Go to: **https://entra.microsoft.com** → **Identity Governance** → **Lifecyc
   <div>
       <img width="450" height="892" alt="Screenshot 2025-11-20 111907" src="https://github.com/user-attachments/assets/b468360e-a82e-4f78-a6da-7341623fe054" />
       <img width="450" height="578" alt="Screenshot 2025-11-20 113217" src="https://github.com/user-attachments/assets/0a93b4ad-5362-47e9-adc4-8e6b35e5629a" />
+      <img width="450" height="596" alt="Screenshot 2025-11-20 154249" src="https://github.com/user-attachments/assets/b5291c03-5d65-4afd-90a9-b254d2c8acb2" />
+      <img width="450" height="625" alt="Screenshot 2025-11-20 154217" src="https://github.com/user-attachments/assets/65514c9e-583b-44f3-b919-083bb43c5b3a" />
   </div>
 
 ---
