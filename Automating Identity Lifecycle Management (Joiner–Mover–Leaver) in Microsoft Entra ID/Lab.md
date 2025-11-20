@@ -136,7 +136,7 @@ cd C:\JML-Practice
 
    <div>
             <img width="300" height="791" alt="Screenshot 2025-11-11 150023" src="https://github.com/user-attachments/assets/adfa5dc5-17a6-441a-94dd-70ef838cb3d6" />
-           <img width="600" height="264" alt="Screenshot 2025-11-11 161243" src="https://github.com/user-attachments/assets/4115f7d1-6343-4a00-8648-6aa4f07f991e" />
+            <img width="600" height="264" alt="Screenshot 2025-11-11 161243" src="https://github.com/user-attachments/assets/4115f7d1-6343-4a00-8648-6aa4f07f991e" />
      </div>  
   
 3. Create multiple groups
@@ -246,14 +246,26 @@ Go to: **https://entra.microsoft.com** → **Identity Governance** → **Lifecyc
 |------|-------|
 | **Template** | `Onboard pre-hire employee` |
 | **Name** | `JML - Joiner (Auto-Onboard)` |
-| **Trigger** | `Scheduled`, `-1 day`, `employeeHireDate` |
+| **Trigger** |`Time based attribute`, `Scheduled`, `1 day`, `employeeHireDate` |
 | **Condition** | `employeeHireDate is not null` |
+| **Configure Scope** | `accountEnabled equal false` |
 | **Tasks** |  
-| → Add user to group | `DevOps-Team` (or dynamic via custom task) |
+| → Enable user account | Enable user account in the directory |
+| → Generate TAP | 1 hour and send to user and manager |
 | → Send welcome email | To user |
-| → Generate TAP | 1 hour |
+| → Add user to group | `All Employee Group` |
+| → Assign licenses to user | `Microsoft Entra ID P1` |
+
+
 
 **Test:** Run on demand → Select **Alice Joiner**
+
+📸 **Screenshot of the Workflow summary, the users in scope, and processed users:**
+
+  <div>
+      <img width="450" height="892" alt="Screenshot 2025-11-20 111907" src="https://github.com/user-attachments/assets/b468360e-a82e-4f78-a6da-7341623fe054" />
+      <img width="450" height="578" alt="Screenshot 2025-11-20 113217" src="https://github.com/user-attachments/assets/0a93b4ad-5362-47e9-adc4-8e6b35e5629a" />
+  </div>
 
 ---
 
