@@ -258,7 +258,7 @@ Go to: **https://entra.microsoft.com** → **Identity Governance** → **Lifecyc
 
 
 
-**Test:** Run on demand → Select **Alice Joiner**
+**Test:** Wait for the scheduled time or Run on demand → Select **Alice Joiner**
 
 📸 **Screenshot of the Workflow summary, the users in scope, and processed users:**
 
@@ -275,19 +275,27 @@ Go to: **https://entra.microsoft.com** → **Identity Governance** → **Lifecyc
 
 | Field | Value |
 |------|-------|
-| **Template** | `Custom workflow` |
+| **Template** | `Employee job profile change` |
 | **Name** | `JML - Mover (Dept Change)` |
-| **Trigger** | `On attribute change`, `department`, `Last 1 day` |
+| **Trigger** | `On attribute change`, `department`, `Scheduled` |
+| **Configure Scope** | `department equal Support` |
 | **Tasks** |  
-| → Remove from group | `Marketing-Team` |
-| → Add to group | `Sales-Team` |
+| → Remove user from s selected groups | `HR-Team` |
+| → Add to selected groups | `Support-Team` |
+| Send email to notify manager of user move→  | `HR Manager` |
 
 **Test:**  
 ```powershell
-Update-MgUser -UserId "bob.mover@yourtenant.onmicrosoft.com" -department "Sales"
+Update-MgUser -UserId "eve.mover@yourtenant.onmicrosoft.com" -department "Support"
 ```
-→ Wait 5 mins or **Run on demand**
+→ Wait for the scheduled time or **Run on demand**  
 
+📸 **Screenshot of the Workflow summary, the user in scope, and processed user:**
+<div>
+   <img width="450" height="884" alt="Screenshot 2025-11-21 170500" src="https://github.com/user-attachments/assets/edd66d2c-eb97-479c-b265-852474b0cda8" />
+     <img width="450" height="471" alt="Screenshot 2025-11-21 170251" src="https://github.com/user-attachments/assets/055b188e-27c6-41c3-a705-76a2d0440895" />
+    <img width="900" height="562" alt="Screenshot 2025-11-21 172029" src="https://github.com/user-attachments/assets/d3024f26-f108-4e1c-9e00-f97e91ac3b8d" />
+</div>
 ---
 
 ### Workflow 3: **Leaver** – Offboard Employee
