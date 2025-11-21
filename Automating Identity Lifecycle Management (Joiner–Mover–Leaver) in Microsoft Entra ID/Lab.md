@@ -286,25 +286,26 @@ Go to: **https://entra.microsoft.com** → **Identity Governance** → **Lifecyc
 
 **Test:**  
 ```powershell
-Update-MgUser -UserId "eve.mover@yourtenant.onmicrosoft.com" -department "Support"
+Update-MgUser -UserId "eve.mover@Cousera669.onmicrosoft.com" -department "Support"
 ```
 → Wait for the scheduled time or **Run on demand**  
 
 📸 **Screenshot of the Workflow summary, the user in scope, and processed user:**
 <div>
-   <img width="450" height="884" alt="Screenshot 2025-11-21 170500" src="https://github.com/user-attachments/assets/edd66d2c-eb97-479c-b265-852474b0cda8" />
-     <img width="450" height="471" alt="Screenshot 2025-11-21 170251" src="https://github.com/user-attachments/assets/055b188e-27c6-41c3-a705-76a2d0440895" />
-    <img width="900" height="562" alt="Screenshot 2025-11-21 172029" src="https://github.com/user-attachments/assets/d3024f26-f108-4e1c-9e00-f97e91ac3b8d" />
+   <img width="300" height="884" alt="Screenshot 2025-11-21 170500" src="https://github.com/user-attachments/assets/edd66d2c-eb97-479c-b265-852474b0cda8" />
+     <img width="350" height="471" alt="Screenshot 2025-11-21 170251" src="https://github.com/user-attachments/assets/055b188e-27c6-41c3-a705-76a2d0440895" />
+    <img width="350" height="562" alt="Screenshot 2025-11-21 172029" src="https://github.com/user-attachments/assets/d3024f26-f108-4e1c-9e00-f97e91ac3b8d" />
 </div>
+
 ---
 
 ### Workflow 3: **Leaver** – Offboard Employee
 
 | Field | Value |
 |------|-------|
-| **Template** | `Offboard leaver employee` |
+| **Template** | `Offboard an employee` |
 | **Name** | `JML - Leaver (Auto-Offboard)` |
-| **Trigger** | `Scheduled`, `0 days`, `employeeLeaveDateTime` |
+| **Trigger** | `Time based attribute`, `Scheduled`, `0 days`, `employeeLeaveDateTime` |
 | **Condition** | `employeeLeaveDateTime is not null` |
 | **Tasks** |  
 | → Disable account | |
@@ -314,9 +315,14 @@ Update-MgUser -UserId "eve.mover@yourtenant.onmicrosoft.com" -department "Suppor
 
 **Test:**  
 ```powershell
-Update-MgUser -UserId "charlie.leaver@yourtenant.onmicrosoft.com" -employeeLeaveDateTime "2025-11-04T17:00:00Z"
+Update-MgUser -UserId "charlie.leaver@Cousera669.onmicrosoft.com" -employeeLeaveDateTime "2025-11-04T17:00:00Z"
 ```
-→ **Run on demand**
+→ Wait for the scheduled time or **Run on demand**  
+📸 **Screenshot of the Workflow summary, the user in scope, and processed user:**
+<div>
+    <img width="450" height="857" alt="Screenshot 2025-11-21 184623" src="https://github.com/user-attachments/assets/0b4a2796-b082-4552-aefc-e4ddbf978bcb" />
+    <img width="450" height="270" alt="Screenshot 2025-11-21 192033" src="https://github.com/user-attachments/assets/bccba82f-2815-4be3-9e1d-cd5ae224cc19" />
+</div>
 
 ---
 
