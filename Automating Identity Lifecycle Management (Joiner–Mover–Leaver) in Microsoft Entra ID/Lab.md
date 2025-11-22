@@ -359,14 +359,6 @@ Get-MgUser -UserId "charlie.leaver@Cousera669.onmicrosoft.com" -Property Employe
 
 ---
 
-## Cleanup (Optional)
-```powershell
-# Delete all test users
-Get-MgUser -Filter "mailNickname startsWith 'alice' or mailNickname startsWith 'bob' or mailNickname startsWith 'charlie'" | Remove-MgUser -Confirm:$false
-```
-
----
-
 ## Summary: What I’ve Built
 
 | Feature | Tool |
