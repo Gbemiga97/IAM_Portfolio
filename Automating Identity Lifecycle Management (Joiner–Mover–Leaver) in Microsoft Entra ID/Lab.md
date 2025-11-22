@@ -354,7 +354,7 @@ Get-MgUser -UserId "charlie.leaver@Cousera669.onmicrosoft.com" -Property Employe
 | User | Group | License |Account |
 |------|------|--------|--------|
 | Alice | `DevOps-Team` | Microsoft Entra ID P1 | Enabled |
-| Eve | `Support-Team` | null | Enabled |
+| Eve | `Support-Team` | No license | Enabled |
 | Charlie | No groups | No license | **Disabled & Deleted** |
 
 ---
