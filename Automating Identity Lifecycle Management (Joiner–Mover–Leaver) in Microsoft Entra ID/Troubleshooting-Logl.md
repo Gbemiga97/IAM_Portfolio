@@ -73,7 +73,7 @@ Welcome email successfully delivered to new hire
 
 ---
 
-### Issue 6 – License assignment task fails
+### Issue 6 – UsageLocation error
 **Root Cause:**  
 UsageLocation set to “Nigeria” instead of valid ISO 3166-1 alpha-2 code
 
@@ -81,7 +81,7 @@ UsageLocation set to “Nigeria” instead of valid ISO 3166-1 alpha-2 code
 Changed UsageLocation = "NG" in all scripts
 
 **Verification:**  
-Microsoft 365 E3/E5, EMS, and other licenses assign without error
+UsageLocation = "NG"
 
 ---
 
