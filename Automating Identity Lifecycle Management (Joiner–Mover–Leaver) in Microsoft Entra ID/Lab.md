@@ -284,10 +284,12 @@ Go to: **https://entra.microsoft.com** → **Identity Governance** → **Lifecyc
 | → Add to selected groups | `Support-Team` |
 | Send email to notify manager of user move→  | `HR Manager` |
 
-**Test:**  
+#### Test: 
+**Update the `department` attributes in PowerShell or Entra ID admin center**
 ```powershell
 Update-MgUser -UserId "eve.mover@Cousera669.onmicrosoft.com" -department "Support"
 ```
+
 → Wait for the scheduled time or **Run on demand**  
 
 📸 **Screenshot of the Workflow summary, the user in scope, and processed user:**
@@ -313,36 +315,44 @@ Update-MgUser -UserId "eve.mover@Cousera669.onmicrosoft.com" -department "Suppor
 | → Remove all licenses | |
 | → Send email | To HR |
 
-**Test:**  
+
+
+#### Test: (PowerShell)  
+**Update the `employeeLeaveDateTime` attributes**
 ```powershell
-Update-MgUser -UserId "charlie.leaver@Cousera669.onmicrosoft.com" -employeeLeaveDateTime "2025-11-04T17:00:00Z"
+Update-MgUser -UserId "charlie.leaver@Cousera669.onmicrosoft.com" -employeeLeaveDateTime "2025-11-21T17:00:00Z"
 ```
+**Verify the `employeeLeaveDateTime` attributes**
+```powershell
+Get-MgUser -UserId "charlie.leaver@Cousera669.onmicrosoft.com" -Property EmployeeLeaveDateTime | Select -Expand EmployeeLeaveDateTime
+```
+
 → Wait for the scheduled time or **Run on demand**  
-📸 **Screenshot of the Workflow summary, the user in scope, and processed user:**
+
+📸 **Screenshot of the Workflow summary, the updated attribute, the user in scope, and processed user:**
+
 <div>
     <img width="450" height="857" alt="Screenshot 2025-11-21 184623" src="https://github.com/user-attachments/assets/0b4a2796-b082-4552-aefc-e4ddbf978bcb" />
-    <img width="450" height="270" alt="Screenshot 2025-11-21 192033" src="https://github.com/user-attachments/assets/bccba82f-2815-4be3-9e1d-cd5ae224cc19" />
+    <img width="450" height="270" alt="Screenshot 2025-11-21 192033" src="https://github.com/user-attachments/assets/bccba82f-2815-4be3-9e1d-cd5ae224cc19" />   
+    <img width="450" height="462" alt="Screenshot 2025-11-22 114214" src="https://github.com/user-attachments/assets/7e898c8c-30aa-4824-8128-4e58312573b4" />
 </div>
 
 ---
 
 ## Step 3: Verify Everything Works
 
-### 3.1 Check Attributes (PowerShell)
-```powershell
-Get-MgUser -UserId "charlie.leaver@yourtenant.onmicrosoft.com" -Property EmployeeLeaveDateTime | Select -Expand EmployeeLeaveDateTime
-```
 
-### 3.2 Check Workflow History
+
+### 3.1 Check Workflow History
 - **Entra admin center** → **Lifecycle workflows** → **Workflow history**
 - Filter by user → See **Completed** status
 
-### 3.3 Final State
+### 3.2 Final State
 | User | Group | Account |
 |------|------|--------|
 | Alice | `DevOps-Team` | Enabled |
 | Bob | `Sales-Team` | Enabled |
-| Charlie | No groups | **Disabled** |
+| Charlie | No groups | **Disabled & Deleted** |
 
 ---
 
@@ -354,7 +364,7 @@ Get-MgUser -Filter "mailNickname startsWith 'alice' or mailNickname startsWith '
 
 ---
 
-## Summary: What You’ve Built
+## Summary: What I’ve Built
 
 | Feature | Tool |
 |-------|------|
