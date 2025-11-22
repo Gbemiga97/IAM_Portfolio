@@ -310,10 +310,11 @@ Update-MgUser -UserId "eve.mover@Cousera669.onmicrosoft.com" -department "Suppor
 | **Trigger** | `Time based attribute`, `Scheduled`, `0 days`, `employeeLeaveDateTime` |
 | **Condition** | `employeeLeaveDateTime is not null` |
 | **Tasks** |  
-| → Disable account | |
-| → Remove from all groups | |
-| → Remove all licenses | |
-| → Send email | To HR |
+| → Send email on user’s last day | To HR |
+| → Disable User Account | |
+| → Remove user from all groups | |
+| → Remove all licenses for user | |
+| → Delete User Account |  |
 
 
 
@@ -335,6 +336,8 @@ Get-MgUser -UserId "charlie.leaver@Cousera669.onmicrosoft.com" -Property Employe
     <img width="450" height="857" alt="Screenshot 2025-11-21 184623" src="https://github.com/user-attachments/assets/0b4a2796-b082-4552-aefc-e4ddbf978bcb" />
     <img width="450" height="270" alt="Screenshot 2025-11-21 192033" src="https://github.com/user-attachments/assets/bccba82f-2815-4be3-9e1d-cd5ae224cc19" />   
     <img width="450" height="462" alt="Screenshot 2025-11-22 114214" src="https://github.com/user-attachments/assets/7e898c8c-30aa-4824-8128-4e58312573b4" />
+    <img width="450" height="571" alt="Screenshot 2025-11-22 122218" src="https://github.com/user-attachments/assets/a220453e-a139-4381-8c38-8f39d41e585f" />
+
 </div>
 
 ---
@@ -348,11 +351,11 @@ Get-MgUser -UserId "charlie.leaver@Cousera669.onmicrosoft.com" -Property Employe
 - Filter by user → See **Completed** status
 
 ### 3.2 Final State
-| User | Group | Account |
-|------|------|--------|
-| Alice | `DevOps-Team` | Enabled |
-| Bob | `Sales-Team` | Enabled |
-| Charlie | No groups | **Disabled & Deleted** |
+| User | Group | License |Account |
+|------|------|--------|--------|
+| Alice | `DevOps-Team` | Microsoft Entra ID P1 | Enabled |
+| Eve | `Support-Team` | null | Enabled |
+| Charlie | No groups | No license | **Disabled & Deleted** |
 
 ---
 
