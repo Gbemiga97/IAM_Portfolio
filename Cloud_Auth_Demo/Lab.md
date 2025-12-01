@@ -17,8 +17,12 @@ The adapted "Cloud Auth Demo" project focuses on configuring Microsoft Entra ID 
 #### Step 1: Setting Up Entra ID Basics
 1. Log in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 2. Create test users: Navigate to Entra ID > Users > New user. Add users like `employee1@techcorp.com` with passwords.
-3. Optionally, enable MFA or conditional access in Entra ID > Security for realism, but keep it simple for demo.
+3. Optionally, enable MFA or conditional access in Entra ID.
 
+📸 Screenshot of the user:
+<div>
+  <img width="400" height="627" alt="Screenshot 2025-12-01 151921" src="https://github.com/user-attachments/assets/9a56baa2-f57d-47a3-a717-b26c37df6e47" />
+</div>
 
 
 #### Step 2: Configuring Protocol-Specific Apps
