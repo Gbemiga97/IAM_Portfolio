@@ -1,4 +1,4 @@
-# Cloud Auth Demo
+<img width="1540" height="739" alt="image" src="https://github.com/user-attachments/assets/23c400ab-b19a-49b1-a53a-2288eeeae087" /># Cloud Auth Demo
 
 ### Project Overview
 The adapted "Cloud Auth Demo" project focuses on configuring Microsoft Entra ID (formerly Azure AD) for SAML, OAuth, and OIDC using only the admin center. This Project focuses on SAML for enterprise SSO (e.g., with a gallery app like Salesforce), OIDC for modern logins (e.g., with a gallery app like Smartsheet), and OAuth for delegated API access (e.g., via Microsoft Graph). The Cloud Auth Demo project provides a straightforward way to illustrate my understanding of authentication and authorization protocols like SAML, OAuth, and OIDC. What's the Difference?" By leveraging Microsoft Entra ID's user-friendly admin center, the project emphasizes enterprise-grade configurations through gallery apps and app registrations, SAML for trusted federated SSO with XML assertions and rich attributes, OAuth for scoped, revocable delegation without inherent identity, and OIDC as an OAuth extension adding standardized JWT ID tokens for hybrid authentication in modern ecosystems. This setup mirrors real-world scenarios where organizations centralize identity management to avoid password sharing, enhancing security and user experience.  
@@ -33,10 +33,11 @@ Use the UI to add and customize apps, focusing on gallery integrations where pos
 2. Search the gallery for "Salesforce" (a common SAML-supported app); select and add it.
 3. In the app's properties, select Single sign-on > SAML.
 4. Edit Basic SAML Configuration: Enter Identifier (e.g., `https://techcorp.my.salesforce.com`), Reply URL (from Salesforce SSO settings, e.g., `https://techcorp.my.salesforce.com/acs`).
-5. Download the SAML Signing Certificate (Base64) and upload it to Salesforce's SSO setup.
-6. Set User Attributes & Claims: Map NameID to user.email; add attributes like department=Engineering.
-7. Assign users: Under Users and groups, add `employee1`.
-8. In Salesforce admin (no code), enable SAML and paste Entra endpoints (e.g., Login URL: `https://login.microsoftonline.com/{tenant-id}/saml2`).
+5. Configure Salesforce SSO, 
+6. Download the SAML Signing Certificate (Base64) and upload it to Salesforce's SSO setup.
+7. Set User Attributes & Claims: Map NameID to user.email; add attributes like department=Engineering.
+8. Assign users: Under Users and groups, add `employee1`.
+9. In Salesforce admin (no code), enable SAML and paste Entra endpoints (e.g., Login URL: `https://login.microsoftonline.com/{tenant-id}/saml2`).
 
 This aligns with the article's SAML use for federated enterprise auth with rich attributes.
 
