@@ -1,4 +1,4 @@
-<img width="1540" height="739" alt="image" src="https://github.com/user-attachments/assets/23c400ab-b19a-49b1-a53a-2288eeeae087" /># Cloud Auth Demo
+# Cloud Auth Demo
 
 ### Project Overview
 The adapted "Cloud Auth Demo" project focuses on configuring Microsoft Entra ID (formerly Azure AD) for SAML, OAuth, and OIDC using only the admin center. This Project focuses on SAML for enterprise SSO (e.g., with a gallery app like Salesforce), OIDC for modern logins (e.g., with a gallery app like Smartsheet), and OAuth for delegated API access (e.g., via Microsoft Graph). The Cloud Auth Demo project provides a straightforward way to illustrate my understanding of authentication and authorization protocols like SAML, OAuth, and OIDC. What's the Difference?" By leveraging Microsoft Entra ID's user-friendly admin center, the project emphasizes enterprise-grade configurations through gallery apps and app registrations, SAML for trusted federated SSO with XML assertions and rich attributes, OAuth for scoped, revocable delegation without inherent identity, and OIDC as an OAuth extension adding standardized JWT ID tokens for hybrid authentication in modern ecosystems. This setup mirrors real-world scenarios where organizations centralize identity management to avoid password sharing, enhancing security and user experience.  
@@ -35,11 +35,22 @@ Use the UI to add and customize apps, focusing on gallery integrations where pos
 4. Edit Basic SAML Configuration: Enter Identifier (e.g., `https://techcorp.my.salesforce.com`), Reply URL (from Salesforce SSO settings, e.g., `https://techcorp.my.salesforce.com/acs`).
 5. Configure Salesforce SSO, 
 6. Download the SAML Signing Certificate (Base64) and upload it to Salesforce's SSO setup.
-7. Set User Attributes & Claims: Map NameID to user.email; add attributes like department=Engineering.
-8. Assign users: Under Users and groups, add `employee1`.
-9. In Salesforce admin (no code), enable SAML and paste Entra endpoints (e.g., Login URL: `https://login.microsoftonline.com/{tenant-id}/saml2`).
-
-This aligns with the article's SAML use for federated enterprise auth with rich attributes.
+7. Assign users: Under Users and groups, add `employee1`.
+8. In Salesforce admin (no code), enable SAML and paste Entra endpoints (e.g., Login URL: `https://login.microsoftonline.com/{tenant-id}/saml2`).
+📸 Screenshot of the configuration:
+<div>
+  <img width="320" height="873" alt="Screenshot 2025-12-07 151654" src="https://github.com/user-attachments/assets/2fd8af12-c7e0-4651-a6f3-dda52cf4731f" />
+  <img width="320" height="364" alt="Screenshot 2025-12-04 163334" src="https://github.com/user-attachments/assets/2fd2d9d0-1a31-4c67-8229-111bf59b2104" />
+<img width="320" height="705" alt="Screenshot 2025-12-06 185558" src="https://github.com/user-attachments/assets/1c927f41-7371-49e2-9060-6013982c25f3" />
+<img width="320" height="510" alt="Screenshot 2025-12-07 152510" src="https://github.com/user-attachments/assets/d2840e63-0e7f-46bc-af99-766bb15be580" />
+  <img width="320" height="441" alt="Screenshot 2025-12-07 152333" src="https://github.com/user-attachments/assets/1ddd4605-2376-49f2-a1db-2ade86b98419" />
+ <img width="320" height="745" alt="Screenshot 2025-12-07 154602" src="https://github.com/user-attachments/assets/056ff0cd-0909-43df-b1fd-474bbc50ab98" />
+<img width="320" height="603" alt="Screenshot 2025-12-06 190939" src="https://github.com/user-attachments/assets/cef615f6-0d54-4af3-8ca5-302a07b7c851" />
+<img width="320" height="759" alt="Screenshot 2025-12-06 190245" src="https://github.com/user-attachments/assets/fb5480ac-e3c2-49ed-a923-e01bc45253c0" />
+<img width="320" height="892" alt="Screenshot 2025-12-07 155353" src="https://github.com/user-attachments/assets/492e8f5a-bd3d-47a6-b15e-65fa58404c34" />
+<img width="320" height="866" alt="Screenshot 2025-12-07 155416" src="https://github.com/user-attachments/assets/1ed70fde-df75-4ad9-9099-62214280c84d" />
+<img width="640" height="786" alt="Screenshot 2025-12-07 155448" src="https://github.com/user-attachments/assets/a1c61eef-d75a-4107-a1bc-71b1d75d4a9f" />
+</div>
 
 ##### OIDC Configuration (Modern Login with Gallery App)
 1. In Enterprise applications > New application, search for "Smartsheet" (OIDC-supported gallery app); add it.
