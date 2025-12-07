@@ -32,12 +32,15 @@ Use the UI to add and customize apps, focusing on gallery integrations where pos
 1. Go to Entra ID > Enterprise applications > New application.
 2. Search the gallery for "Salesforce" (a common SAML-supported app); select and add it.
 3. In the app's properties, select Single sign-on > SAML.
-4. Edit Basic SAML Configuration: Enter Identifier (e.g., `https://techcorp.my.salesforce.com`), Reply URL (from Salesforce SSO settings, e.g., `https://techcorp.my.salesforce.com/acs`).
-5. Configure Salesforce SSO, 
-6. Download the SAML Signing Certificate (Base64) and upload it to Salesforce's SSO setup.
-7. Assign users: Under Users and groups, add `employee1`.
-8. In Salesforce admin (no code), enable SAML and paste Entra endpoints (e.g., Login URL: `https://login.microsoftonline.com/{tenant-id}/saml2`).
+4. Edit Basic SAML Configuration: Enter Identifier (e.g., `https://cousera894.my.salesforce.com`), Reply URL (from Salesforce SSO settings, e.g., `https://cousera894.my.salesforce.com/acs`).
+5. Download the SAML Signing Federation Metadata XML and Certificate (Raw) to upload it to Salesforce's SSO setup.
+6. 8. Assign users: Under Users and groups, add `employee1`.
+7. Configure Salesforce SSO, and Create Salesforce test user - to have a counterpart of `employee1` in Salesforce that's linked to the Microsoft Entra representation of the user.
+8.  In Salesforce admin (no code), enable SAML and paste Entra endpoints (e.g., Login URL: `https://login.microsoftonline.com/{tenant-id}/saml2`).
+9.  Test The SSO from signing with `employee1` in  [My Apps](https://myapplications.microsoft.com)  
+
 📸 Screenshot of the configuration:
+
 <div>
   <img width="320" height="873" alt="Screenshot 2025-12-07 151654" src="https://github.com/user-attachments/assets/2fd8af12-c7e0-4651-a6f3-dda52cf4731f" />
   <img width="320" height="364" alt="Screenshot 2025-12-04 163334" src="https://github.com/user-attachments/assets/2fd2d9d0-1a31-4c67-8229-111bf59b2104" />
