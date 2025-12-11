@@ -66,7 +66,19 @@ Use the UI to add and customize apps, focusing on gallery integrations where pos
 
 For custom OIDC if needed: Use App registrations > New registration, set as single-tenant, add Web redirect URI.
 
-This reflects the article's OIDC as OAuth-enhanced for identity and API access.
+📸 Screenshot of the configuration:
+
+<div>
+  <img width="640" height="1174" alt="oidc-sso-configuration" src="https://github.com/user-attachments/assets/0f5553fa-84ba-4ef2-9585-5ee508db27e6" />
+<img width="320" height="725" alt="Screenshot 2025-12-07 175933" src="https://github.com/user-attachments/assets/80b65951-9ba8-4ecf-8c92-d0c70a2aba03" />
+<img width="320" height="669" alt="Screenshot 2025-12-07 180018" src="https://github.com/user-attachments/assets/a9e62188-a39b-4c47-bbc2-26d503d9a8a8" />
+<img width="320" height="417" alt="Screenshot 2025-12-08 171525" src="https://github.com/user-attachments/assets/952c2732-6c96-4b35-bc93-e91fff1c30bc" />
+<img width="320" height="859" alt="Screenshot 2025-12-08 173533" src="https://github.com/user-attachments/assets/03bf8ab7-39c0-40aa-985d-84f690b7091c" />
+<img width="320" height="647" alt="Screenshot 2025-12-08 173558" src="https://github.com/user-attachments/assets/e83c2b02-be9e-460f-bd1a-6290e0cadfe6" />
+<img width="320" height="696" alt="Screenshot 2025-12-08 173721" src="https://github.com/user-attachments/assets/ece50bb0-0f15-444e-9fdf-42627bcafc14" />
+<img width="320" height="724" alt="Screenshot 2025-12-11 160732" src="https://github.com/user-attachments/assets/92ae8f84-125f-438e-95fd-33dd181686b3" />
+</div>
+
 
 ##### OAuth Configuration (Delegated Access with App Registration)
 1. Go to Entra ID > App registrations > New registration.
