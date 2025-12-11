@@ -59,12 +59,6 @@ Use the UI to add and customize apps, focusing on gallery integrations where pos
 1. In Enterprise applications > New application, search for "Smartsheet" (OIDC-supported gallery app); add it.
 2. Select Single sign-on > OpenID Connect (if prompted; some gallery apps auto-configure OIDC).
 3. Complete consent: Sign in with Entra credentials, accept permissions.
-4. Configure details: Add Redirect URIs (e.g., `https://app.smartsheet.com/auth/redirect` from Smartsheet docs).
-5. Add API permissions: Go to App registrations (linked from enterprise app), add delegated scopes like openid, profile, email.
-6. Grant admin consent.
-7. In Smartsheet settings, enable OIDC and input Entra details (Client ID, Tenant ID from app Overview).
-
-For custom OIDC if needed: Use App registrations > New registration, set as single-tenant, add Web redirect URI.
 
 📸 Screenshot of the configuration:
 
