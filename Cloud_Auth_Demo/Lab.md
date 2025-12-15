@@ -87,13 +87,14 @@ Use the UI to add and customize apps, focusing on gallery integrations where pos
 
 | Parameter | Description | Example Value |
 |-----------|-------------|---------------|
-|Grant Type | Flow for delegated access | Authorization Code (with PKCE) | 
-| Callback URL    | Where Entra ID redirects after auth   | https://oauth.pstmn.io/v1/callback |
+| Token Name | Name of the Token | oauth-partner-access-token  | 
+| Grant Type | Flow for delegated access | Authorization Code  | 
+| Callback URL    | Where Entra ID redirects after auth   | https://oauth.pstmn.io/v1/browser-callback |
 | Auth URL    | Endpoint for user sign-in  | https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/authorize|
 | Access Token URL   | Endpoint to exchange code for token   | https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token |
 | Client ID   | Unique app identifier  | From Entra ID Overview |
 | Client Secret  | Secure authentication key | From Entra ID Certificates & secrets |
-| Scope  | Permissions requested  | https://graph.microsoft.com/User.Read   https://graph.microsoft.com/Mail.Read|
+| Scope  | Permissions requested  | https://graph.microsoft.com/User.Read   https://graph.microsoft.com/Mail.Read |
 | Client Authentication  | How credentials are sent  | Send as Basic Auth header |
 
 - **OAuth**: In browser, construct authorize URL: `https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?client_id={client_id}&response_type=code&redirect_uri=http://localhost&scope=User.Read&state=1234`. Sign in; copy code from redirect.
@@ -103,22 +104,24 @@ Use the UI to add and customize apps, focusing on gallery integrations where pos
 📸 Screenshot of the configuration:
 
 <div>
-    <img width="1633" height="401" alt="Screenshot 2025-12-15 132401" src="https://github.com/user-attachments/assets/f37e481a-c852-4f22-bae7-e64e0253f24a" />
-<img width="947" height="639" alt="Screenshot 2025-12-14 165710" src="https://github.com/user-attachments/assets/30d35684-2c06-4807-b0f1-12b7e3ec6597" />
- <img width="1645" height="645" alt="Screenshot 2025-12-14 170734" src="https://github.com/user-attachments/assets/f17b93cb-2eff-4026-9a97-76c409e62e18" />
-<img width="800" height="415" alt="Screenshot 2025-12-14 170746" src="https://github.com/user-attachments/assets/c7f7acfb-55ba-4091-b6aa-a7ecda894b9b" />
+  <img width="320" height="639" alt="Screenshot 2025-12-14 165710" src="https://github.com/user-attachments/assets/30d35684-2c06-4807-b0f1-12b7e3ec6597" />
+<img width="320" height="401" alt="Screenshot 2025-12-15 132401" src="https://github.com/user-attachments/assets/6f34b6a5-8f90-4269-8ca4-fb0ca4e6fe97" />
+  <img width="320" height="645" alt="Screenshot 2025-12-14 170734" src="https://github.com/user-attachments/assets/f17b93cb-2eff-4026-9a97-76c409e62e18" />
+<img width="320" height="415" alt="Screenshot 2025-12-14 170746" src="https://github.com/user-attachments/assets/c7f7acfb-55ba-4091-b6aa-a7ecda894b9b" />
+  <img width="320" height="687" alt="Screenshot 2025-12-14 170923" src="https://github.com/user-attachments/assets/76238b15-d31b-4311-be8d-6a1524f57439" />
+  <img width="320" height="495" alt="Screenshot 2025-12-15 165102" src="https://github.com/user-attachments/assets/84cf5d9e-af41-45cc-8f78-bb2f0ae448df" />
+  <img width="320" height="668" alt="Screenshot 2025-12-15 135443" src="https://github.com/user-attachments/assets/e7a8f381-460c-4132-af6e-dbeeba4fb1b0" />
+  <img width="320" height="728" alt="Screenshot 2025-12-15 153034" src="https://github.com/user-attachments/assets/010f482a-f733-41a7-b0cf-39d6ee9f0b77" />
+<img width="320" height="764" alt="Screenshot 2025-12-15 153049" src="https://github.com/user-attachments/assets/7a13f6f2-ed51-4c55-8525-60129b22cbc8" />
 
-  <img width="1656" height="687" alt="Screenshot 2025-12-14 170923" src="https://github.com/user-attachments/assets/76238b15-d31b-4311-be8d-6a1524f57439" />
-<img width="1372" height="799" alt="Screenshot 2025-12-15 133321" src="https://github.com/user-attachments/assets/2fc694fb-ec4b-4450-8293-b330368fd6f0" />
-<img width="754" height="838" alt="Screenshot 2025-12-15 134508" src="https://github.com/user-attachments/assets/9bc925e0-bd0c-4b68-818e-02e72862c08a" />
-<img width="1672" height="668" alt="Screenshot 2025-12-15 135443" src="https://github.com/user-attachments/assets/e7a8f381-460c-4132-af6e-dbeeba4fb1b0" />
-<img width="1920" height="1080" alt="Screenshot (223)" src="https://github.com/user-attachments/assets/85806507-b2f8-4d52-ba88-3bff37938ca4" />
-<img width="1496" height="820" alt="Screenshot 2025-12-15 143215" src="https://github.com/user-attachments/assets/c30856f7-c4d0-44e6-b546-50c22bd5eaa8" />
-<img width="816" height="554" alt="Screenshot 2025-12-15 152333" src="https://github.com/user-attachments/assets/13f06129-7175-43c0-92d2-a96c4af90817" />
-<img width="1509" height="728" alt="Screenshot 2025-12-15 153034" src="https://github.com/user-attachments/assets/010f482a-f733-41a7-b0cf-39d6ee9f0b77" />
-<img width="1654" height="764" alt="Screenshot 2025-12-15 153049" src="https://github.com/user-attachments/assets/b5f8ebb6-02b7-49d8-8284-03fd04462634" />
+  <img width="320" height="910" alt="Screenshot 2025-12-15 164612" src="https://github.com/user-attachments/assets/b25ba291-0c36-437d-991a-ea12c6a61c46" />
+<img width="320" height="838" alt="Screenshot 2025-12-15 134508" src="https://github.com/user-attachments/assets/9bc925e0-bd0c-4b68-818e-02e72862c08a" />
+<img width="320" height="1080" alt="Screenshot (223)" src="https://github.com/user-attachments/assets/85806507-b2f8-4d52-ba88-3bff37938ca4" />
+<img width="320" height="554" alt="Screenshot 2025-12-15 152333" src="https://github.com/user-attachments/assets/13f06129-7175-43c0-92d2-a96c4af90817" />
+<img width="640" height="820" alt="Screenshot 2025-12-15 143215" src="https://github.com/user-attachments/assets/c30856f7-c4d0-44e6-b546-50c22bd5eaa8" />
 </div>
 
+##### Comparison Table:
 
 | Protocol | Use Case in Scenario | Key Config in Entra UI | Gallery Example | Testing Method | 
 |----------|----------------------|------------------------|-----------------|---------------|
@@ -126,16 +129,10 @@ Use the UI to add and customize apps, focusing on gallery integrations where pos
 | OIDC     | Dashboard login     | App registration, ID tokens | Smartsheet     | Browser JWT inspect | 
 | OAuth    | Partner API access  | App registration, scopes | N/A (Custom)   | Postman token request | 
 
-#### Advanced Configurations
-- Custom Attributes: In SAML/OIDC, map extension attributes in Claims.
-- Security: Enable short token lifespans in Token configuration.
-- Troubleshooting: Check audit logs in Entra ID > Sign-ins for errors like mismatched URIs.
+
 
 ### Key Citations
 - [Configure OIDC SSO for gallery and custom applications - Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-setup-oidc-sso)
 - [SAML-based single sign-on: Configuration and Limitations - Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/migrate-adfs-saml-based-sso)
 - [Microsoft identity platform and OAuth 2.0 authorization code flow - Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow)
 - [Integrating Microsoft Entra ID with applications getting started guide](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/plan-an-application-integration)
-- [SAML-based single sign-on: Configuration and Limitations](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/migrate-adfs-saml-based-sso)
-- [Configure OIDC SSO for gallery and custom applications](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-setup-oidc-sso)
-- [Microsoft identity platform and OAuth 2.0 authorization code flow](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow)
