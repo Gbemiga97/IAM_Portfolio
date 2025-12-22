@@ -4,7 +4,7 @@ This project is designed to showcase my skills in enterprise app management and 
 
 #### Prerequisites
 - Microsoft Entra ID admin access (P1 or higher license for provisioning features).
-- A Slack workspace where you're an admin (free plan works).
+- A Slack workspace where you're an admin (Business+ trial plan works).
 - Microsoft Graph PowerShell SDK installed (`Install-Module Microsoft.Graph`).
 
 #### Step-by-Step Implementation
