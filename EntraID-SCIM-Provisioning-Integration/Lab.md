@@ -4,7 +4,7 @@ This project is designed to showcase my skills in enterprise app management and 
 
 #### Prerequisites
 - Microsoft Entra ID admin access (P1 or higher license for provisioning features).
-- A Slack workspace where you're an admin (Business+ trial plan works).
+- A Slack workspace where you're an admin (Business+ plan works).
 - Microsoft Graph PowerShell SDK installed (`Install-Module Microsoft.Graph`).
 
 #### Step-by-Step Implementation
@@ -12,7 +12,7 @@ This project is designed to showcase my skills in enterprise app management and 
 1. **Integrate the App with SCIM Provisioning**
    - In the Entra ID portal (entra.microsoft.com), navigate to "Enterprise applications" > "New application" > Search for "Slack" in the gallery > Create, and enable SSO.
    - In the Slack admin dashboard (admin.slack.com), go to "Settings & administration" > "Workspace settings" > "Authentication" > "Configure" for SSO.
-   - Enable SCIM provisioning and generate an API token (OAuth Bearer Token). Note the SCIM base URL (usually `https://api.slack.com/scim/v1/`).
+   - Configure automatic user account provisioning to Slack in Azure
    - In the app's properties, go to "Provisioning" > Set mode to "Automatic" > Enter the SCIM base URL as Tenant URL and the API token as Secret Token > Test connection (it should succeed).
 
 📸 Screenshot of configurations on Enterprise apps, Slack SSO, and Provisioning:
@@ -21,6 +21,9 @@ This project is designed to showcase my skills in enterprise app management and 
    <img width="310" height="310" alt="Screenshot 2025-12-24 153239" src="https://github.com/user-attachments/assets/83d99e56-9fdc-4a58-a383-6668cee8335c" />
    <img width="310" height="748" alt="Screenshot 2025-12-24 154122" src="https://github.com/user-attachments/assets/3318a765-0ab3-4cb6-b71e-b6a40952c5e2" />
    <img width="310" height="793" alt="Screenshot 2025-12-24 135159" src="https://github.com/user-attachments/assets/36ba6dc4-af29-47b1-b7d3-817403fdfaab" />
+   <img width="310" height="939" alt="Screenshot 2025-12-24 162918" src="https://github.com/user-attachments/assets/652ab12d-9650-4cfd-b1dc-80bfef405c7c" />
+   <img width="310" height="816" alt="Screenshot 2025-12-24 160934" src="https://github.com/user-attachments/assets/8e4b3754-e00d-4e30-8ac9-bf32d633538d" />
+   <img width="310" height="747" alt="Screenshot 2025-12-24 160723" src="https://github.com/user-attachments/assets/d33be907-e962-4df0-97a0-08247e66047a" />
 </div>
 
 2. **Map User Attributes**
@@ -33,6 +36,13 @@ This project is designed to showcase my skills in enterprise app management and 
      - Add custom mappings if needed, e.g., `jobTitle` or `department`.
    - Enable "Create," "Update," and "Delete" actions under Settings.
    - Save and restart provisioning to apply changes.
+
+📸 Screenshot of configurations on Provisioning and Mapping User Attributes:
+
+<div>
+   <img width="465" height="850" alt="Screenshot 2025-12-24 164036" src="https://github.com/user-attachments/assets/ebe94833-32e4-416f-8f5c-8d55292d2f40" />
+   <img width="465" height="873" alt="Screenshot 2025-12-24 165442" src="https://github.com/user-attachments/assets/28e6a8cc-b19a-450f-b15e-536d55210441" />
+</div>
 
 3. **Test Automatic Provisioning and Deprovisioning**
    - Assign users or groups to the app in Entra ID (under "Users and groups").
