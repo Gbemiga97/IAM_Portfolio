@@ -1,6 +1,6 @@
 ### Entra ID SCIM Provisioning Integration Project
 
-This project is designed to showcase my skills in enterprise app management and automated user provisioning using Microsoft Entra ID. It focuses on integrating a SaaS application with SCIM (System for Cross-domain Identity Management) to handle user lifecycle automation, which aligns with real-world IAM tasks like onboarding, updates, and offboarding. I'll be using Slack as the target app since it has a free tier, supports SCIM natively, and integrates seamlessly with Entra ID—making it accessible for testing without complex setups.
+This project is designed to showcase my skills in enterprise app management and automated user provisioning using Microsoft Entra ID. It focuses on integrating a SaaS application with SCIM (System for Cross-domain Identity Management) to handle user lifecycle automation, which aligns with real-world IAM tasks like onboarding, updates, and offboarding. I'll be using Slack as the target app since it supports SCIM natively and integrates seamlessly with Entra ID—making it accessible for testing without complex setups.
 
 #### Prerequisites
 - Microsoft Entra ID admin access (P1 or higher license for provisioning features).
