@@ -10,10 +10,18 @@ This project is designed to showcase my skills in enterprise app management and 
 #### Step-by-Step Implementation
 
 1. **Integrate the App with SCIM Provisioning**
-   - In the Slack admin dashboard (admin.slack.com), go to "Settings & administration" > "Workspace settings" > "Authentication" > "Configure" for SCIM.
-   - Enable SCIM provisioning and generate an API token (OAuth Bearer Token). Note the SCIM base URL (usually `https://api.slack.com/scim/v1/`).
    - In the Entra ID portal (entra.microsoft.com), navigate to "Enterprise applications" > "New application" > Search for "Slack" in the gallery > Create, and enable SSO.
+   - In the Slack admin dashboard (admin.slack.com), go to "Settings & administration" > "Workspace settings" > "Authentication" > "Configure" for SSO.
+   - Enable SCIM provisioning and generate an API token (OAuth Bearer Token). Note the SCIM base URL (usually `https://api.slack.com/scim/v1/`).
    - In the app's properties, go to "Provisioning" > Set mode to "Automatic" > Enter the SCIM base URL as Tenant URL and the API token as Secret Token > Test connection (it should succeed).
+
+📸 Screenshot of configurations on Enterprise apps, Slack SSO, and Provisioning:
+
+<div>
+   <img width="310" height="310" alt="Screenshot 2025-12-24 153239" src="https://github.com/user-attachments/assets/83d99e56-9fdc-4a58-a383-6668cee8335c" />
+   <img width="310" height="748" alt="Screenshot 2025-12-24 154122" src="https://github.com/user-attachments/assets/3318a765-0ab3-4cb6-b71e-b6a40952c5e2" />
+   <img width="310" height="793" alt="Screenshot 2025-12-24 135159" src="https://github.com/user-attachments/assets/36ba6dc4-af29-47b1-b7d3-817403fdfaab" />
+</div>
 
 2. **Map User Attributes**
    - Still in the Provisioning section, expand "Mappings" > Edit "Provision Microsoft Entra ID Users."
@@ -59,7 +67,7 @@ This project is designed to showcase my skills in enterprise app management and 
      ```
      Run this script to simulate real workflows, then check Slack for changes.
 
-4. **Monitor Provisioning Logs**
+5. **Monitor Provisioning Logs**
    - In Entra ID, go to the app's "Provisioning" > "Provisioning logs."
    - Filter by date, status (success/error), or user.
    - Export logs as CSV for analysis (include samples in your repo).
