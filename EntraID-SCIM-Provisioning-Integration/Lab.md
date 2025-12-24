@@ -13,7 +13,7 @@ This project is designed to showcase my skills in enterprise app management and 
    - In the Entra ID portal (entra.microsoft.com), navigate to "Enterprise applications" > "New application" > Search for "Slack" in the gallery > Create, and enable SSO.
    - In the Slack admin dashboard (admin.slack.com), go to "Settings & administration" > "Workspace settings" > "Authentication" > "Configure" for SSO.
    - Configure automatic user account provisioning to Slack in Azure
-   - In the app's properties, go to "Provisioning" > Set mode to "Automatic" > Enter the SCIM base URL as Tenant URL and the API token as Secret Token > Test connection (it should succeed).
+   - In the app's properties, go to "Provisioning" > Set mode to "Automatic" > Test connection (it should succeed).
 
 📸 Screenshot of configurations on Enterprise apps, Slack SSO, and Provisioning:
 
