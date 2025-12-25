@@ -15,7 +15,7 @@ This project is designed to showcase my skills in enterprise app management and 
    - Configure automatic user account provisioning to Slack in Azure
    - In the app's properties, go to "Provisioning" > Set mode to "Automatic" > Test connection (it should succeed).
 
-📸 Screenshot of configurations on Enterprise apps, Slack SSO, and Provisioning:
+📸 Screenshots of configurations on Enterprise apps, Slack SSO, and Provisioning:
 
 <div>
    <img width="310" height="310" alt="Screenshot 2025-12-24 153239" src="https://github.com/user-attachments/assets/83d99e56-9fdc-4a58-a383-6668cee8335c" />
@@ -37,7 +37,7 @@ This project is designed to showcase my skills in enterprise app management and 
    - Enable "Create," "Update," and "Delete" actions under Settings.
    - Save and restart provisioning to apply changes.
 
-📸 Screenshot of configurations on Provisioning and Mapping User Attributes:
+📸 Screenshots of configurations on Provisioning and Mapping User Attributes:
 
 <div>
    <img width="465" height="850" alt="Screenshot 2025-12-24 164036" src="https://github.com/user-attachments/assets/ebe94833-32e4-416f-8f5c-8d55292d2f40" />
@@ -45,15 +45,16 @@ This project is designed to showcase my skills in enterprise app management and 
 </div>
 
 3. **Test Automatic Provisioning and Deprovisioning**
-   - Assign users or groups to the app in Entra ID (under "Users and groups").
    - **Provisioning Test**:
      - Create a test user in Entra ID (manually or via PowerShell script below).
+     - And assign a license to the user in Microsoft 365 for the SCIM to work properly.
+     - Assign the test user to Slack in Entra ID
      - Wait for the provisioning cycle (default 40 minutes) or force a sync via "Provision on demand."
      - Verify in Slack: The user should appear with correct attributes; check the "Members" list.
    - **Deprovisioning Test**:
      - Disable or delete the test user in Entra ID.
      - Trigger sync and confirm the user is deactivated or removed in Slack (e.g., profile archived).
-   - Use PowerShell for bulk testing (save as `Test-Provisioning.ps1` in your repo):
+   - Use PowerShell for testing (save as `Test-Provisioning.ps1` in your repo):
      ```powershell
      # Connect to Microsoft Graph
      Connect-MgGraph -Scopes "User.ReadWrite.All", "Directory.ReadWrite.All"
@@ -68,14 +69,22 @@ This project is designed to showcase my skills in enterprise app management and 
      }
      New-MgUser -BodyParameter $userParams
 
-     # Assign to app (replace with your app's object ID)
-     $appId = "your-app-object-id"
-     New-MgUserAppRoleAssignment -UserId (Get-MgUser -Filter "userPrincipalName eq 'testuser@yourdomain.com'").Id -AppRoleId "00000000-0000-0000-0000-000000000000" -PrincipalId (Get-MgUser -Filter "userPrincipalName eq 'testuser@yourdomain.com'").Id -ResourceId $appId
 
      # Later, disable the user for deprovisioning test
      Update-MgUser -UserId (Get-MgUser -Filter "userPrincipalName eq 'testuser@yourdomain.com'").Id -AccountEnabled $false
      ```
      Run this script to simulate real workflows, then check Slack for changes.
+
+📸 Screenshot of configurations on user creation, user assignment to Slack, user licensing, and user deletion:
+
+<div>
+   <img width="310" height="310" alt="Screenshot 2025-12-24 172522" src="https://github.com/user-attachments/assets/d73e3762-c688-4845-acbc-a24d52a8de7e" />
+   <img width="310" height="864" alt="Screenshot 2025-12-25 174107" src="https://github.com/user-attachments/assets/ed340b5a-dd65-4ca1-854c-a51073fe7215" />
+   <img width="310" height="343" alt="Screenshot 2025-12-25 174616" src="https://github.com/user-attachments/assets/366411d8-87c0-4c4e-a851-807de1d55ba2" />
+   <img width="310" height="817" alt="Screenshot 2025-12-25 174945" src="https://github.com/user-attachments/assets/dc964864-6bc9-4211-951d-33867574b6ed" />
+   <img width="310" height="784" alt="Screenshot 2025-12-25 172805" src="https://github.com/user-attachments/assets/38a0bf07-101a-4761-a786-6b0dd09c22ee" />
+</div>
+     
 
 5. **Monitor Provisioning Logs**
    - In Entra ID, go to the app's "Provisioning" > "Provisioning logs."
