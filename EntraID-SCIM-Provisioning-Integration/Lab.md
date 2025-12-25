@@ -53,7 +53,7 @@ This project is designed to showcase my skills in enterprise app management and 
      - Verify in Slack: The user should appear with correct attributes; check the "Members" list.
    - **Deprovisioning Test**:
      - Disable or delete the test user in Entra ID.
-     - Trigger sync and confirm the user is deactivated or removed in Slack (e.g., profile archived).
+     - Trigger sync and confirm the user is deactivated or removed in Slack.
    - Use PowerShell for testing (save as `Test-Provisioning.ps1` in your repo):
      ```powershell
      # Connect to Microsoft Graph
@@ -68,10 +68,6 @@ This project is designed to showcase my skills in enterprise app management and 
          PasswordProfile = @{ Password = "TempPass123!" ; ForceChangePasswordNextSignIn = $true }
      }
      New-MgUser -BodyParameter $userParams
-
-
-     # Later, disable the user for deprovisioning test
-     Update-MgUser -UserId (Get-MgUser -Filter "userPrincipalName eq 'testuser@yourdomain.com'").Id -AccountEnabled $false
      ```
      Run this script to simulate real workflows, then check Slack for changes.
 
@@ -82,7 +78,9 @@ This project is designed to showcase my skills in enterprise app management and 
    <img width="310" height="864" alt="Screenshot 2025-12-25 174107" src="https://github.com/user-attachments/assets/ed340b5a-dd65-4ca1-854c-a51073fe7215" />
    <img width="310" height="343" alt="Screenshot 2025-12-25 174616" src="https://github.com/user-attachments/assets/366411d8-87c0-4c4e-a851-807de1d55ba2" />
    <img width="310" height="817" alt="Screenshot 2025-12-25 174945" src="https://github.com/user-attachments/assets/dc964864-6bc9-4211-951d-33867574b6ed" />
-   <img width="310" height="784" alt="Screenshot 2025-12-25 172805" src="https://github.com/user-attachments/assets/38a0bf07-101a-4761-a786-6b0dd09c22ee" />
+   <img width="620" height="784" alt="Screenshot 2025-12-25 172805" src="https://github.com/user-attachments/assets/38a0bf07-101a-4761-a786-6b0dd09c22ee" />
+   <img width="620" height="830" alt="Screenshot 2025-12-25 181552" src="https://github.com/user-attachments/assets/c07240fc-f8e7-4f16-b728-0afa6e2e69cf" />
+   <img width="310" height="473" alt="Screenshot 2025-12-25 181706" src="https://github.com/user-attachments/assets/1bf53707-2001-4e68-8846-a655ccf50e99" />
 </div>
      
 
