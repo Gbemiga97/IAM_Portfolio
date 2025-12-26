@@ -9,7 +9,7 @@ This project is designed to showcase my skills in enterprise app management and 
 
 #### Step-by-Step Implementation
 
-1. **Integrate the App with SCIM Provisioning**
+##### 1. **Integrate the App with SCIM Provisioning**
    - In the Entra ID portal (entra.microsoft.com), navigate to "Enterprise applications" > "New application" > Search for "Slack" in the gallery > Create, and enable SSO.
    - In the Slack admin dashboard (admin.slack.com), go to "Settings & administration" > "Workspace settings" > "Authentication" > "Configure" for SSO.
    - Configure automatic user account provisioning to Slack in Azure
@@ -26,7 +26,7 @@ This project is designed to showcase my skills in enterprise app management and 
    <img width="310" height="747" alt="Screenshot 2025-12-24 160723" src="https://github.com/user-attachments/assets/d33be907-e962-4df0-97a0-08247e66047a" />
 </div>
 
-2. **Map User Attributes**
+##### 2. **Map User Attributes**
    - Still in the Provisioning section, expand "Mappings" > Edit "Provision Microsoft Entra ID Users."
    - Map key attributes to ensure user data syncs correctly:
      - `userName` (Entra ID) → `userName` (Slack) – Use `userPrincipalName` or `mail`.
@@ -44,7 +44,7 @@ This project is designed to showcase my skills in enterprise app management and 
    <img width="465" height="873" alt="Screenshot 2025-12-24 165442" src="https://github.com/user-attachments/assets/28e6a8cc-b19a-450f-b15e-536d55210441" />
 </div>
 
-3. **Test Automatic Provisioning and Deprovisioning**
+##### 3. **Test Automatic Provisioning and Deprovisioning**
    - **Provisioning Test**:
      - Create a test user in Entra ID (manually or via PowerShell script below).
      - And assign a license to the user in Microsoft 365 for the SCIM to work properly.
@@ -87,18 +87,12 @@ This project is designed to showcase my skills in enterprise app management and 
 5. **Monitor Provisioning Logs**
    - In Entra ID, go to the app's "Provisioning" > "Provisioning logs."
    - Filter by date, status (success/error), or user.
-   - Export logs as CSV for analysis (include samples in your repo).
-   - For advanced monitoring, add a PowerShell script (`Monitor-Logs.ps1`):
-     ```powershell
-     Connect-MgGraph -Scopes "AuditLog.Read.All"
+   - Export logs as CSV for analysis
 
-     # Query provisioning audit logs (last 7 days)
-     Get-MgAuditLogDirectoryAudit -Filter "activityDisplayName eq 'Provisioning'" -All | Select-Object ActivityDateTime, ActivityDisplayName, TargetResources | Export-Csv -Path "provisioning-logs.csv" -NoTypeInformation
-     ```
-     This pulls logs via Graph API—review for errors like attribute mismatches and document fixes in your README.
+📸 Screenshot of the provisioning logs
 
-#### Documentation in README.md
-- **Introduction**: "This project demonstrates SCIM-based integration of Slack with Microsoft Entra ID for automated user provisioning, mapping, testing, and monitoring—key skills for IAM roles."
-- **Challenges & Learnings**: Discuss common issues like token expiration or attribute conflicts, and how you resolved them.
-- **Screenshots**: Embed images of successful connection tests, attribute mappings, log views, and before/after user states in Slack.
-- **Extensions**: Suggest adding group provisioning or integrating with your previous onboarding scripts for full JML (Joiner-Mover-Leaver) automation.
+<div>
+   <img width="620" height="482" alt="Screenshot 2025-12-26 163628" src="https://github.com/user-attachments/assets/2a92e6b1-de55-4880-83d2-aad3803cc5fb" />
+   <img width="310" height="729" alt="Screenshot 2025-12-26 164253" src="https://github.com/user-attachments/assets/98efa37d-12c7-4c47-956e-c2d1a0cd6303" />
+</div>
+
