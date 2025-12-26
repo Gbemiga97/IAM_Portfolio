@@ -19,7 +19,7 @@ This log documents the errors encountered during setup, testing, and integration
 ## Phase 3: PowerShell Scripting for Testing
 - **Error**: BadRequest (400) - "The assigned app role was not found on the application" with New-MgUserAppRoleAssignment.
 - **Cause**: Slack gallery app lacks custom app roles; default ID is invalid without enabling assignments.
-- **Fix**: Switched to manual assignment in Entra ID portal (Users and groups > Add user). Noted scripted assignments unreliable for such apps—used PowerShell only for user creation/disabling and logs.
+- **Fix**: Switched to manual assignment in Entra ID portal (Users and groups > Add user). Noted scripted assignments unreliable for such apps—used PowerShell only for user creation
 
 - **Error**: NotFound (404) - Resource not found for ResourceId.
 - **Cause**: Incorrect/hardcoded service principal Object ID.
