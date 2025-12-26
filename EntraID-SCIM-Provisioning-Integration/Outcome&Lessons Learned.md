@@ -5,7 +5,7 @@ This project successfully demonstrated the integration of Microsoft Entra ID wit
 
 - **Successful SCIM Integration**: Configured automatic provisioning in Entra ID's enterprise application for Slack, using the SCIM endpoint `https://api.slack.com/scim` and an OAuth bearer token from Slack. Tested the connection, which validated successfully after resolving permission issues.
   
-- **Attribute Mapping**: Mapped core user attributes such as `userPrincipalName` to `userName`, `displayName`, `givenName`, and `surname`. Enabled create, update, and delete actions, ensuring user data synced accurately between Entra ID and Slack.
+- **Attribute Mapping**: Mapped core user attributes such as `userPrincipalName` to `userName`, `displayName`, `givenName`, and `surname`. Enabled create, update, and delete actions, ensuring user data is synced accurately between Entra ID and Slack.
 
 - **Provisioning and Deprovisioning Tests**: 
   - Created a test user in Entra ID (manually or via PowerShell) and assigned them to the Slack app.
@@ -14,9 +14,9 @@ This project successfully demonstrated the integration of Microsoft Entra ID wit
 
 - **SSO Integration**: Set up SAML-based SSO, allowing users to sign in to Slack via Entra ID. Tested login with the test user, achieving seamless authentication after fixing configuration mismatches.
 
-- **Monitoring**: Exported provisioning logs from Entra ID and analyzed them (via portal or PowerShell script) to confirm successful operations and identify any attribute mismatches.
+- **Monitoring**: Exported provisioning logs from Entra ID and analyzed them to confirm successful operations and identify any attribute mismatches.
 
-Overall, the integration automated user lifecycle management, reducing manual admin tasks and enhancing security through centralized control.
+Overall, the integration automates user lifecycle management, reducing manual admin tasks and enhancing security through centralized control.
 
 ## Lessons Learned
 - **Licensing Requirements**: Discovered that Entra ID P1 or Governance licenses are essential for per-user provisioning. Assigning these in the Microsoft 365 admin center enabled SCIM sync for test users—without it, provisioning wouldn't trigger, impacting SSO tests.
