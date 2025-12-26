@@ -84,7 +84,7 @@ This project is designed to showcase my skills in enterprise app management and 
 </div>
      
 
-5. **Monitor Provisioning Logs**
+##### 4. **Monitor Provisioning Logs**
    - In Entra ID, go to the app's "Provisioning" > "Provisioning logs."
    - Filter by date, status (success/error), or user.
    - Export logs as CSV for analysis
