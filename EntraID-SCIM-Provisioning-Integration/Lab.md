@@ -69,7 +69,6 @@ This project is designed to showcase my skills in enterprise app management and 
      }
      New-MgUser -BodyParameter $userParams
      ```
-     Run this script to simulate real workflows, then check Slack for changes.
 
 📸 Screenshot of configurations on user creation, user assignment to Slack, user licensing, and user deletion:
 
