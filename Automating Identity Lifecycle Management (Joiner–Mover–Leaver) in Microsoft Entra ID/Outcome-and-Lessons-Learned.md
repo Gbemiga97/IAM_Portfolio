@@ -4,7 +4,7 @@
 
 ### Risks in the JML Lifecycle
 
-This Project highlights several key risks associated with poor management of the Joiner-Mover-Leaver (JML) process in Identity and Access Management (IAM):
+This Project highlights management of the Joiner-Mover-Leaver (JML) process in Identity and Access Management (IAM):
 
 - **Orphaned Accounts**: These occur primarily in the Leaver phase when access isn't revoked promptly after an employee departs. This can lead to data theft by former employees, compliance audit failures, and unnecessary costs associated with unused licenses. Automation in JML aims to deprovision 98% of secondary applications immediately, closing gaps that manual processes often miss.
 - **Privilege Creep**: Common in the Mover phase during role changes like promotions, where users accumulate unnecessary permissions from prior positions. This heightens security vulnerabilities. JML mitigates this through "delta provisioning," which only adds new access while removing obsolete access, often requiring manager approval to evaluate necessity.
