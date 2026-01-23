@@ -14,7 +14,7 @@ Ensure user and group access is reviewed periodically and stale access is remove
 - Review decisions completed
 - Access removed for rejected users
 
-## Evidence to Capture
+## Evidence Captured
 - Access review configuration screenshots
 - Review decision logs
 
