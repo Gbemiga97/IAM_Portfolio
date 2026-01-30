@@ -46,46 +46,48 @@ Catalogs allow resources to be grouped and to delegate management to non-admins.
 1. Open the **"Finance Department"** Catalog.
 2. Click **Resources** on the left menu.
 3. Add the resources identified in your matrix:
-* **Groups/Teams:** Select a Finance Security Group or Microsoft Team.
-* **Applications:** Select an Enterprise Application (e.g., Salesforce, or a sample app).
+   - **Groups/Teams:** Select a Finance Security Group or Microsoft Team.
+   - **Applications:** Select an Enterprise Application (e.g., Salesforce, or a sample app).
 
 📸 Screenshots of resources added:
 
-<div>
-  <img width="640" height="803" alt="Screenshot 2026-01-30 154600" src="https://github.com/user-attachments/assets/61b44047-0174-431f-8e97-b17483a484ac" />
-</div>
+  <div>
+    <img width="640" height="803" alt="Screenshot 2026-01-30 154600" src="https://github.com/user-attachments/assets/61b44047-0174-431f-8e97-b17483a484ac" />
+  </div>
 
 ### Step 3: Create the Access Package (The Product)
 
 1. Go to **Access Packages** > **New Access Package**.
 2. **Basics:**
-* Name: "Finance Analyst Roles"
-* Description: "Standard access for Finance Analysts (SharePoint + NetSuite)."
-* Catalog: "Finance Department."
-
-
+    * Name: "Finance Analyst Role"
+    * Description: "Standard access for Finance Analysts (SharePoint + NetSuite)."
+    * Catalog: "Finance Department."
 3. **Resource Roles:**
-* Select the resources you added in Step 2.
-* Assign the role (e.g., "Member" for the Group, "User" for the App).
+    - Select the resources you added in Step 2.
+    - Assign the role (e.g., "Member" for the Group, "User" for the App).
+📸 Screenshots of resources added:
 
-
+      <div>
+        <img width="450" height="803" alt="Screenshot 2026-01-30 162630" src="https://github.com/user-attachments/assets/d41972bc-0dc3-4afc-accd-705ea799c426" />
+        <img width="450" height="802" alt="Screenshot 2026-01-30 162645" src="https://github.com/user-attachments/assets/608d0a5e-c88d-454d-8b56-91f7dc996e5b" />
+      </div>
 
 ### Step 4: Configure Approval Workflows (The Governance)
 
 *This is the core "Business Data Ownership" task.*
 
 1. **Requests Tab:**
-* *Users who can request access:* "For users in your directory."
-* Select "Specific users and groups" (or "All members").
+    * *Users who can request access:* "For users in your directory."
+    * Select "Specific users and groups" (or "All members").
 
 
 2. **Requestor Information:**
-* Add a question: "Cost Center Number" (Required). *This adds business context to the request.*
+      * Add a question: "Cost Center Number" (Required). *This adds business context to the request.*
 
 
 3. **Lifecycle Tab:**
-* *Expiration:* 365 Days.
-* *Access Reviews:* Yes (Set to "Self-review" or "Review by Manager" – this is a huge bonus for governance).
+    * *Expiration:* 365 Days.
+    * *Access Reviews:* Yes (Set to "Self-review" or "Review by Manager" – this is a huge bonus for governance).
 
 
 
@@ -95,9 +97,9 @@ In the **Requests** tab (from Step 4), strictly define the approval chain:
 
 1. **Require Approval:** Yes.
 2. **First Approver:**
-* Choose **"Specific approvers"**.
-* Select the **Finance Director** user.
-* *Alternative:* Choose **"Manager as approver"**. This dynamically routes the request to the user's manager defined in Entra ID.
+    * Choose **"Specific approvers"**.
+    * Select the **Finance Director** user.
+    * *Alternative:* Choose **"Manager as approver"**. This dynamically routes the request to the user's manager defined in Entra ID.
 
 
 3. **Fallback:** Select the IT Admin account (in case the Owner is on vacation).
@@ -109,18 +111,18 @@ In the **Requests** tab (from Step 4), strictly define the approval chain:
 ### Task: Simulate the Workflow
 
 1. **The Request:**
-* Open a private browser window.
-* Log in as a standard user (The "Employee").
-* Navigate to the **MyAccess Portal** (`myaccess.microsoft.com`).
-* Find "Finance Analyst Roles" and click **Request**.
-* Fill in the business justification.
+    * Open a private browser window.
+    * Log in as a standard user (The "Employee").
+    * Navigate to the **MyAccess Portal** (`myaccess.microsoft.com`).
+    * Find "Finance Analyst Roles" and click **Request**.
+    * Fill in the business justification.
 
 
 2. **The Approval:**
-* Log in as the **Finance Director** (The Approver).
-* Check email or refresh the MyAccess portal to see "Approvals".
-* Approve the request.
+    * Log in as the **Finance Director** (The Approver).
+    * Check email or refresh the MyAccess portal to see "Approvals".
+    * Approve the request.
 
 
 3. **The Verification:**
-* Go back to the Employee account. Verify they are now a member of the `SG-Finance-Data` group automatically.
+    * Go back to the Employee account. Verify they are now a member of the `SG-Finance-Data` group automatically.
