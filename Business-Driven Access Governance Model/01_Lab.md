@@ -4,15 +4,15 @@
 
 **Company:** *Apex Financial Services*
 **The Problem:** The IT Service Desk is drowning in tickets. New hires in the Finance and HR departments wait days for access to SharePoint sites, Teams, and SaaS apps. IT admins are blindly approving requests without knowing if the user *actually* needs the data.
-**The Solution:** You will implement **Entra ID Entitlement Management**. You will delegate decision-making authority to the "Business Owners" (Finance Director and HR Manager) so they control who accesses their data, while IT controls the security guardrails.
+**The Solution:**  I'll implement **Entra ID Entitlement Management**, and delegate decision-making authority to the "Business Owners" (Finance Director and HR Manager) so they control who can access their data, while IT controls the security guardrails.
 
 ---
 
 ## 2. Phase 1: The Business-to-IAM Mapping (Planning)
 
-*Before touching the portal, you must map business needs to technical objects. This document is a critical piece of your portfolio.*
+*Mapping business needs to technical objects.*
 
-**Task:** Create a "Governance Matrix" (Excel/Table) defining the ownership.
+**Task:** Create a "Governance Matrix" defining the ownership.
 
 | Business Role | Data/Resources (The "What") | Resource Type | Data Owner (The "Who") | Approval Workflow | Access Duration |
 | --- | --- | --- | --- | --- | --- |
@@ -26,12 +26,20 @@
 
 ### Step 1: Create Business Catalogs (The Container)
 
-Catalogs allow you to group resources and delegate management to non-admins.
+Catalogs allow resources to be grouped and to delegate management to non-admins.
 
 1. Go to **Entra ID Admin Center** > **Identity Governance** > **Entitlement Management** > **Catalogs**.
 2. Create a new Catalog named **"Finance Department"**.
 3. **Enabled:** Yes.
-4. **Catalog Owners:** Add a generic user (e.g., "Finance Director") to simulate business ownership. This proves you understand delegation.
+4. **Catalog Owners:** Add a generic user (e.g., "Finance Director") to simulate business ownership.
+
+📸 Screenshots of catalog creation:
+
+<div>
+  <img width="480" height="782" alt="Screenshot 2026-01-29 153703" src="https://github.com/user-attachments/assets/d5183b13-4a35-4ddc-ae41-5117da107197" />
+  <img width="480" height="796" alt="Screenshot 2026-01-30 152624" src="https://github.com/user-attachments/assets/33d84432-bafa-43e3-86af-8ee70fab286d" />
+</div>
+
 
 ### Step 2: Add Resources to Catalog
 
@@ -40,9 +48,12 @@ Catalogs allow you to group resources and delegate management to non-admins.
 3. Add the resources identified in your matrix:
 * **Groups/Teams:** Select a Finance Security Group or Microsoft Team.
 * **Applications:** Select an Enterprise Application (e.g., Salesforce, or a sample app).
-* *Note: If you don't have these, create dummy Security Groups named `SG-Finance-Data` first.*
 
+📸 Screenshots of resources added:
 
+<div>
+  <img width="640" height="803" alt="Screenshot 2026-01-30 154600" src="https://github.com/user-attachments/assets/61b44047-0174-431f-8e97-b17483a484ac" />
+</div>
 
 ### Step 3: Create the Access Package (The Product)
 
@@ -50,7 +61,7 @@ Catalogs allow you to group resources and delegate management to non-admins.
 2. **Basics:**
 * Name: "Finance Analyst Roles"
 * Description: "Standard access for Finance Analysts (SharePoint + NetSuite)."
-* Catalog: "Finance Department"
+* Catalog: "Finance Department."
 
 
 3. **Resource Roles:**
