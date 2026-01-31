@@ -59,7 +59,7 @@ Catalogs allow resources to be grouped and to delegate management to non-admins.
 
 1. Go to **Access Packages** > **New Access Package**.
 2. **Basics:**
-    * Name: "Finance Analyst Role"
+    * Name: "Finance Analyst Role."
     * Description: "Standard access for Finance Analysts (SharePoint + NetSuite)."
     * Catalog: "Finance Department."
 3. **Resource Roles:**
@@ -87,9 +87,15 @@ Catalogs allow resources to be grouped and to delegate management to non-admins.
 
 3. **Lifecycle Tab:**
     * *Expiration:* 365 Days.
-    * *Access Reviews:* Yes (Set to "Self-review" or "Review by Manager" – this is a huge bonus for governance).
+    * *Access Reviews:* Yes (Set to "Self-review" or "Review by Manager" – this is necessary for governance).
 
+📸 Screenshots of configuration:
 
+  <div>
+  <img width="320" height="799" alt="Screenshot 2026-01-30 171412" src="https://github.com/user-attachments/assets/397b2796-033b-47ce-8cf5-d285745aec99" />
+  <img width="320" height="788" alt="Screenshot 2026-01-30 171734" src="https://github.com/user-attachments/assets/b1b34e74-7325-407f-aba8-326f30c8ab8e" />
+  <img width="320" height="797" alt="Screenshot 2026-01-30 172050" src="https://github.com/user-attachments/assets/180feeef-e362-4eb2-8179-4f8edf9be002" />
+    </div>
 
 ### Step 5: The "Owner Approval" Logic
 
@@ -104,6 +110,11 @@ In the **Requests** tab (from Step 4), strictly define the approval chain:
 
 3. **Fallback:** Select the IT Admin account (in case the Owner is on vacation).
 
+📸 Screenshots of configuration:
+
+<div>
+    <img width="320" height="811" alt="Screenshot 2026-01-30 171429" src="https://github.com/user-attachments/assets/85c0d031-1337-4f5e-b3b6-81dfffb295cf" />
+</div>
 ---
 
 ## 4. Phase 3: The User Experience (Validation)
