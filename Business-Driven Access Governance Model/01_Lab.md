@@ -16,7 +16,7 @@
 
 | Business Role | Data/Resources (The "What") | Resource Type | Data Owner (The "Who") | Approval Workflow | Access Duration |
 | --- | --- | --- | --- | --- | --- |
-| **Finance Analyst** | `SG-Finance-SharePoint-RW` | Security Group | CFO (Sarah) | 1-Stage (Manager) | 365 Days |
+| **Finance Analyst** | `SG-Finance-SharePoint-RW` | Security Group | Finance Director | 1-Stage (Manager), (Finance Director) | 365 Days |
 |  | `App-NetSuite-Finance` | Enterprise App | CFO (Sarah) |  |  |
 | **HR Specialist** | `Team-HR-Confidential` | M365 Group | HR VP (David) | 2-Stage (Manager + Owner) | 180 Days |
 |  | `SG-Workday-SSO` | Security Group | HR VP (David) |  |  |
@@ -67,10 +67,10 @@ Catalogs allow resources to be grouped and to delegate management to non-admins.
     - Assign the role (e.g., "Member" for the Group, "User" for the App).
 📸 Screenshots of resources added:
 
-      <div>
-        <img width="450" height="803" alt="Screenshot 2026-01-30 162630" src="https://github.com/user-attachments/assets/d41972bc-0dc3-4afc-accd-705ea799c426" />
-        <img width="450" height="802" alt="Screenshot 2026-01-30 162645" src="https://github.com/user-attachments/assets/608d0a5e-c88d-454d-8b56-91f7dc996e5b" />
-      </div>
+<div>
+    <img width="450" height="803" alt="Screenshot 2026-01-30 162630" src="https://github.com/user-attachments/assets/d41972bc-0dc3-4afc-accd-705ea799c426" />
+    <img width="450" height="802" alt="Screenshot 2026-01-30 162645" src="https://github.com/user-attachments/assets/608d0a5e-c88d-454d-8b56-91f7dc996e5b" />
+ </div>    
 
 ### Step 4: Configure Approval Workflows (The Governance)
 
@@ -136,4 +136,18 @@ In the **Requests** tab (from Step 4), strictly define the approval chain:
 
 
 3. **The Verification:**
-    * Go back to the Employee account. Verify they are now a member of the `SG-Finance-Data` group automatically.
+    * Go back to the Employee account. Verify they are now a member of the `Finance-Team` group automatically.
+
+
+📸 Screenshots of Request, Approval, and Verification:
+
+<div>
+  <img width="480" height="716" alt="Screenshot 2026-02-02 152630" src="https://github.com/user-attachments/assets/167b8028-1b20-4a4e-b43a-90064aecee43" />
+<img width="480" height="747" alt="Screenshot 2026-02-02 152719" src="https://github.com/user-attachments/assets/68df439e-ffcd-464e-9578-719f3bc7647f" />
+<img width="480" height="759" alt="Screenshot 2026-02-02 152834" src="https://github.com/user-attachments/assets/27408a2c-43f8-4929-986d-d918158ea4aa" />
+<img width="480" height="753" alt="Screenshot 2026-02-02 152921" src="https://github.com/user-attachments/assets/6508773a-7878-4ced-95d8-b692f0fa154f" />
+<img width="320" height="837" alt="Screenshot 2026-02-02 153148" src="https://github.com/user-attachments/assets/7181ed6a-68ce-4fbd-a734-2bb4d2d94883" />
+<img width="320" height="828" alt="Screenshot 2026-02-02 153021" src="https://github.com/user-attachments/assets/da6f94a3-bc3b-44cf-aaf9-a27a8c626e1c" />
+<img width="480" height="810" alt="Screenshot 2026-02-02 153502" src="https://github.com/user-attachments/assets/4650c7f9-1fe7-471d-8d6d-583f378304d0" />
+<img width="320" height="856" alt="Screenshot 2026-02-02 165029" src="https://github.com/user-attachments/assets/f3d58c3c-a8ac-4417-bc91-a1398453c7da" />
+</div>
