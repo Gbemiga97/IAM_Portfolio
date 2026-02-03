@@ -39,7 +39,11 @@ Catalogs allow resources to be grouped and to delegate management to non-admins.
   <img width="480" height="782" alt="Screenshot 2026-01-29 153703" src="https://github.com/user-attachments/assets/d5183b13-4a35-4ddc-ae41-5117da107197" />
   <img width="480" height="796" alt="Screenshot 2026-01-30 152624" src="https://github.com/user-attachments/assets/33d84432-bafa-43e3-86af-8ee70fab286d" />
 </div>
+<div>
+  <img width="480" height="792" alt="Screenshot 2026-02-03 150226" src="https://github.com/user-attachments/assets/c799b63e-6db5-4fd6-ae32-363a0a54526a" />
+<img width="480" height="819" alt="Screenshot 2026-02-03 150352" src="https://github.com/user-attachments/assets/0aa1a62b-e5b4-4207-8523-71d46974c590" />
 
+</div>
 
 ### Step 2: Add Resources to Catalog
 
