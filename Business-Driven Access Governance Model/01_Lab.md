@@ -142,12 +142,17 @@ In the **Requests** tab (from Step 4), strictly define the approval chain:
 📸 Screenshots of Request, Approval, and Verification:
 
 <div>
-  <img width="480" height="716" alt="Screenshot 2026-02-02 152630" src="https://github.com/user-attachments/assets/167b8028-1b20-4a4e-b43a-90064aecee43" />
-<img width="480" height="747" alt="Screenshot 2026-02-02 152719" src="https://github.com/user-attachments/assets/68df439e-ffcd-464e-9578-719f3bc7647f" />
-<img width="480" height="759" alt="Screenshot 2026-02-02 152834" src="https://github.com/user-attachments/assets/27408a2c-43f8-4929-986d-d918158ea4aa" />
-<img width="480" height="753" alt="Screenshot 2026-02-02 152921" src="https://github.com/user-attachments/assets/6508773a-7878-4ced-95d8-b692f0fa154f" />
-<img width="320" height="837" alt="Screenshot 2026-02-02 153148" src="https://github.com/user-attachments/assets/7181ed6a-68ce-4fbd-a734-2bb4d2d94883" />
-<img width="320" height="828" alt="Screenshot 2026-02-02 153021" src="https://github.com/user-attachments/assets/da6f94a3-bc3b-44cf-aaf9-a27a8c626e1c" />
-<img width="480" height="810" alt="Screenshot 2026-02-02 153502" src="https://github.com/user-attachments/assets/4650c7f9-1fe7-471d-8d6d-583f378304d0" />
-<img width="320" height="856" alt="Screenshot 2026-02-02 165029" src="https://github.com/user-attachments/assets/f3d58c3c-a8ac-4417-bc91-a1398453c7da" />
+  <img width="320" height="716" alt="Screenshot 2026-02-02 152630" src="https://github.com/user-attachments/assets/167b8028-1b20-4a4e-b43a-90064aecee43" />
+<img width="320" height="747" alt="Screenshot 2026-02-02 152719" src="https://github.com/user-attachments/assets/68df439e-ffcd-464e-9578-719f3bc7647f" />
+<img width="320" height="759" alt="Screenshot 2026-02-02 152834" src="https://github.com/user-attachments/assets/27408a2c-43f8-4929-986d-d918158ea4aa" />
+<img width="320" height="753" alt="Screenshot 2026-02-02 152921" src="https://github.com/user-attachments/assets/6508773a-7878-4ced-95d8-b692f0fa154f" />
+<img width="160" height="837" alt="Screenshot 2026-02-02 153148" src="https://github.com/user-attachments/assets/7181ed6a-68ce-4fbd-a734-2bb4d2d94883" />
+<img width="160" height="828" alt="Screenshot 2026-02-02 153021" src="https://github.com/user-attachments/assets/da6f94a3-bc3b-44cf-aaf9-a27a8c626e1c" />
+<img width="320" height="810" alt="Screenshot 2026-02-02 153502" src="https://github.com/user-attachments/assets/4650c7f9-1fe7-471d-8d6d-583f378304d0" />
+<img width="160" height="856" alt="Screenshot 2026-02-02 165029" src="https://github.com/user-attachments/assets/f3d58c3c-a8ac-4417-bc91-a1398453c7da" />
+  <img width="400" height="512" alt="Screenshot 2026-02-03 135144" src="https://github.com/user-attachments/assets/a80697ae-3f8f-462f-9951-3271c131d2d5" />
+<img width="400" height="730" alt="Screenshot 2026-02-03 135343" src="https://github.com/user-attachments/assets/0919102c-f67e-4738-9517-07845f4df2d7" />
+<img width="480" height="774" alt="Screenshot 2026-02-03 135704" src="https://github.com/user-attachments/assets/caca01de-e8e2-451f-a243-ab9e0bde0cbb" />
+<img width="480" height="724" alt="Screenshot 2026-02-03 140333" src="https://github.com/user-attachments/assets/2353ae9f-21d2-4ab4-bd0f-e5d6df9a7a36" />
+
 </div>
