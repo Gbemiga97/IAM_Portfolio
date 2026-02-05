@@ -18,8 +18,8 @@
 | --- | --- | --- | --- | --- | --- |
 | **Finance Analyst** | `SG-Finance-SharePoint-RW` | Security Group | Finance Director | 1-Stage (Manager), (Finance Director) | 365 Days |
 |  | `App-NetSuite-Finance` | Enterprise App | CFO (Sarah) |  |  |
-| **HR Specialist** | `Team-HR-Confidential` | M365 Group | HR VP (David) | 2-Stage (Manager + Owner) | 180 Days |
-|  | `SG-Workday-SSO` | Security Group | HR VP (David) |  |  |
+| **HR Specialist** | `Team-HR-Confidential` | M365 Group | HR VP (Harry) | 2-Stage (Manager + Owner) | 180 Days |
+|  | `Workday-SSO` | Enterprise App | HR VP (Harry) |  |  |
 
 
 ## 3. Phase 2: Implementation (Hands-On)
@@ -125,7 +125,7 @@ In the **Requests** tab (from Step 4), strictly define the approval chain:
     <img width="480" height="811" alt="Screenshot 2026-01-30 171429" src="https://github.com/user-attachments/assets/85c0d031-1337-4f5e-b3b6-81dfffb295cf" />
     <img width="480" height="581" alt="Screenshot 2026-02-05 134804" src="https://github.com/user-attachments/assets/2915ffad-0a90-40ab-ad4b-958ad83744c2" />
 </div>
----
+
 
 ## 4. Phase 3: The User Experience (Validation)
 
@@ -164,5 +164,20 @@ In the **Requests** tab (from Step 4), strictly define the approval chain:
 <img width="400" height="730" alt="Screenshot 2026-02-03 135343" src="https://github.com/user-attachments/assets/0919102c-f67e-4738-9517-07845f4df2d7" />
 <img width="480" height="774" alt="Screenshot 2026-02-03 135704" src="https://github.com/user-attachments/assets/caca01de-e8e2-451f-a243-ab9e0bde0cbb" />
 <img width="480" height="724" alt="Screenshot 2026-02-03 140333" src="https://github.com/user-attachments/assets/2353ae9f-21d2-4ab4-bd0f-e5d6df9a7a36" />
+</div>
 
+---
+
+<div>
+  <img width="320" height="569" alt="Screenshot 2026-02-05 142448" src="https://github.com/user-attachments/assets/238c96b1-7cb4-4709-a059-7a15094f7511" />
+<img width="160" height="495" alt="Screenshot 2026-02-05 142509" src="https://github.com/user-attachments/assets/7aa5099c-19f7-4863-9dd4-989accbf0bf7" />
+ <img width="160" height="346" alt="Screenshot (2)" src="https://github.com/user-attachments/assets/86c4717a-4eb4-4600-b28c-2ecbe186f0d6" />
+<img width="320" height="539" alt="Screenshot 2026-02-05 142824" src="https://github.com/user-attachments/assets/903b126f-d155-4efe-b1da-2834d250edc7" />
+<img width="160" height="596" alt="Screenshot 2026-02-05 143040" src="https://github.com/user-attachments/assets/bff3bd4c-422b-4ab0-87f1-02340236db5d" />
+<img width="160" height="596" alt="Screenshot 2026-02-05 142939" src="https://github.com/user-attachments/assets/2a772067-cfb1-460f-94fd-32e8e0b96974" />
+<img width="320" height="510" alt="Screenshot 2026-02-05 143512" src="https://github.com/user-attachments/assets/30372b0d-f350-4e2e-9c18-5a20e91e42ca" />
+<img width="160" height="555" alt="Screenshot 2026-02-05 143637" src="https://github.com/user-attachments/assets/6fdc729a-b931-4dfa-87b0-79d03be5196f" />
+<img width="160" height="593" alt="Screenshot 2026-02-05 143549" src="https://github.com/user-attachments/assets/4c4814bb-c7e3-4c4c-8cf6-cffd08823339" />
+<img width="320" height="604" alt="Screenshot 2026-02-05 150349" src="https://github.com/user-attachments/assets/9c088a9a-40ef-40ba-87ca-b2f0859b8fd7" />
+<img width="320" height="618" alt="Screenshot 2026-02-05 150439" src="https://github.com/user-attachments/assets/d0170154-1c3e-48bb-b27d-0a54d5ea954f" />
 </div>
