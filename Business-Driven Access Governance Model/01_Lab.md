@@ -42,7 +42,6 @@ Catalogs allow resources to be grouped and to delegate management to non-admins.
 <div>
   <img width="480" height="792" alt="Screenshot 2026-02-03 150226" src="https://github.com/user-attachments/assets/c799b63e-6db5-4fd6-ae32-363a0a54526a" />
 <img width="480" height="819" alt="Screenshot 2026-02-03 150352" src="https://github.com/user-attachments/assets/0aa1a62b-e5b4-4207-8523-71d46974c590" />
-
 </div>
 
 ### Step 2: Add Resources to Catalog
@@ -56,7 +55,8 @@ Catalogs allow resources to be grouped and to delegate management to non-admins.
 📸 Screenshots of resources added:
 
   <div>
-    <img width="640" height="803" alt="Screenshot 2026-01-30 154600" src="https://github.com/user-attachments/assets/61b44047-0174-431f-8e97-b17483a484ac" />
+    <img width="480" height="803" alt="Screenshot 2026-01-30 154600" src="https://github.com/user-attachments/assets/61b44047-0174-431f-8e97-b17483a484ac" />
+    <img width="480" height="606" alt="Screenshot 2026-02-05 135718" src="https://github.com/user-attachments/assets/95d281ad-e2c3-457b-8498-ed37a510949d" />
   </div>
 
 ### Step 3: Create the Access Package (The Product)
@@ -72,9 +72,11 @@ Catalogs allow resources to be grouped and to delegate management to non-admins.
 📸 Screenshots of resources added:
 
 <div>
-    <img width="450" height="803" alt="Screenshot 2026-01-30 162630" src="https://github.com/user-attachments/assets/d41972bc-0dc3-4afc-accd-705ea799c426" />
-    <img width="450" height="802" alt="Screenshot 2026-01-30 162645" src="https://github.com/user-attachments/assets/608d0a5e-c88d-454d-8b56-91f7dc996e5b" />
- </div>    
+    <img width="480" height="803" alt="Screenshot 2026-01-30 162630" src="https://github.com/user-attachments/assets/d41972bc-0dc3-4afc-accd-705ea799c426" />
+    <img width="480" height="802" alt="Screenshot 2026-01-30 162645" src="https://github.com/user-attachments/assets/608d0a5e-c88d-454d-8b56-91f7dc996e5b" />
+    <img width="480" height="591" alt="Screenshot 2026-02-05 134345" src="https://github.com/user-attachments/assets/67b6c195-990f-4b6e-a6b7-eb24328acb2b" />
+    <img width="480" height="595" alt="Screenshot 2026-02-05 135141" src="https://github.com/user-attachments/assets/814aaf9b-09bd-4096-893c-8e86c7161f2e" />
+</div>    
 
 ### Step 4: Configure Approval Workflows (The Governance)
 
@@ -99,7 +101,10 @@ Catalogs allow resources to be grouped and to delegate management to non-admins.
   <img width="320" height="799" alt="Screenshot 2026-01-30 171412" src="https://github.com/user-attachments/assets/397b2796-033b-47ce-8cf5-d285745aec99" />
   <img width="320" height="788" alt="Screenshot 2026-01-30 171734" src="https://github.com/user-attachments/assets/b1b34e74-7325-407f-aba8-326f30c8ab8e" />
   <img width="320" height="797" alt="Screenshot 2026-01-30 172050" src="https://github.com/user-attachments/assets/180feeef-e362-4eb2-8179-4f8edf9be002" />
-    </div>
+  <img width="320" height="589" alt="Screenshot 2026-02-05 134532" src="https://github.com/user-attachments/assets/6419cc16-29c3-4115-b6a2-66f6cd5e6338" />
+  <img width="320" height="442" alt="Screenshot 2026-02-05 141909" src="https://github.com/user-attachments/assets/442be183-7b7d-453f-b095-626056257213" />
+  <img width="320" height="588" alt="Screenshot 2026-02-05 135115" src="https://github.com/user-attachments/assets/14951771-9d58-4608-98d5-4f9482ab7624" />
+  </div>
 
 ### Step 5: The "Owner Approval" Logic
 
@@ -117,7 +122,8 @@ In the **Requests** tab (from Step 4), strictly define the approval chain:
 📸 Screenshots of configuration:
 
 <div>
-    <img width="320" height="811" alt="Screenshot 2026-01-30 171429" src="https://github.com/user-attachments/assets/85c0d031-1337-4f5e-b3b6-81dfffb295cf" />
+    <img width="480" height="811" alt="Screenshot 2026-01-30 171429" src="https://github.com/user-attachments/assets/85c0d031-1337-4f5e-b3b6-81dfffb295cf" />
+    <img width="480" height="581" alt="Screenshot 2026-02-05 134804" src="https://github.com/user-attachments/assets/2915ffad-0a90-40ab-ad4b-958ad83744c2" />
 </div>
 ---
 
