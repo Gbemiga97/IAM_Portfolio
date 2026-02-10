@@ -15,11 +15,10 @@ Following the steps below, I will be implementing the solution in my Entra envir
       📸 Screenshots of configurations on Traffic Forwarding
       
       <div>
-      <img width="320" height="608" alt="Screenshot 2026-02-10 145749" src="https://github.com/user-attachments/assets/9c19c7ff-9bed-40e0-aea1-d55ab808d7db" />
-      <img width="320" height="609" alt="Screenshot 2026-02-10 145812" src="https://github.com/user-attachments/assets/353830d9-2b8a-4236-ab59-07c66eee3178" />
-      <img width="320" height="613" alt="Screenshot 2026-02-10 150015" src="https://github.com/user-attachments/assets/20a1942a-9acf-4917-a050-5d38ee03af9d" />
-      <img width="320" height="609" alt="Screenshot 2026-02-10 150050" src="https://github.com/user-attachments/assets/0c12159f-5896-4664-8756-3f00307c652f" />
-      <img width="320" height="597" alt="Screenshot 2026-02-10 150922" src="https://github.com/user-attachments/assets/38e8dea1-9533-491d-8f25-87d88bf7ce01" />
+      <img width="450" height="608" alt="Screenshot 2026-02-10 145749" src="https://github.com/user-attachments/assets/9c19c7ff-9bed-40e0-aea1-d55ab808d7db" />
+      <img width="450" height="613" alt="Screenshot 2026-02-10 150015" src="https://github.com/user-attachments/assets/20a1942a-9acf-4917-a050-5d38ee03af9d" />
+      <img width="450" height="609" alt="Screenshot 2026-02-10 150050" src="https://github.com/user-attachments/assets/0c12159f-5896-4664-8756-3f00307c652f" />
+      <img width="450" height="597" alt="Screenshot 2026-02-10 150922" src="https://github.com/user-attachments/assets/38e8dea1-9533-491d-8f25-87d88bf7ce01" />
       </div>
 
 2. **Install and Verify the Global Secure Access Client (Device Phase)**
