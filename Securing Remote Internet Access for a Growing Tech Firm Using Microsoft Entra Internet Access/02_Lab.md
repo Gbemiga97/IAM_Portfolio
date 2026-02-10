@@ -1,5 +1,5 @@
 #### Project Tasks
-Following these steps below, I will implement the solution in my Entra environment.  And also document my actions, any errors encountered, and resolutions in a project log.
+Following the steps below, I will be implementing the solution in my Entra environment.  And also document my actions, any errors encountered, and resolutions in a project log.
 
 1. **Enable Traffic Forwarding Profiles (Setup Phase)**
    - Log in to the Entra Admin Center (entra.microsoft.com).
@@ -11,6 +11,16 @@ Following these steps below, I will implement the solution in my Entra environme
      - Bypass specific FQDNs (e.g., internal.techova.com or a diagnostic site like ipchicken.com for testing).
    - Assign the profiles to your pilot group ("Remote Developers Pilot") or select "All users" for broader testing.
    - Expected Outcome: Traffic for Microsoft 365 is tunneled efficiently, while general internet traffic is routed for security checks. Allow 5-10 minutes for propagation.
+
+📸 Screenshots of configurations on Traffic Forwarding
+
+<div>
+<img width="320" height="608" alt="Screenshot 2026-02-10 145749" src="https://github.com/user-attachments/assets/9c19c7ff-9bed-40e0-aea1-d55ab808d7db" />
+<img width="320" height="609" alt="Screenshot 2026-02-10 145812" src="https://github.com/user-attachments/assets/353830d9-2b8a-4236-ab59-07c66eee3178" />
+<img width="320" height="613" alt="Screenshot 2026-02-10 150015" src="https://github.com/user-attachments/assets/20a1942a-9acf-4917-a050-5d38ee03af9d" />
+<img width="320" height="609" alt="Screenshot 2026-02-10 150050" src="https://github.com/user-attachments/assets/0c12159f-5896-4664-8756-3f00307c652f" />
+<img width="320" height="597" alt="Screenshot 2026-02-10 150922" src="https://github.com/user-attachments/assets/38e8dea1-9533-491d-8f25-87d88bf7ce01" />
+</div>
 
 2. **Install and Verify the Global Secure Access Client (Device Phase)**
    - On your test Windows device, install the Global Secure Access client and restart the machine.
