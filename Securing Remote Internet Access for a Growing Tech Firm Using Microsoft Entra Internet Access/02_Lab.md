@@ -51,8 +51,20 @@ Following the steps below, I will be implementing the solution in my Entra envir
      - Navigate to Identity > Protection > Conditional Access > New Policy.
      - Target: All cloud apps (or specifically internet resources via Global Secure Access).
      - Assign to your pilot group.
-     - Under Grant, require the "Remote Access Security Profile."
+     - Under Access Controls > Session > Use Global Secure Access security Profile, require the "Remote Access Security Profile."
    - Expected Outcome: Policies enforce zero-trust checks at the cloud edge. Propagation may take 60-90 minutes.
+
+      📸 Screenshots of Web Content Filtering Policies
+
+     <div>
+         <img width="420" height="607" alt="Screenshot 2026-02-12 162059" src="https://github.com/user-attachments/assets/ea0ec1c2-5f99-40b1-83ff-8779188d7fc5" />
+         <img width="420" height="616" alt="Screenshot 2026-02-12 162333" src="https://github.com/user-attachments/assets/ced68e09-a44b-45ac-b476-bace4b897693" />
+           <img width="420" height="611" alt="Screenshot 2026-02-12 163131" src="https://github.com/user-attachments/assets/5611656e-d540-466f-98f3-9199ff17e2ed" /> 
+         <img width="420" height="619" alt="Screenshot 2026-02-12 163100" src="https://github.com/user-attachments/assets/667b7ec2-b410-4e94-b18a-c0da47e6577d" />
+        <img width="420" height="603" alt="Screenshot 2026-02-12 164037" src="https://github.com/user-attachments/assets/fbe54602-1cb7-4622-a1f7-7a62d58dbc2a" />
+       <img width="420" height="616" alt="Screenshot 2026-02-12 164235" src="https://github.com/user-attachments/assets/ddcad826-d656-4a96-9019-573ee3ceaca2" />
+    </div>
+
 
 4. **Test and Validate the Implementation (Verification Phase)**
    - After propagation, log in as a pilot user on the test device.
