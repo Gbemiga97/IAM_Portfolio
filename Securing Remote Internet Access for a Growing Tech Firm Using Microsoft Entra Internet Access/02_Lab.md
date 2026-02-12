@@ -29,6 +29,18 @@ Following the steps below, I will be implementing the solution in my Entra envir
    - Test Microsoft traffic: Access Teams or SharePoint and check logs for "tunneled" via Microsoft 365 profile.
    - Troubleshooting: If health checks fail, review IPv4 settings or reinstall the client. For mobile devices (iOS/Android), ensure the client is installed via Intune or manual setup.
 
+      📸 Screenshots of global secure verification on client device
+      
+      <div>
+         <img width="420" height="593" alt="Screenshot 2026-02-10 154824" src="https://github.com/user-attachments/assets/69a8f761-6c5c-4340-9d1f-93b5cc28202b" />
+         <img width="420" height="768" alt="Screenshot (23)" src="https://github.com/user-attachments/assets/0db73897-7383-4927-984f-5c43f2e5e461" />
+           <img width="420" height="200" alt="Screenshot 2026-02-12 154209" src="https://github.com/user-attachments/assets/93fd1f84-8f94-46e4-8985-c10f24a37cbd" />
+            <img width="420" height="768" alt="Screenshot (31)" src="https://github.com/user-attachments/assets/5d03c07d-c4e5-487c-85d4-f92300a5b0a7" />
+         <img width="420" height="652" alt="Screenshot 2026-02-12 133357" src="https://github.com/user-attachments/assets/4f02f63b-16af-4fb1-b9e8-351961eb404f" />
+         <img width="420" height="526" alt="Screenshot 2026-02-12 151641" src="https://github.com/user-attachments/assets/8ea888f9-de89-4e5d-b943-481f665fb407" />
+      </div>
+
+
 3. **Configure Web Content Filtering Policies (Security Phase)**
    - Go to Global Secure Access > Secure > Web Content Filtering > Web Content Filtering Policies.
    - Create a new policy named "TechNova Web Filter - Block Risky Categories."
