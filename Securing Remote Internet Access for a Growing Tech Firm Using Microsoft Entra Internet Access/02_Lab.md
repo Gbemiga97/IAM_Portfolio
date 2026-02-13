@@ -80,9 +80,9 @@ Following the steps below, I will be implementing the solution in my Entra envir
       <div>
          <img width="420" height="768" alt="Screenshot (34)" src="https://github.com/user-attachments/assets/de92b6d0-f53d-4145-ade7-06500091aef3" />
          <img width="420" height="768" alt="Screenshot (35)" src="https://github.com/user-attachments/assets/adea6c26-65fb-4ab4-ab50-85c75b949862" />
+          <img width="420" height="768" alt="Screenshot (39)" src="https://github.com/user-attachments/assets/072b18e7-728f-4ce4-b435-1e91a8801115" />
          <img width="420" height="768" alt="Screenshot (37)" src="https://github.com/user-attachments/assets/ee843493-1481-43dd-b970-55dd9307877c" />
          <img width="420" height="768" alt="Screenshot (38)" src="https://github.com/user-attachments/assets/409c47d6-924a-43e2-a5b1-b71eec98a900" />
-         <img width="420" height="768" alt="Screenshot (39)" src="https://github.com/user-attachments/assets/072b18e7-728f-4ce4-b435-1e91a8801115" />
          <img width="420" height="768" alt="Screenshot (40)" src="https://github.com/user-attachments/assets/72f9a673-0e40-4b04-8010-191d9357d129" />
       </div>
  
