@@ -74,9 +74,19 @@ Following the steps below, I will be implementing the solution in my Entra envir
    - Simulate a phishing attempt: Try a risky URL (use a safe test site if needed) and verify blocking.
    - Monitor performance: Compare latency before/after (e.g., using speedtest.net). Note improvements in Microsoft 365 access.
    - For multi-device testing: Repeat on an iOS or Android device in the pilot group.
-   - Document: Capture screenshots of logs, block pages, and any latency metrics.
 
-5. **Evaluate and Scale (Reflection Phase)**
+      📸 Screenshots of  Web Content Filtering Verification
+   
+      <div>
+         <img width="420" height="768" alt="Screenshot (34)" src="https://github.com/user-attachments/assets/de92b6d0-f53d-4145-ade7-06500091aef3" />
+         <img width="420" height="768" alt="Screenshot (35)" src="https://github.com/user-attachments/assets/adea6c26-65fb-4ab4-ab50-85c75b949862" />
+         <img width="420" height="768" alt="Screenshot (37)" src="https://github.com/user-attachments/assets/ee843493-1481-43dd-b970-55dd9307877c" />
+         <img width="420" height="768" alt="Screenshot (38)" src="https://github.com/user-attachments/assets/409c47d6-924a-43e2-a5b1-b71eec98a900" />
+         <img width="420" height="768" alt="Screenshot (39)" src="https://github.com/user-attachments/assets/072b18e7-728f-4ce4-b435-1e91a8801115" />
+         <img width="420" height="768" alt="Screenshot (40)" src="https://github.com/user-attachments/assets/72f9a673-0e40-4b04-8010-191d9357d129" />
+      </div>
+ 
+6. **Evaluate and Scale (Reflection Phase)**
    - Assess the solution against TechNova's challenges: Did it reduce VPN dependency? Improve security without Azure infra? Optimize bandwidth?
    - Identify limitations: E.g., no support for multi-user OS like Windows Server; category coverage vs. custom needs.
    - Propose next steps: Roll out to all remote users, add more categories (e.g., malware sites), or integrate with Microsoft Defender for Endpoint.
