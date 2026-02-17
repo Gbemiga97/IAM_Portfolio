@@ -5,14 +5,12 @@ As a beginner with CyberArk, this scenario-based project will help me build a fo
 This project is designed to be hands-on and educational, emphasizing concepts like domain controllers, connectors, and MFA. It may take several hours to a few days, depending on my pace—take time to understand each step, troubleshoot, and experiment. If something goes wrong (e.g., connectivity issues), I'll be using Azure logs or CyberArk documentation for debugging.
 
 #### Prerequisites
-- **Azure Subscription**: Free tier or paid to create VMs.
+- **VMware Workstation Pro from Broadcom, and an ISO image from Microsoft.
 - **CyberArk Privilege Cloud Account**: Sign up for a trial if needed (via CyberArk's website).
 - **Windows Knowledge**: Basic familiarity with Windows Server (e.g., RDP, Server Manager).
-- **Tools**: Azure Portal access, RDP client (built-in on Windows).
-- **Safety Note**: This is a lab setup—use a test environment. Shut down VMs when not in use to save costs.
 
 #### High-Level Project Flow
-1. Set up Active Directory on an Azure VM.
+1. Set up Active Directory on a VMware Workstation Pro.
 2. Set up additional infrastructure (e.g., connector server).
 3. Privilege Cloud configuration, with added explanations and updates.
 4. Test and verify.
