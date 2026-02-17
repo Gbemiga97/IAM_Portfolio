@@ -1,60 +1,79 @@
 
-### Step 1: Set Up Active Directory on Azure VM
-Active Directory (AD) is Microsoft's directory service for managing users, computers, and permissions in a network. Here, I'll create a Domain Controller (DC) on an Azure VM to host my AD forest. This acts as the "identity provider" for CyberArk.
+### Step 1 – Set Up Active Directory on VMware Workstation
 
-#### Substep 1.1: Create Azure Resources
-- Log into the Azure Portal (portal.azure.com).
-- Create a **Resource Group**: Search for "Resource groups" > Create > Name it (e.g., "CyberArkLab-RG") > Choose a region (e.g., East US) > Review + create.
-- Create a **Virtual Network (VNet)**: Search for "Virtual networks" > Create > Basics: Use your resource group, name it (e.g., "CyberArkLab-VNet"), region same as above. Address space: 10.0.0.0/16. Subnet: Name "default", address range 10.0.0.0/24 > Review + create.
-- Create the DC VM:
-  - Search for "Virtual machines" > Create > Azure virtual machine.
-  - Basics: Resource group (your RG), VM name (e.g., "DC-1"), Region (same), Availability options: Availability set or zone for redundancy (use zone 1 for simplicity).
-  - Image: Windows Server 2022 Datacenter - Gen2 (or 2019 if preferred).
-  - Size: Standard_D2s_v3 (2 vCPUs, 8 GiB RAM—affordable for lab).
-  - Administrator account: Set a username (e.g., "localadmin") and a strong password.
-  - Inbound ports: Allow RDP (3389) for now (secure later with NSG).
-  - Disks: OS disk default; add a data disk (e.g., 128 GiB Standard SSD) for AD databases (NTDS/SYSVOL)—best practice to separate from OS.
-  - Networking: Use your VNet and subnet. Assign a static private IP (e.g., 10.0.0.4) under NIC network interface > IP configurations.
-  - Management: Enable boot diagnostics.
-  - Review + create > Create. Wait 5–10 minutes for deployment.
+#### Substep 1.1: Prepare VMware Workstation
+- Install VMware Workstation Pro/Player.
+- Download Windows Server ISO: Go to Microsoft Evaluation Center (evaluation.microsoft.com) → Windows Server 2022 or 2025 (90-day eval is fine for lab; renew by re-installing if needed).
+- Optional: Download a Windows 10/11 ISO for client testing later.
 
-#### Substep 1.2: Configure the VM and Promote to Domain Controller
-- RDP into the VM: In Azure Portal > Your VM > Connect > RDP > Download RDP file > Connect using localadmin credentials.
-- Set a static IP inside the VM (matches Azure setting):
-  - Open PowerShell as admin: `Set-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress 10.0.0.4 -PrefixLength 24 -DefaultGateway 10.0.0.1`
-  - Set DNS: `Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 127.0.0.1` (points to itself after promotion).
-- Install AD DS Role:
-  - Open Server Manager (starts automatically).
-  - Dashboard > Quick Start > Add roles and features.
-  - Select "Role-based or feature-based installation" > Next.
-  - Server: Your server > Next.
-  - Server Roles: Check "Active Directory Domain Services" > Add features when prompted > Next all the way > Install.
-- Promote to DC:
-  - After install, Server Manager notification > "Promote this server to a domain controller."
-  - Deployment: "Add a new forest" > Root domain name (e.g., "mydomain.com") > Next.
-  - Domain Controller Options: Forest/Domain functional level (default), set DSRM password (strong, remember it) > Next.
-  - DNS Options: Ignore warnings > Next.
-  - Paths: Use your data disk (e.g., change to E:\ for NTDS, Logs, SYSVOL if attached as E:) > Next.
-  - Review > Next > Install. Reboot takes 5–10 minutes.
-- Post-Promotion:
-  - Log in as mydomain.com\localadmin (domain credentials now).
-  - Open Active Directory Users and Computers (search in Start): Create a new user (e.g., right-click Users > New > User > Name: "brad" > Set password, uncheck "User must change password").
-  - Add brad to "Domain Admins" group (double-click Domain Admins > Members > Add).
+#### Substep 1.2: Create the Domain Controller VM
+1. Open VMware Workstation → File → New Virtual Machine.
+2. Choose **Typical (recommended)** → Next.
+3. Installer disc image file (iso) → Browse to your Windows Server ISO → Next.
+4. Guest operating system: Microsoft Windows → Version: Windows Server 2022 (or 2025 if using that) → Next.
+5. Name the VM (e.g., "DC-01") and choose location (e.g., dedicated folder) → Next.
+6. Disk: Create a new virtual disk → Maximum disk size: 60–100 GB (split into multiple files for easy move) → Next.
+7. Customize Hardware (important!):
+   - Memory: 4 GB (minimum; 6–8 GB better).
+   - Processors: 2 cores.
+   - Network Adapter: **Bridged** (connects to your physical network; VM gets IP from your router like any PC).
+     - If you want isolation: Use **Host-only** (VMnet1 or custom) and configure NAT/shared internet later.
+   - CD/DVD: Ensure connected to ISO.
+   - USB Controller, Sound, etc.: Optional; disable if not needed to save resources.
+8. Finish → Power on the VM.
+9. Install Windows Server:
+   - Follow prompts: Choose Standard Desktop Experience (GUI), set strong admin password.
+   - After install: Update Windows fully (important for roles/features).
 
-#### Substep 1.3: Set Up a Connector Server VM (for Redundancy and Best Practice)
-The video installs the Identity Connector on two Windows servers for redundancy. These should be domain-joined members (not the DC itself, to avoid single point of failure). Create one or two additional VMs.
+#### Substep 1.3: Configure Networking Inside the VM
+- After install, log in.
+- Set static IP (recommended for DC):
+  - Right-click Start → Network Connections → Ethernet → Properties → IPv4 → Use static IP.
+    - Example (adjust to your network):
+      - IP: 192.168.1.50 (or whatever fits your router's range).
+      - Subnet: 255.255.255.0
+      - Gateway: Your router IP (e.g., 192.168.1.1)
+      - DNS: 127.0.0.1 (point to itself; add 8.8.8.8 as secondary for internet during setup).
+- Rename computer: Settings → System → About → Rename this PC → e.g., "DC-01" → Restart.
 
-- Repeat VM creation (similar to DC, but name e.g., "Connector-1", Windows Server 2022, same VNet/subnet, static IP e.g., 10.0.0.5).
-- RDP in, join to domain:
-  - Settings > System > About > Rename this PC (advanced) > Change > Domain: mydomain.com > OK > Credentials: mydomain.com\brad > Reboot.
-- For a second connector ("Connector-2", IP 10.0.0.6), repeat.
+#### Substep 1.4: Promote to Domain Controller (Same as Before)
+- Open Server Manager → Add roles and features → Role-based → Select server → Server Roles: Check **Active Directory Domain Services** → Add features → Install.
+- After install: Notification flag → Promote this server to a domain controller.
+- Deployment: Add a new forest → Root domain name: e.g., "mylab.local" (avoid .com/.net to prevent real-world conflicts).
+- Set DSRM password.
+- DNS options: Proceed despite warnings.
+- Paths: Default or custom.
+- Install → Reboot.
+- Post-setup:
+  - Log in as mylab.local\Administrator.
+  - Open Active Directory Users and Computers → Create test user "brad" (strong password) → Add to Domain Admins.
 
-Now your AD is ready: You have a DC and connector server(s) in the domain.
+#### Substep 1.5: Create Connector Server VM(s)
+- Repeat VM creation process (name e.g., "Connector-01").
+- Specs: 4 GB RAM, 2 cores, Bridged network.
+- Install Windows Server (same ISO).
+- Join to domain:
+  - After install → System → About → Rename this PC (advanced) → Change → Domain: mylab.local → Use domain admin creds → Reboot.
+- Create a second one ("Connector-02") for redundancy (highly recommended; CyberArk docs suggest at least two).
 
-#### Security Updates
-- Create a Network Security Group (NSG): Azure Portal > Network security groups > Create > Associate to your subnet or VMs. Allow RDP only from your IP.
-- Enable Azure Firewall or Just-In-Time access for RDP.
-- Ensure VMs have outbound internet (default in Azure) for connector to reach Privilege Cloud.
+**Networking Tip**: All VMs on Bridged get IPs from your home router (e.g., 192.168.1.x). Ensure they can reach the internet (test ping google.com). The Identity Connector needs outbound internet only—no ports open inbound.
+
+**Isolation Option**: If you prefer a fully isolated lab:
+- Edit → Virtual Network Editor (run as admin) → Add Network → VMnet2 → Host-only → No DHCP (or enable).
+- Set all VMs to Custom: VMnet2.
+- For internet on connector VMs: Add a second NIC (Bridged) to connector VMs only, or share host internet via ICS (Internet Connection Sharing) on host.
+
+### Step 2: CyberArk Privilege Cloud Configuration (No Major Changes)
+- Follow the original project steps/video exactly.
+- When installing Identity Connector:
+  - Download from Privilege Cloud portal → Install on Connector-01 and Connector-02 VMs (run as domain admin).
+  - Installer needs internet (HTTPS outbound).
+  - Enable AD Deleted Objects access on DC (as before).
+  - Register connectors in portal.
+- User sync, policies, MFA, adding AD user (brad@mylab.local) to roles—all identical.
+- Test login from your host browser (or a Windows client VM joined to domain).
+
+
 
 ### Step 2: Configure CyberArk Privilege Cloud (Following Video with Updates)
 Now follow the video, but with added context and fills for gaps. Watch the video alongside for visuals.
