@@ -24,6 +24,19 @@
 9. Install Windows Server:
    - Follow prompts: Choose Standard Desktop Experience (GUI), set strong admin password.
    - After install: Update Windows fully (important for roles/features).
+   
+   📸 Screenshots of configurations
+   
+   <div>
+      <img width="200" height="425" alt="Screenshot 2026-02-17 184614" src="https://github.com/user-attachments/assets/54b8b3e6-3333-43dc-95cb-4fd8f288c175" />
+      <img width="200" height="428" alt="Screenshot 2026-02-17 185348" src="https://github.com/user-attachments/assets/f318f2d4-568f-439c-83b8-8f2f6400815b" />
+      <img width="200" height="429" alt="Screenshot 2026-02-17 185517" src="https://github.com/user-attachments/assets/97910112-7430-40b5-8edf-1ed8bd0a146a" />
+      <img width="200" height="426" alt="Screenshot 2026-02-17 185615" src="https://github.com/user-attachments/assets/9c720c71-3999-4009-aa39-296cc0ae48b1" />
+      <img width="200" height="603" alt="Screenshot 2026-02-17 185551" src="https://github.com/user-attachments/assets/f3619a79-f8cb-4ba4-82f5-ebbd95df68a2" />
+       <img width="200" height="434" alt="Screenshot 2026-02-17 185637" src="https://github.com/user-attachments/assets/dc0ba4b6-7d6b-4256-88a3-ad28938f5d85" />
+      <img width="200" height="462" alt="Screenshot 2026-02-17 185744" src="https://github.com/user-attachments/assets/68e90108-2947-4159-9191-f34f9a14c091" />
+      <img width="200" height="519" alt="Screenshot 2026-02-17 191948" src="https://github.com/user-attachments/assets/40f16aea-586d-430f-b726-7b38f9a9f237" />
+   </div>
 
 #### Substep 1.3: Configure Networking Inside the VM
 - After install, log in.
