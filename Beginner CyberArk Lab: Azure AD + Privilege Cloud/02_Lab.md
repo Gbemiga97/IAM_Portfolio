@@ -87,19 +87,41 @@
 </div>
 
 #### Substep 1.5: Create Connector Server VM(s)
-- Repeat VM creation process (name e.g., "Connector-01").
-- Specs: 4 GB RAM, 2 cores, Bridged network.
+- Repeat VM creation process (name e.g., "Connector-01/CS-01").
+- Specs: 2 GB RAM, 1 cores, Bridged network.
 - Install Windows Server (same ISO).
 - Join to domain:
   - After install → System → About → Rename this PC (advanced) → Change → Domain: mylab.local → Use domain admin creds → Reboot.
 - Create a second one ("Connector-02") for redundancy (highly recommended; CyberArk docs suggest at least two).
 
-**Networking Tip**: All VMs on Bridged get IPs from your home router (e.g., 192.168.1.x). Ensure they can reach the internet (test ping google.com). The Identity Connector needs outbound internet only—no ports open inbound.
+**Networking Tip**: All VMs on Bridged get IPs from your host network (e.g., 192.168.1.x). Ensure they can reach the internet (test ping google.com). The Identity Connector needs outbound internet only—no ports open inbound.
 
-**Isolation Option**: If you prefer a fully isolated lab:
-- Edit → Virtual Network Editor (run as admin) → Add Network → VMnet2 → Host-only → No DHCP (or enable).
-- Set all VMs to Custom: VMnet2.
-- For internet on connector VMs: Add a second NIC (Bridged) to connector VMs only, or share host internet via ICS (Internet Connection Sharing) on host.
+📸 Screenshots of configurations
+
+<div>
+   <img width="200" height="432" alt="Screenshot 2026-02-18 124129" src="https://github.com/user-attachments/assets/d90ce087-f3b6-45c7-b471-388073d2fbf1" />
+   <img width="200" height="620" alt="Screenshot 2026-02-18 131751" src="https://github.com/user-attachments/assets/fe1543df-72a4-436a-b763-c232c683b73f" />
+    <img width="200" height="270" alt="Screenshot 2026-02-18 152221" src="https://github.com/user-attachments/assets/3c52436a-ea96-480f-a677-f1ea6ae33587" />
+
+   <img width="200" height="615" alt="Screenshot 2026-02-18 135213" src="https://github.com/user-attachments/assets/4ff18996-a6ba-4a93-b771-5c08f049a290" />
+   <img width="200" height="251" alt="Screenshot 2026-02-18 140401" src="https://github.com/user-attachments/assets/162087d4-5e51-4736-8bc4-2e808b0cb8fd" />
+
+   <img width="200" height="558" alt="Screenshot 2026-02-18 141414" src="https://github.com/user-attachments/assets/75bef66d-b481-46a2-907c-c7002d5c1f5c" />
+   <img width="200" height="559" alt="Screenshot 2026-02-18 142002" src="https://github.com/user-attachments/assets/dd9a8622-46af-46fa-aba1-08e31e9a4623" />
+   <img width="200" height="551" alt="Screenshot 2026-02-18 142109" src="https://github.com/user-attachments/assets/9836c422-b5ef-41cb-a2fb-d431efb44ec3" />
+   <img width="200" height="426" alt="Screenshot 2026-02-18 145445" src="https://github.com/user-attachments/assets/5334d6b7-15e5-47d5-a330-3829ea4d7db3" />
+   <img width="200" height="432" alt="Screenshot 2026-02-18 145501" src="https://github.com/user-attachments/assets/6e7a1899-9e8f-4994-aa1b-9a62cb298f23" />
+   <img width="200" height="426" alt="Screenshot 2026-02-18 145445" src="https://github.com/user-attachments/assets/dc56f322-85b3-49d1-ae72-029ef3276857" />
+<img width="200" height="432" alt="Screenshot 2026-02-18 145501" src="https://github.com/user-attachments/assets/044ba0ae-a565-456e-a46e-b3a7da1ab3fe" />
+<img width="200" height="627" alt="Screenshot 2026-02-18 152133" src="https://github.com/user-attachments/assets/aa52cfdd-8982-4456-a40f-c93e0a6bccc1" />
+<img width="200" height="259" alt="Screenshot 2026-02-18 152234" src="https://github.com/user-attachments/assets/52aea113-224f-4eac-a0d3-8a823f78a18c" />
+<img width="200" height="568" alt="Screenshot 2026-02-18 153138" src="https://github.com/user-attachments/assets/49d9eb43-ef8b-436e-afeb-70bcac1a9c13" />
+<img width="200" height="460" alt="Screenshot 2026-02-18 153233" src="https://github.com/user-attachments/assets/3baa8637-1dfb-4d94-b75a-1b5c8492d7f9" />
+<img width="200" height="463" alt="Screenshot 2026-02-18 153324" src="https://github.com/user-attachments/assets/a085f2e1-3d35-4c2e-84b6-6e03ed003f91" />
+<img width="200" height="560" alt="Screenshot 2026-02-18 153905" src="https://github.com/user-attachments/assets/f0a65b70-d6f7-4cef-8edc-efa56bb61f7d" />
+<img width="200" height="559" alt="Screenshot 2026-02-18 154408" src="https://github.com/user-attachments/assets/ed6aadad-47e2-4866-b017-c95ba0dc7700" />
+<img width="200" height="558" alt="Screenshot 2026-02-18 154847" src="https://github.com/user-attachments/assets/5c686ccd-a8b5-42ac-8c98-53a968e694c7" />
+</div>
 
 ### Step 2: CyberArk Privilege Cloud Configuration (No Major Changes)
 - Follow the original project steps/video exactly.
