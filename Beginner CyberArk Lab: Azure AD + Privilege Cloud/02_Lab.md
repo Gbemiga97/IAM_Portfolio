@@ -42,12 +42,22 @@
 - After install, log in.
 - Set static IP (recommended for DC):
   - Right-click Start → Network Connections → Ethernet → Properties → IPv4 → Use static IP.
-    - Example (adjust to your network):
-      - IP: 192.168.1.50 (or whatever fits your router's range).
+    - Example (adjust to your Virtual Network Editor):
+      - IP: 192.168.1.50 (or whatever fits your editor's range).
       - Subnet: 255.255.255.0
       - Gateway: Your router IP (e.g., 192.168.1.1)
-      - DNS: 127.0.0.1 (point to itself; add 8.8.8.8 as secondary for internet during setup).
+      - DNS: 192.168.1.50 (point to itself).
 - Rename computer: Settings → System → About → Rename this PC → e.g., "DC-01" → Restart.
+
+📸 Screenshots of configurations
+
+<div>
+   <img width="260" height="487" alt="Screenshot 2026-02-18 110044" src="https://github.com/user-attachments/assets/2b2cd1bb-5aff-4c0c-ab57-8ea5f878de1f" />
+   <img width="260" height="557" alt="Screenshot 2026-02-18 110131" src="https://github.com/user-attachments/assets/697db96e-9126-40d2-902a-9d28931f45f7" />
+   <img width="260" height="584" alt="Screenshot 2026-02-18 110504" src="https://github.com/user-attachments/assets/ab01a8ff-1424-4943-9ba5-30fb41a2174b" />
+   <img width="260" height="627" alt="Screenshot 2026-02-18 111831" src="https://github.com/user-attachments/assets/9346e8ae-ac21-426d-8882-6e3496d8a086" />
+   <img width="260" height="703" alt="Screenshot 2026-02-18 111028" src="https://github.com/user-attachments/assets/f5b8c9e6-d891-4564-9bf8-74dce97468cc" />
+</div>
 
 #### Substep 1.4: Promote to Domain Controller (Same as Before)
 - Open Server Manager → Add roles and features → Role-based → Select server → Server Roles: Check **Active Directory Domain Services** → Add features → Install.
