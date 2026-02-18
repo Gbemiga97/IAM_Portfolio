@@ -71,6 +71,21 @@
   - Log in as mylab.local\Administrator.
   - Open Active Directory Users and Computers → Create test user "brad" (strong password) → Add to Domain Admins.
 
+📸 Screenshots of configurations
+
+<div>
+   <img width="320" height="562" alt="Screenshot 2026-02-18 113304" src="https://github.com/user-attachments/assets/bd4f841f-f856-43f6-84df-5945db4bc1c8" />
+   <img width="320" height="718" alt="Screenshot 2026-02-18 114558" src="https://github.com/user-attachments/assets/ed69aadb-8841-4ec5-9283-8d8ce2b0c615" />
+   <img width="320" height="462" alt="Screenshot 2026-02-18 114639" src="https://github.com/user-attachments/assets/7fe172cc-a969-4e7b-8334-5e0f96767d10" />
+   <img width="320" height="559" alt="Screenshot 2026-02-18 114806" src="https://github.com/user-attachments/assets/a9e9cddb-7e6f-4f0e-a98c-e8baa5ec5e18" />
+   <img width="320" height="562" alt="Screenshot 2026-02-18 114852" src="https://github.com/user-attachments/assets/7977bbf0-6f7f-4f67-966d-f9b70e380306" />
+   <img width="320" height="561" alt="Screenshot 2026-02-18 115003" src="https://github.com/user-attachments/assets/d01a648d-1057-4db2-9e10-202ff720ed51" />
+   <img width="320" height="500" alt="Screenshot 2026-02-18 115453" src="https://github.com/user-attachments/assets/5fe49182-12c5-4d56-8dac-131dd56fa099" />
+   <img width="320" height="491" alt="Screenshot 2026-02-18 120939" src="https://github.com/user-attachments/assets/6aa5896a-29bf-4195-abe8-b24b9c0839a2" />
+   <img width="320" height="524" alt="Screenshot 2026-02-18 121410" src="https://github.com/user-attachments/assets/d8b640ef-5e66-4733-9add-652d59d0bef9" />
+
+</div>
+
 #### Substep 1.5: Create Connector Server VM(s)
 - Repeat VM creation process (name e.g., "Connector-01").
 - Specs: 4 GB RAM, 2 cores, Bridged network.
