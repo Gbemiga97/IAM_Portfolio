@@ -17,11 +17,11 @@
    - Add your trusted IP (e.g., your office's public IPv4 address—use a tool like ipinfo.io to confirm). For ranges, enter CIDR notation (e.g., 192.168.1.0/24).  
    - Save. This defines "trusted" access points, preventing blocks from variable home IPs.
   
-      📸 Screenshot
+   📸 Screenshot
    
-      <div>
-         <img width="480" height="602" alt="Screenshot 2026-02-24 151936" src="https://github.com/user-attachments/assets/2a5838e6-3c98-429c-b3c1-283703107fc1" />
-      </div>
+   <div>
+    <img width="480" height="602" alt="Screenshot 2026-02-24 151936" src="https://github.com/user-attachments/assets/2a5838e6-3c98-429c-b3c1-283703107fc1" />
+   </div>  
 
 4. **Create or Identify a Service Principal (App Registration)**  
    - If you don't have one: Go to **Entra ID** > **App registrations** > **+ New registration**.  
@@ -32,7 +32,7 @@
    - Grant permissions: **API permissions** > **+ Add a permission** > Microsoft Graph > Application permissions (e.g., Reports.Read.All for reading data). Admin consent required.  
    - Why include this? It's foundational; skipping could mean testing with a non-functional app, derailing the project.
 
-    📸 Screenshot
+    📸 Screenshots
 
    <div>
       <img width="320" height="426" alt="Screenshot 2026-02-24 153504" src="https://github.com/user-attachments/assets/d3967274-6a18-4b3c-82e6-add9086c582d" />
@@ -57,6 +57,15 @@
 4. **Enable in Report-Only Mode**  
    - Set to **Report-only** initially. Save.  
    - Why? Allows monitoring without breaking your daily reports— testing here for success.
+
+   📸 Screenshot
+
+     <div>
+      <img width="320" height="322" alt="Screenshot 2026-02-24 172336" src="https://github.com/user-attachments/assets/61977876-08d1-41d0-992f-e194f18fb6ad" />
+      <img width="320" height="376" alt="Screenshot 2026-02-24 172537" src="https://github.com/user-attachments/assets/f3d1c6ed-3d22-4a23-a8e0-df31015a9133" />
+      <img width="320" height="488" alt="Screenshot 2026-02-24 173136" src="https://github.com/user-attachments/assets/5d099fdf-0e4b-49bf-903a-fcf37303d38c" />
+     </div>  
+
 
 #### Phase 2: Enhance with Custom Security Attributes (Scalability Extension)
 As discussed, tags make this enterprise-ready for TechSolutions growing automations.
