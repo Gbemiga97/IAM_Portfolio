@@ -16,8 +16,14 @@
    - Click **+ IP ranges location**. Name it " TechSolutions Office Server" (or "Sensitive App Server").  
    - Add your trusted IP (e.g., your office's public IPv4 address—use a tool like ipinfo.io to confirm). For ranges, enter CIDR notation (e.g., 192.168.1.0/24).  
    - Save. This defines "trusted" access points, preventing blocks from variable home IPs.
+  
+      📸 Screenshot
+   
+      <div>
+         <img width="480" height="602" alt="Screenshot 2026-02-24 151936" src="https://github.com/user-attachments/assets/2a5838e6-3c98-429c-b3c1-283703107fc1" />
+      </div>
 
-3. **Create or Identify a Service Principal (App Registration)**  
+4. **Create or Identify a Service Principal (App Registration)**  
    - If you don't have one: Go to **Entra ID** > **App registrations** > **+ New registration**.  
    - Name: "Daily Report Automation".  
    - Supported account types: "Accounts in this organizational directory only."  
@@ -25,6 +31,15 @@
    - Add a client secret: **Certificates & secrets** > **+ New client secret** (expires in 1 year—set a reminder).  
    - Grant permissions: **API permissions** > **+ Add a permission** > Microsoft Graph > Application permissions (e.g., Reports.Read.All for reading data). Admin consent required.  
    - Why include this? It's foundational; skipping could mean testing with a non-functional app, derailing the project.
+
+    📸 Screenshot
+
+   <div>
+      <img width="320" height="426" alt="Screenshot 2026-02-24 153504" src="https://github.com/user-attachments/assets/d3967274-6a18-4b3c-82e6-add9086c582d" />
+      <img width="320" height="545" alt="Screenshot 2026-02-24 153811" src="https://github.com/user-attachments/assets/76c39a1b-0859-4479-a029-e8f23d5433fa" />
+      <img width="320" height="612" alt="Screenshot 2026-02-24 154157" src="https://github.com/user-attachments/assets/58451397-b411-473e-bdc8-fef8519d7eb1" />
+
+   </div>
 
 #### Phase 1: Implement Basic CA Policy
 1. **Navigate to Conditional Access**  
