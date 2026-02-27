@@ -86,8 +86,16 @@ As discussed, tags make this enterprise-ready for TechSolutions growing automati
      $params = @{ AttributeSet = "AutomationSecurityTags"; Attribute = "RiskLevel"; Values = "High" }
      New-MgBetaServicePrincipalCustomSecurityAttributeAssignment -ServicePrincipalId <YourAppObjectId> -BodyParameter $params
      ```
- 
 
+     📸 Screenshots
+
+     <div>
+      <img width="450" height="614" alt="Screenshot 2026-02-26 121753" src="https://github.com/user-attachments/assets/5a9c201a-68de-4b45-bc62-952f8995ade6" />
+      <img width="450" height="522" alt="Screenshot 2026-02-26 124420" src="https://github.com/user-attachments/assets/89e0042f-80b5-4282-914d-c8f41213b491" />
+      <img width="450" height="605" alt="Screenshot 2026-02-26 124514" src="https://github.com/user-attachments/assets/c6461b5b-be25-4b78-a332-d58ed3752da4" />
+      <img width="450" height="427" alt="Screenshot 2026-02-26 125703" src="https://github.com/user-attachments/assets/3d9f8717-2968-44a8-a873-9fefd80ee21c" />
+     </div> 
+      
 3. **Update CA Policy with Filters**  
    - Edit your policy: Under Workload identities, switch to **All** and add a filter.  
    - Filter: AttributeSet = AutomationSecurityTags, Attribute = RiskLevel, Equals "High" AND LocationRestriction = Yes.  
