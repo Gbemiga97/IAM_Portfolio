@@ -74,7 +74,6 @@ As discussed, tags make this enterprise-ready for TechSolutions growing automati
    - Entra ID > **Custom security attributes** > **Attribute sets** > **+ Add attribute set**. Name: "AutomationSecurityTags".  
    - Add attributes:  
      - Name: "RiskLevel", Type: String, Predefined values: High, Medium, Low.  
-     - Name: "LocationRestriction", Type: Boolean (Yes/No).  
    - Assign roles if needed (e.g., grant yourself Attribute Assignment Admin).
 
 2. **Tag Your Service Principals**  
@@ -97,10 +96,17 @@ As discussed, tags make this enterprise-ready for TechSolutions growing automati
      </div> 
       
 3. **Update CA Policy with Filters**  
-   - Edit your policy: Under Workload identities, switch to **All** and add a filter.  
-   - Filter: AttributeSet = AutomationSecurityTags, Attribute = RiskLevel, Equals "High" AND LocationRestriction = Yes.  
+   - Edit your policy: Under Workload identities, select all service principals that the filter will apply to and add a filter.  
+   - Filter: AttributeSet = AutomationSecurityTags, Attribute = RiskLevel, Equals "High".  
    - This dynamically applies the IP block to tagged apps—add more without editing the policy.
 
+   📸 Screenshots
+
+   <div>
+    <img width="480" height="607" alt="Screenshot 2026-03-04 124829" src="https://github.com/user-attachments/assets/2ab6313c-c8f9-4c1a-b1c7-fb0316b8268a" /> 
+    <img width="480" height="616" alt="Screenshot 2026-03-04 124851" src="https://github.com/user-attachments/assets/fb21c53e-11ee-4fc8-8815-ffce4ada3471" /> 
+   </div>
+   
 #### Phase 3: Testing and Validation (Critical for Success)
 
 1. **Simulate Access**  
