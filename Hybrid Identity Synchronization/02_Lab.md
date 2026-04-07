@@ -6,7 +6,14 @@ I created a new VM in VMware Workstation, installed Windows Server 2022, and con
 - Installed Active Directory Domain Services role via Server Manager  
 - Promoted the server to a domain controller for `cloud.training`  
 - Created Organizational Units: `Admins`, `Employees`, and a top-level `Users` OU  
-- Added 12 test users and 3 security groups (e.g., “Finance-Team”, “IT-Admins”) using both GUI and a quick PowerShell script for bulk creation  
+- Added 12 test users and 3 security groups (e.g., “Finance-Team”, “IT-Admins”) using both GUI and a quick PowerShell script for bulk creation
+
+| Role 1 | Role 2 | Role 3 |
+|------|--------|--------|
+| <img src="img/01_AD_install.png" width="300" />  | <img src="img/02_promoting_AD.png" width="300" />  | <img src="03_Server_Dashboard.png" width="300" /> |
+| **Mover** | Trigger on `department` change → update group | - |
+| **Leaver** | Trigger on `employeeLeaveDateTime` → disable account | - |
+
 
 *(Screenshot: VMware Workstation VM summary showing DC01 powered on and healthy – img/vmware-lab-overview.png)*  
 *(Screenshot: Active Directory Users and Computers showing OU structure and test users – img/ad-ou-structure.png)*  
