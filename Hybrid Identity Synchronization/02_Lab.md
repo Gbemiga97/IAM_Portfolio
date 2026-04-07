@@ -8,11 +8,11 @@ I created a new VM in VMware Workstation, installed Windows Server 2022, and con
 - Created Organizational Units: `Admins`, `Employees`, and a top-level `Users` OU  
 - Added 12 test users and 3 security groups (e.g., “Finance-Team”, “IT-Admins”) using both GUI and a quick PowerShell script for bulk creation
 
-| Role 1 | Role 2 | Role 3 |
+| Installing the Active Directory Domain Services role via Server Manager | Promoting the Active Directory Domain Services role via Server Manager | DC01 powered on and healthy  |
 |------|--------|--------|
 | <img src="img/01_AD_install.png" width="650" />  | <img src="img/02_promoting_AD.png" width="300" />  | <img src="img/03_Server_Dashboard.png" width="650" /> |
 | Installing the Active Directory Domain Services role via Server Manager | Promoting the Active Directory Domain Services role via Server Manager | DC01 powered on and healthy |
-| **Leaver** | Trigger on `employeeLeaveDateTime` → disable account | - |
+| <img src="img/04_Bulk_Users_Creation.png" width="650" />  | <img src="img/05_Admins_OU.png" width="300" /> | <img src="img/06_Employees_OU.png" width="300" />|
 
 
 *(Screenshot: VMware Workstation VM summary showing DC01 powered on and healthy – img/vmware-lab-overview.png)*  
