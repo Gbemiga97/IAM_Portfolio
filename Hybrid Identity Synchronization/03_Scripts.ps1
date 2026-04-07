@@ -68,7 +68,7 @@ $Users = @(
     @{GivenName="Jane";          Surname="Smith";     SamAccountName="jane.smith";       UserPrincipalName="jane.smith@cloud.training";      Path="OU=TopLevelUsers,$DomainDN";      Title="Developer";               Department="IT";     EmployeeID="3002"},
     @{GivenName="Michael";       Surname="Chen";      SamAccountName="michael.chen";      UserPrincipalName="michael.chen@cloud.training";     Path="OU=TopLevelUsers,$DomainDN";      Title="Sales Rep";               Department="Sales";  EmployeeID="3003"},
     @{GivenName="Priya";         Surname="Patel";     SamAccountName="priya.patel";      UserPrincipalName="priya.patel@cloud.training";     Path="OU=TopLevelUsers,$DomainDN";      Title="Recruiter";               Department="HR";     EmployeeID="3004"},
-    @{GivenName="Feliciano";     Surname="Da Rosa";   SamAccountName="feliciano.darosa"; UserPrincipalName="feliciano.darosa@cloud.training";Path="OU=TopLevelUsers,$DomainDN";      Title="Support Engineer";        Department="IT";     EmployeeID="3005"},  # Intentionally had a space in UPN originally for error testing
+    @{GivenName="Feliciano";     Surname="Da Rosa";   SamAccountName="feliciano.darosa"; UserPrincipalName="feliciano.darosa@cloud.training";Path="OU=TopLevelUsers,$DomainDN";      Title="Support Engineer";        Department="IT";     EmployeeID="3005"}, 
     @{GivenName="Sarah";         Surname="Johnson";   SamAccountName="sarah.johnson";    UserPrincipalName="sarah.johnson@cloud.training";   Path="OU=TopLevelUsers,$DomainDN";      Title="Analyst";                 Department="Finance";EmployeeID="3006"}
 )
 
