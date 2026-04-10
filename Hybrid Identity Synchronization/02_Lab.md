@@ -14,7 +14,7 @@ I created a new VM in VMware Workstation, installed Windows Server 2022, and con
 | Installing the Active Directory Domain Services role via Server Manager | Promoting the Active Directory Domain Services role via Server Manager | DC01 powered on and healthy  |
 |------|--------|--------|
 | <img src="img/01_AD_install.png" width="650" />  | <img src="img/02_promoting_AD.png" width="300" />  | <img src="img/03_Server_Dashboard.png" width="650" /> |
-| Bulk Users Creation | Users Created in the Admin OU | Users Created in the TopLevelUsers OU |
+| <p align="center" > **Bulk Users Creation** <p/> | <p align="center" > **Users Created in the Admin OU** <p/> | <p align="center" > **Users Created in the TopLevelUsers OU** <p/> |
 | <img src="img/04_Bulk_Users_Creation.png" width="650" />  | <img src="img/05_Admins_OU.png" width="600" /> | <img src="img/07_TopLevelUsers_OU.png" width="600" />|
 
 
@@ -22,17 +22,20 @@ I created a new VM in VMware Workstation, installed Windows Server 2022, and con
 
 **2. Installed Microsoft Entra Connect on the Domain Controller**  
 I downloaded the latest Entra Connect MSI from the Microsoft Download Center and ran it on DC01.  
-- Chose **Customize** (not Express Settings) to have full control  
+- Choose **Customize** (not Express Settings) to have full control  
 - Used SQL Express (default for lab)  
 - Let the wizard create the service account automatically  
 - Installed all prerequisites (Visual C++ redistributable, etc.) without issues  
 
-*(Screenshot: Entra Connect installation wizard on the Customize screen – img/entra-connect-install.png)*  
+*(Screenshot: Entra Connect installation wizard on the Customize screen)*
+|  Customized Settings  | Installing the required components | 
+|------|--------|
+| <img src="img/08_Cusztomized_Config.png" width="650" />  | <img src="img/09_Required_Components.png" width="650" />  | 
 
 **3. Ran the Configuration Wizard – Core Setup**  
 This was the heart of the project. I walked through every screen carefully:  
-- Signed in with my Global Administrator account from the Entra ID tenant  
 - Selected **Password Hash Synchronization** + enabled **Seamless Single Sign-On**  
+- Signed in with my Global Administrator account from the Entra ID tenant  
 - The wizard automatically detected my `cloud.training` forest  
 - Scoped synchronization to the `Users` OU only (for testing)  
 - Set source anchor to `msDS-ConsistencyGuid` (best practice)  
@@ -42,6 +45,12 @@ This was the heart of the project. I walked through every screen carefully:
 After the wizard finished, the service account `MSOL_xxxx` was created automatically on-premises, and the cloud service account appeared in my Entra ID tenant.  
 
 *(Screenshot: Configuration wizard summary screen before clicking Install – img/config-wizard-summary.png)*  
+
+| Enabled Password Writeback and SSO | Connected to Entra ID | Automatic Detection of the Domain  |
+|------|--------|--------|
+| <img src="img/10_Enabled_SSO.png" width="650" />  | <img src="img/11_Connection_to_Entra_ID.png" width="650" />  | <img src="img/12_Domain_Detection.png" width="650" /> |
+| <p align="center" > **OU Users filtered for testing** <p/> | <p align="center" > **Password Writeback and Directory Extension** <p/> | <p align="center" > **Users Created in the TopLevelUsers OU** <p/> |
+| <img src="img/13_OU_Users_Filtering_For_Testing.png" width="650" />  | <img src="img/14_Optional_features.png" width="600" /> | <img src="img/07_TopLevelUsers_OU.png" width="600" />|
 
 **4. Performed Initial Synchronization and Verification**  
 I opened PowerShell as admin and forced the first full sync:  
