@@ -49,8 +49,8 @@ After the wizard finished, the service account `MSOL_xxxx` was created automatic
 | Enabled Password Writeback and SSO | Connected to Entra ID | Automatic Detection of the Domain  |
 |------|--------|--------|
 | <img src="img/10_Enabled_SSO.png" width="650" />  | <img src="img/11_Connection_to_Entra_ID.png" width="650" />  | <img src="img/12_Domain_Detection.png" width="650" /> |
-| <p align="center" > **OU Users filtered for testing** <p/> | <p align="center" > **Password Writeback and Directory Extension** <p/> | <p align="center" > **Users Created in the TopLevelUsers OU** <p/> |
-| <img src="img/13_OU_Users_Filtering_For_Testing.png" width="650" />  | <img src="img/14_Optional_features.png" width="600" /> | <img src="img/07_TopLevelUsers_OU.png" width="600" />|
+| <p align="center" > **OU Users filtered for testing** <p/> | <p align="center" > **Password Writeback and Directory Extension** <p/> | <p align="center" > **Directory extentions synchronized from AD to Entra** <p/> |
+| <img src="img/13_OU_Users_Filtering_For_Testing.png" width="650" />  | <img src="img/14_Optional_features.png" width="600" /> | <img src="img/15_Directory Extension.png" width="650" />|
 
 **4. Performed Initial Synchronization and Verification**  
 I opened PowerShell as admin and forced the first full sync:  
