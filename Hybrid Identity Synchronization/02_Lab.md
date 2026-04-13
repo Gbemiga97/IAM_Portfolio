@@ -60,7 +60,7 @@ Start-ADSyncSyncCycle -PolicyType Initial
 Then I monitored progress in the Synchronization Service Manager (miisclient.exe).  
 
 Switched to the Microsoft Entra admin center → Identity → Hybrid management → Microsoft Entra Connect:  
-- Sync status showed “Healthy”  
+- Sync status showed “Enabled”  
 - All 12 users and groups appeared with “On-premises Sync Enabled: Yes”  
 - Confirmed Password Hash Sync and Seamless SSO were active for the domain  
 
