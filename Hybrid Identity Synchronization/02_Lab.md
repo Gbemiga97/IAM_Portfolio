@@ -66,6 +66,13 @@ Switched to the Microsoft Entra admin center → Identity → Hybrid management 
 
 *(Screenshot: Entra admin center showing synchronized users and sync status – img/entra-sync-verification.png)*  
 
+| Iniated a Sync | Monitored through the Synchronization Service Manager |
+|------|--------|
+| <img src="img/17_Initiate_The_Sync.png" width="750" />  | <img src="img/18_Monitoring.png" width="650" />  | 
+| <p align="center" > **Sync Status in Entra Admin Center** <p/> | <p align="center" > **Synced Users** <p/> | 
+| <img src="img/19_Sync_Satus.png" width="650" />  | <img src="img/20_Synced_Users.png" width="650" /> | 
+
+
 **5. Advanced Configuration & Management (Post-Installation)**  
 I re-ran the wizard to expand the sync scope from the `Users` OU to the entire domain (important lesson: OU changes require wizard re-run).  
 
