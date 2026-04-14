@@ -11,9 +11,9 @@ I created a new VM in VMware Workstation, installed Windows Server 2022, and con
 *(Screenshot: VMware Workstation VM summary showing DC01 powered on and healthy)*  
 *(Screenshot: Active Directory Users and Computers showing OU structure and test users)* 
 
-| Installing the Active Directory Domain Services role via Server Manager | Promoting the Active Directory Domain Services role via Server Manager | DC01 powered on and healthy  |
+| Installing the Active Directory Domain Services role via Server Manager | Promoting the Active Directory Domain Services role via Server Manager | DC01 powered on and healthy |
 |------|--------|--------|
-| <img src="img/01_AD_install.png" width="650" />  | <img src="img/02_promoting_AD.png" width="300" />  | <img src="img/03_Server_Dashboard.png" width="650" /> |
+| <img src="img/01_AD_install.png" width="650"  />  | <img src="img/02_promoting_AD.png" width="300" />  | <img src="img/03_Server_Dashboard.png" width="650" /> |
 | <p align="center" > **Bulk Users Creation** <p/> | <p align="center" > **Users Created in the Admin OU** <p/> | <p align="center" > **Users Created in the TopLevelUsers OU** <p/> |
 | <img src="img/04_Bulk_Users_Creation.png" width="650" />  | <img src="img/05_Admins_OU.png" width="600" /> | <img src="img/07_TopLevelUsers_OU.png" width="600" />|
 
@@ -97,6 +97,13 @@ I also simulated a common issue by creating a user with a space in the UPN (“F
 
 *(Screenshot: PowerShell output showing custom deletion threshold and sync scheduler – img/powershell-advanced.png)*  
 *(Screenshot: Synchronization Service Manager showing successful export after UPN fix – img/sync-manager-errors-fixed.png)*  
+
+| Expanded the synce scope to the entire domain | Customized the Deletion Threshold | Customized the sync schedule  |
+|------|--------|--------|
+| <img src="img/21_Expand the sync scope.png" width="650" />  | <img src="img/22_Deletion Threshold.png" width="650" />  | <img src="img/23_Customized the sync schedule.png" width="650" /> |
+| <p align="center" > **Practiced suspending the synchronization** <p/> | <p align="center" > **Password Writeback and Directory Extension** <p/> | <p align="center" > **Directory extentions synchronized from AD to Entra** <p/> |
+| <img src="img/24_Practiced suspending.png" width="650" />  | <img src="img/14_Optional_features.png" width="600" /> | <img src="img/15_Directory Extension.png" width="650" />|
+
 
 **6. Final Testing & Cleanup**  
 - Changed a user’s phone number and division attribute on-premises → confirmed it synced to Entra ID within the new 2-hour interval  
