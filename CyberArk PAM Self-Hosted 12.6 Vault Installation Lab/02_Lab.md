@@ -1,5 +1,3 @@
----
-
 ## What I Did
 
 ### 1. Prepare the Vault Server Environment
