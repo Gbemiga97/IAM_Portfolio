@@ -63,7 +63,7 @@ $Users = @(
     @{GivenName="Fatima";        Surname="Bello";     SamAccountName="fatima.bello";     UserPrincipalName="fatima.bello@cloud.training";    Path="OU=Employees,$DomainDN";  Title="HR Manager";              Department="HR";     EmployeeID="2003"},
     @{GivenName="Ibrahim";       Surname="Yusuf";     SamAccountName="ibrahim.yusuf";    UserPrincipalName="ibrahim.yusuf@cloud.training";   Path="OU=Employees,$DomainDN";  Title="Marketing Specialist";    Department="Marketing";EmployeeID="2004"},
     
-    # Users OU (main testing pool)
+    # TopLevelUsers OU 
     @{GivenName="John";          Surname="Doe";       SamAccountName="john.doe";         UserPrincipalName="john.doe@cloud.training";        Path="OU=TopLevelUsers,$DomainDN";      Title="Accountant";              Department="Finance";EmployeeID="3001"},
     @{GivenName="Jane";          Surname="Smith";     SamAccountName="jane.smith";       UserPrincipalName="jane.smith@cloud.training";      Path="OU=TopLevelUsers,$DomainDN";      Title="Developer";               Department="IT";     EmployeeID="3002"},
     @{GivenName="Michael";       Surname="Chen";      SamAccountName="michael.chen";      UserPrincipalName="michael.chen@cloud.training";     Path="OU=TopLevelUsers,$DomainDN";      Title="Sales Rep";               Department="Sales";  EmployeeID="3003"},
@@ -106,3 +106,25 @@ Write-Host "`n=== Bulk creation completed! ===" -ForegroundColor Green
 Write-Host "12 users created across 3 OUs"
 Write-Host "3 security groups created and populated"
 Write-Host "Ready for Entra Connect synchronization scoping to OU=TopLevelUsers,$DomainDN"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
