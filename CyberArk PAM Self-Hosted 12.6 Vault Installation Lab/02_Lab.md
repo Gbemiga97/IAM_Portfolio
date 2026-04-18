@@ -62,6 +62,10 @@ I navigated to the `Server` folder in the installation package and right-clicked
 
 **Security Tip**: Store keys securely after install — never leave them on the server long-term.
 
+|  Operator CD path  | RCA Configuration | 
+|------|--------|
+| <img src="img/07_OperatorCD-path.png" width="350" />  | <img src="img/08_RCA_Configuration.png" width="350" />  | 
+
 ---
 
 ### 5. Harden the Server and Complete Installation
@@ -76,6 +80,11 @@ I navigated to the `Server` folder in the installation package and right-clicked
 - Clicked **Finish**.
 
 *Screenshot description: Built-in Users Passwords screen with Master and Administrator fields.*
+
+|  Set strong passwords for built-in users | RCA Configuration | 
+|------|--------|
+| <img src="img/09_Set_strong passwords_for built-in_users.png" width="350" />  | <img src="img/08_RCA_Configuration.png" width="350" />  | 
+
 
 **Post-Install Actions**:
 - Restarted the server.
