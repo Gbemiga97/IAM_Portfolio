@@ -33,7 +33,10 @@ I navigated to the `Server` folder in the installation package and right-clicked
 - Accepted the license agreement.
 - Entered my name and organization details.
 
-*Screenshot description: Initial CyberArk Digital Vault Setup window with Install button highlighted.*
+*Screenshot description: Initial CyberArk Digital Vault Setup window with license agreement and the Company name.*
+|  License accepted   | Company name | 
+|------|--------|
+| <img src="img/03_License_accepted.png" width="350" />  | <img src="img/04_Company_name.png" width="350" />  | 
 
 ---
 
@@ -44,6 +47,9 @@ I navigated to the `Server` folder in the installation package and right-clicked
 - Provided the path to the license file (`.xml`).
 
 *Screenshot description: Vault Installation Mode screen with Standalone option selected.*
+|  Standalone vaut selected   | License path | 
+|------|--------|
+| <img src="img/05_Standalone_Vault.png" width="350" />  | <img src="img/06_License_path.png" width="350" />  | 
 
 ---
 
