@@ -18,9 +18,9 @@ I started with a fresh Windows Server installation and performed these critical 
 
 *Screenshot description: Network adapter properties showing only TCP/IPv4 enabled and unnecessary components uninstalled.*
 
-|  Customized Settings  | Installing the required components | 
+|  Unselect all other protocols   | IPv Configuration | 
 |------|--------|
-| <img src="img/08_Cusztomized_Config.png" width="650" />  | <img src="img/09_Required_Components.png" width="650" />  | 
+| <img src="img/01_IPV4.png" width="350" />  | <img src="img/02_IPV4_config.png" width="350" />  | 
 
 
 ---
