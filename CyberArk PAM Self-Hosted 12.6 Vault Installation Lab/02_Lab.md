@@ -18,6 +18,11 @@ I started with a fresh Windows Server installation and performed these critical 
 
 *Screenshot description: Network adapter properties showing only TCP/IPv4 enabled and unnecessary components uninstalled.*
 
+|  Customized Settings  | Installing the required components | 
+|------|--------|
+| <img src="img/08_Cusztomized_Config.png" width="650" />  | <img src="img/09_Required_Components.png" width="650" />  | 
+
+
 ---
 
 ### 2. Launch the Vault Installation Wizard
