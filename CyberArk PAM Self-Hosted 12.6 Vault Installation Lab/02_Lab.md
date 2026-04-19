@@ -109,9 +109,9 @@ I navigated to the `Server` folder in the installation package and right-clicked
 
 The Vault was now operational as the secure core of my PAM environment!
 
-|  Operator CD path  | RCA Configuration | 
+|  PrivateArk Client Installation  | Logged In to the Vault | 
 |------|--------|
-| <img src="img/07_OperatorCD-path.png" width="350" />  | <img src="img/08_RCA_Configuration.png" width="350" />  | 
+| <img src="img/15_PrivateArk_client_installation.png" width="350" />  | <img src="img/16_Vault_logon.png" width="350" />  | 
 
 
 ---
