@@ -96,6 +96,9 @@ I navigated to the `Server` folder in the installation package and right-clicked
   - PrivateArk Remote Control Agent (if enabled)
 - Opened **PrivateArk Server Management Console** from the Start menu and confirmed the firewall message: "ITAFW001I Firewall is open for client communication."
 
+|  PrivateArk Components Running | CyberArk Notification and Logic Container Running | PrivateArk Server Management |
+|------|--------|--------|
+| <img src="img/12_PrivateArk_Running.png" width="350" />  | <img src="img/13_CyberArk_Running.png" width="350" />  | <img src="img/14_PrivateArk_Server_Management.png" width="350" /> |
 
 ---
 
@@ -105,6 +108,11 @@ I navigated to the `Server` folder in the installation package and right-clicked
 - Checked logs in `Server\Logs\VaultConfiguration.log` for any warnings.
 
 The Vault was now operational as the secure core of my PAM environment!
+
+|  Operator CD path  | RCA Configuration | 
+|------|--------|
+| <img src="img/07_OperatorCD-path.png" width="350" />  | <img src="img/08_RCA_Configuration.png" width="350" />  | 
+
 
 ---
 
