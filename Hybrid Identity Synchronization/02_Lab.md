@@ -110,11 +110,9 @@ I also simulated a common issue by creating a user with a space in the UPN (“F
 - Verified Seamless SSO worked by signing into the Microsoft 365 portal from a test client VM  
 - Took snapshots in VMware before and after major changes (lifesaver for labs!)  
 
-| Iniated a Sync | Monitored through the Synchronization Service Manager |
-|------|--------|
-| <img src="img/17_Initiate_The_Sync.png" width="750" />  | <img src="img/18_Monitoring.png" width="650" />  | 
-| <p align="center" > **Sync Status in Entra Admin Center** <p/> | <p align="center" > **Synced Users** <p/> | 
-| <img src="img/19_Sync_Satus.png" width="650" />  | <img src="img/20_Synced_Users.png" width="650" /> | 
+| Previous State of the User | Changing the number In Active Directory | After Changing the Number |
+|------|--------|--------|
+| <img src="img/25_Before_changing_Number.png" width="750" />  | <img src="img/26_Changing_Number_In_AD.png" width="650" /> | <img src="img/27_After_changing_Number.png" width="750" />  | 
 
 
 
