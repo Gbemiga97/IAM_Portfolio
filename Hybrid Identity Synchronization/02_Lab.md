@@ -106,9 +106,17 @@ I also simulated a common issue by creating a user with a space in the UPN (“F
 
 
 **6. Final Testing & Cleanup**  
-- Changed a user’s phone number and division attribute on-premises → confirmed it synced to Entra ID within the new 2-hour interval  
+- Changed a user’s phone number on-premises → confirmed it synced to Entra ID within the new 2-hour interval  
 - Verified Seamless SSO worked by signing into the Microsoft 365 portal from a test client VM  
 - Took snapshots in VMware before and after major changes (lifesaver for labs!)  
+
+| Iniated a Sync | Monitored through the Synchronization Service Manager |
+|------|--------|
+| <img src="img/17_Initiate_The_Sync.png" width="750" />  | <img src="img/18_Monitoring.png" width="650" />  | 
+| <p align="center" > **Sync Status in Entra Admin Center** <p/> | <p align="center" > **Synced Users** <p/> | 
+| <img src="img/19_Sync_Satus.png" width="650" />  | <img src="img/20_Synced_Users.png" width="650" /> | 
+
+
 
 **Key Takeaways**  
 This project gave me real confidence in hybrid identity management. I now fully understand:  
