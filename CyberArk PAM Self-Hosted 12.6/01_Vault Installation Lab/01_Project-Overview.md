@@ -28,5 +28,3 @@ This lab walks through installing a standalone CyberArk Digital Vault (the heart
   - Administrator access to the server.
   - Backup of any existing data (this is a clean install).
   - Optional: Hardware Security Module (HSM) client if using external key storage.
-
-This setup gives you a fully functional self-hosted CyberArk PAM Vault ready for adding components like PVWA, CPM, and PSM. Test access with the built-in Administrator user and explore the PrivateArk Client for Safe creation and user management next!
