@@ -9,11 +9,10 @@ I created a new VM in VMware Workstation Pro:
 - Installed the latest Windows updates.  
 - Enabled Remote Desktop for easy management.
 - 
-| Installing the Active Directory Domain Services role via Server Manager | Promoting the Active Directory Domain Services role via Server Manager | DC01 powered on and healthy |
+| Setting a static IPV4 | Domain Joined | Verified the Server in DC01 |
 |------|--------|--------|
-| <img src="img/01_AD_install.png" width="650"  />  | <img src="img/02_promoting_AD.png" width="300" />  | <img src="img/03_Server_Dashboard.png" width="650" /> |
-| <p align="center" > **Bulk Users Creation** <p/> | <p align="center" > **Users Created in the Admin OU** <p/> | <p align="center" > **Users Created in the TopLevelUsers OU** <p/> |
-| <img src="img/04_Bulk_Users_Creation.png" width="650" />  | <img src="img/05_Admins_OU.png" width="600" /> | <img src="img/07_TopLevelUsers_OU.png" width="600" />|
+| <img src="img/01_Static_IPV4.png" width="650"  />  | <img src="img/02_Domain_joined.png" width="650" />  | <img src="img/03_Verification.png" width="650" /> |
+
 
 **2. Prepared the Current Server (DC01)**  
 On **DC01** (current active Entra Connect server):  
