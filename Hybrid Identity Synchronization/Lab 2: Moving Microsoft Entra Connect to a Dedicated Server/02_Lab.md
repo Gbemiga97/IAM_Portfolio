@@ -21,6 +21,10 @@ On **DC01** (current active Entra Connect server):
 - Exported the full configuration settings to a JSON file (saved to a network share accessible from SYNC01).  
 - (Optional but recommended) Updated Entra Connect to the latest version first.
 
+| Selected the View Configuraton | Exported the Configuration from DC01 | 
+|------|--------|
+| <img src="img/04_Tasks.png" width="650"  />  | <img src="img/05_Export-Config_from-DC01.png" width="650" />
+
 **3. Installed Entra Connect on SYNC01 in Staging Mode**  
 On the new **SYNC01** server:  
 - Downloaded the latest Microsoft Entra Connect installer from the Microsoft Entra admin center.  
