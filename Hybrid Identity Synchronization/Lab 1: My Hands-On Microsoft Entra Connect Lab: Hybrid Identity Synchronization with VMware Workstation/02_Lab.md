@@ -13,7 +13,7 @@ I created a new VM in VMware Workstation, installed Windows Server 2022, and con
 
 | Installing the Active Directory Domain Services role via Server Manager | Promoting the Active Directory Domain Services role via Server Manager | DC01 powered on and healthy |
 |------|--------|--------|
-| <img src="img/01_Ad_install.png" width="650"  />  | <img src="img/02_promoting_AD.png" width="300" />  | <img src="img/03_Server_Dashboard.png" width="650" /> |
+| <img src="img/01_AD_install.png" width="650"  />  | <img src="img/02_promoting_AD.png" width="300" />  | <img src="img/03_Server_Dashboard.png" width="650" /> |
 | <p align="center" > **Bulk Users Creation** <p/> | <p align="center" > **Users Created in the Admin OU** <p/> | <p align="center" > **Users Created in the TopLevelUsers OU** <p/> |
 | <img src="img/04_Bulk_Users_Creation.png" width="650" />  | <img src="img/05_Admins_OU.png" width="600" /> | <img src="img/07_TopLevelUsers_OU.png" width="600" />|
 
