@@ -55,6 +55,11 @@ On **SYNC01**:
 - Used the export preview feature (or CSExportAnalyzer) to verify that expected changes matched what the old server would do.  
 - Ran my verification scripts to confirm users, groups, and attributes looked correct in the metaverse.
 
+| Ran Full Import and Full Synchronization | Confirmed users appeared in the Metaverse | 
+|------|--------|
+| <img src="img/10_Full-Sync.png" width="650"  />  | <img src="img/11_MetaVerse-Confirmation.png" width="650" />
+
+
 **5. Switched Over (Promote SYNC01 to Active)**  
 Once I was happy with the staging results:  
 
