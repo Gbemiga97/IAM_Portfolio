@@ -135,8 +135,8 @@ cd C:\JML-Practice
       📸 **Screenshots of Permissions requested and the expected output:**  
 
    <div>
-            <img width="300" height="791" alt="Screenshot 2025-11-11 150023" src="https://github.com/user-attachments/assets/adfa5dc5-17a6-441a-94dd-70ef838cb3d6" />
-            <img width="600" height="264" alt="Screenshot 2025-11-11 161243" src="https://github.com/user-attachments/assets/4115f7d1-6343-4a00-8648-6aa4f07f991e" />
+            <img width="300"  alt="Screenshot 2025-11-11 150023" src="https://github.com/user-attachments/assets/adfa5dc5-17a6-441a-94dd-70ef838cb3d6" />
+            <img width="600"  alt="Screenshot 2025-11-11 161243" src="https://github.com/user-attachments/assets/4115f7d1-6343-4a00-8648-6aa4f07f991e" />
      </div>  
   
 3. Create multiple groups
@@ -152,8 +152,8 @@ cd C:\JML-Practice
      ```
       📸 **Screenshots of groups created in PowerShell and Entra Portal:**
        <div>
-           <img width="450" height="579" alt="Screenshot 2025-11-17 183530" src="https://github.com/user-attachments/assets/27b24bb0-a4ed-4e15-8965-c9ce11e33d38" />
-            <img width="450" height="748" alt="Screenshot 2025-11-17 183952" src="https://github.com/user-attachments/assets/110c0c2b-5c3d-4eb1-8217-9cd8b796a1b5" />
+           <img width="450"  alt="Screenshot 2025-11-17 183530" src="https://github.com/user-attachments/assets/27b24bb0-a4ed-4e15-8965-c9ce11e33d38" />
+            <img width="450"  alt="Screenshot 2025-11-17 183952" src="https://github.com/user-attachments/assets/110c0c2b-5c3d-4eb1-8217-9cd8b796a1b5" />
        </div>
        
 4. Create bulk users and disable joiners' accounts, e.g `alice.joiner@Cousera669.onmicrosoft.com`
@@ -197,10 +197,10 @@ cd C:\JML-Practice
    📸 **Screenshots of users created in PowerShell and Entra Portal, and account disabled for joiners and enabled for other users:**
     
       <div>
-        <img width="450" height="967" alt="Screenshot 2025-11-18 175341" src="https://github.com/user-attachments/assets/b520c576-46dc-474e-bca5-739f892590c8" />
-        <img width="450" height="889" alt="Screenshot 2025-11-18 175437" src="https://github.com/user-attachments/assets/7c72daf7-15f7-4d6f-b3a3-c8c3583515b8" />
-        <img width="450" height="739" alt="Screenshot 2025-11-18 175631" src="https://github.com/user-attachments/assets/64c293de-4137-4faa-b8fb-d7eea20c0ca4" />
-        <img width="450" height="740" alt="Screenshot 2025-11-18 175700" src="https://github.com/user-attachments/assets/1c6e3baf-f945-43a3-9ea9-7e0efaf9b5b3" />
+        <img width="450"  alt="Screenshot 2025-11-18 175341" src="https://github.com/user-attachments/assets/b520c576-46dc-474e-bca5-739f892590c8" />
+        <img width="450"  alt="Screenshot 2025-11-18 175437" src="https://github.com/user-attachments/assets/7c72daf7-15f7-4d6f-b3a3-c8c3583515b8" />
+        <img width="450"  alt="Screenshot 2025-11-18 175631" src="https://github.com/user-attachments/assets/64c293de-4137-4faa-b8fb-d7eea20c0ca4" />
+        <img width="450"  alt="Screenshot 2025-11-18 175700" src="https://github.com/user-attachments/assets/1c6e3baf-f945-43a3-9ea9-7e0efaf9b5b3" />
       </div>
        
 5. Set JML attributes for the users
@@ -221,15 +221,15 @@ cd C:\JML-Practice
     📸 **Screenshot of JML attributes output for the users:**
 
     <div>
-        <img width="450" height="488" alt="Screenshot 2025-11-18 180355" src="https://github.com/user-attachments/assets/60307571-ce02-46fa-8711-6ed8b7c2a0fe" />
-        <img width="450" height="878" alt="Screenshot 2025-11-18 100843" src="https://github.com/user-attachments/assets/09d362cc-585f-47dd-892d-0add5df71877" />
-        <img width="450" height="859" alt="Screenshot 2025-11-18 100915" src="https://github.com/user-attachments/assets/2f30c74d-c551-4592-a4a5-5a7ca12eebe7" />
-        <img width="450" height="161" alt="Screenshot 2025-11-18 101453" src="https://github.com/user-attachments/assets/8a2a2e87-af7a-4822-b67d-59565ee88fb8" />
+        <img width="450"  alt="Screenshot 2025-11-18 180355" src="https://github.com/user-attachments/assets/60307571-ce02-46fa-8711-6ed8b7c2a0fe" />
+        <img width="450"  alt="Screenshot 2025-11-18 100843" src="https://github.com/user-attachments/assets/09d362cc-585f-47dd-892d-0add5df71877" />
+        <img width="450"  alt="Screenshot 2025-11-18 100915" src="https://github.com/user-attachments/assets/2f30c74d-c551-4592-a4a5-5a7ca12eebe7" />
+        <img width="450"  alt="Screenshot 2025-11-18 101453" src="https://github.com/user-attachments/assets/8a2a2e87-af7a-4822-b67d-59565ee88fb8" />
     </div>
 6. Assign joiners a Manager so that the onboard workflow can generate TAP and send the Manager an email, e.g `hr.manager@Cousera669.onmicrosoft.com`
    <div>
-       <img width="450" height="848" alt="Screenshot 2025-11-18 180928" src="https://github.com/user-attachments/assets/d2c02f33-ee03-405d-a80f-d0a382263a68" />
-       <img width="450" height="807" alt="Screenshot 2025-11-18 181729" src="https://github.com/user-attachments/assets/2d2a10c8-4532-4b3c-8335-379b5bbef1f4" />
+       <img width="450" alt="Screenshot 2025-11-18 180928" src="https://github.com/user-attachments/assets/d2c02f33-ee03-405d-a80f-d0a382263a68" />
+       <img width="450"  alt="Screenshot 2025-11-18 181729" src="https://github.com/user-attachments/assets/2d2a10c8-4532-4b3c-8335-379b5bbef1f4" />
    </div>
 ---
 
@@ -263,10 +263,10 @@ Go to: **https://entra.microsoft.com** → **Identity Governance** → **Lifecyc
 📸 **Screenshot of the Workflow summary, the users in scope, and processed users:**
 
   <div>
-      <img width="450" height="892" alt="Screenshot 2025-11-20 111907" src="https://github.com/user-attachments/assets/b468360e-a82e-4f78-a6da-7341623fe054" />
-      <img width="450" height="578" alt="Screenshot 2025-11-20 113217" src="https://github.com/user-attachments/assets/0a93b4ad-5362-47e9-adc4-8e6b35e5629a" />
-      <img width="450" height="596" alt="Screenshot 2025-11-20 154249" src="https://github.com/user-attachments/assets/b5291c03-5d65-4afd-90a9-b254d2c8acb2" />
-      <img width="450" height="625" alt="Screenshot 2025-11-20 154217" src="https://github.com/user-attachments/assets/65514c9e-583b-44f3-b919-083bb43c5b3a" />
+      <img width="450"  alt="Screenshot 2025-11-20 111907" src="https://github.com/user-attachments/assets/b468360e-a82e-4f78-a6da-7341623fe054" />
+      <img width="450"  alt="Screenshot 2025-11-20 113217" src="https://github.com/user-attachments/assets/0a93b4ad-5362-47e9-adc4-8e6b35e5629a" />
+      <img width="450"  alt="Screenshot 2025-11-20 154249" src="https://github.com/user-attachments/assets/b5291c03-5d65-4afd-90a9-b254d2c8acb2" />
+      <img width="450"  alt="Screenshot 2025-11-20 154217" src="https://github.com/user-attachments/assets/65514c9e-583b-44f3-b919-083bb43c5b3a" />
   </div>
 
 ---
@@ -294,9 +294,9 @@ Update-MgUser -UserId "eve.mover@Cousera669.onmicrosoft.com" -department "Suppor
 
 📸 **Screenshot of the Workflow summary, the user in scope, and processed user:**
 <div>
-   <img width="300" height="884" alt="Screenshot 2025-11-21 170500" src="https://github.com/user-attachments/assets/edd66d2c-eb97-479c-b265-852474b0cda8" />
-     <img width="350" height="471" alt="Screenshot 2025-11-21 170251" src="https://github.com/user-attachments/assets/055b188e-27c6-41c3-a705-76a2d0440895" />
-    <img width="350" height="562" alt="Screenshot 2025-11-21 172029" src="https://github.com/user-attachments/assets/d3024f26-f108-4e1c-9e00-f97e91ac3b8d" />
+   <img width="300"  alt="Screenshot 2025-11-21 170500" src="https://github.com/user-attachments/assets/edd66d2c-eb97-479c-b265-852474b0cda8" />
+     <img width="350"  alt="Screenshot 2025-11-21 170251" src="https://github.com/user-attachments/assets/055b188e-27c6-41c3-a705-76a2d0440895" />
+    <img width="350"  alt="Screenshot 2025-11-21 172029" src="https://github.com/user-attachments/assets/d3024f26-f108-4e1c-9e00-f97e91ac3b8d" />
 </div>
 
 ---
@@ -333,10 +333,10 @@ Get-MgUser -UserId "charlie.leaver@Cousera669.onmicrosoft.com" -Property Employe
 📸 **Screenshot of the Workflow summary, the updated attribute, the user in scope, and processed user:**
 
 <div>
-    <img width="450" height="857" alt="Screenshot 2025-11-21 184623" src="https://github.com/user-attachments/assets/0b4a2796-b082-4552-aefc-e4ddbf978bcb" />
-    <img width="450" height="270" alt="Screenshot 2025-11-21 192033" src="https://github.com/user-attachments/assets/bccba82f-2815-4be3-9e1d-cd5ae224cc19" />   
-    <img width="450" height="462" alt="Screenshot 2025-11-22 114214" src="https://github.com/user-attachments/assets/7e898c8c-30aa-4824-8128-4e58312573b4" />
-    <img width="450" height="571" alt="Screenshot 2025-11-22 122218" src="https://github.com/user-attachments/assets/a220453e-a139-4381-8c38-8f39d41e585f" />
+    <img width="450"  alt="Screenshot 2025-11-21 184623" src="https://github.com/user-attachments/assets/0b4a2796-b082-4552-aefc-e4ddbf978bcb" />
+    <img width="450"  alt="Screenshot 2025-11-21 192033" src="https://github.com/user-attachments/assets/bccba82f-2815-4be3-9e1d-cd5ae224cc19" />   
+    <img width="450"  alt="Screenshot 2025-11-22 114214" src="https://github.com/user-attachments/assets/7e898c8c-30aa-4824-8128-4e58312573b4" />
+    <img width="450"  alt="Screenshot 2025-11-22 122218" src="https://github.com/user-attachments/assets/a220453e-a139-4381-8c38-8f39d41e585f" />
 
 </div>
 
