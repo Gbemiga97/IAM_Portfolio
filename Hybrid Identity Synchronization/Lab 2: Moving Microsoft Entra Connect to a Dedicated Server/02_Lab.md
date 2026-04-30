@@ -50,7 +50,8 @@ The new server now runs full imports and synchronizations internally but does **
 **4. Verified the Staging Server**  
 On **SYNC01**:  
 - Opened **Synchronization Service Manager** (`miisclient.exe`).  
-- Performed manual **Full Import** and **Full Synchronization** on the AD connector, then on the Microsoft Entra ID connector.  
+- Performed manual **Full Import** and **Full Synchronization** on the AD connector, then on the Microsoft Entra ID connector.
+- Verified the users appear in the Metaverse Search and confirmed they appear with the correct attributes (employeeID, department, UPN, etc.).
 - Used the export preview feature (or CSExportAnalyzer) to verify that expected changes matched what the old server would do.  
 - Ran my verification scripts to confirm users, groups, and attributes looked correct in the metaverse.
 
