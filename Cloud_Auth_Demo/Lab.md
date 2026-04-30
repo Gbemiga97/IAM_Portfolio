@@ -21,7 +21,7 @@ The adapted "Cloud Auth Demo" project focuses on configuring Microsoft Entra ID 
 
 📸 Screenshot of the user:
 <div>
-  <img width="400" height="627" alt="Screenshot 2025-12-01 151921" src="https://github.com/user-attachments/assets/9a56baa2-f57d-47a3-a717-b26c37df6e47" />
+  <img width="400"  alt="Screenshot 2025-12-01 151921" src="https://github.com/user-attachments/assets/9a56baa2-f57d-47a3-a717-b26c37df6e47" />
 </div>
 
 
@@ -43,17 +43,17 @@ Use the UI to add and customize apps, focusing on gallery integrations where pos
 📸 Screenshot of the configuration:
 
 <div>
-  <img width="320" height="873" alt="Screenshot 2025-12-07 151654" src="https://github.com/user-attachments/assets/2fd8af12-c7e0-4651-a6f3-dda52cf4731f" />
-  <img width="320" height="364" alt="Screenshot 2025-12-04 163334" src="https://github.com/user-attachments/assets/2fd2d9d0-1a31-4c67-8229-111bf59b2104" />
-<img width="320" height="705" alt="Screenshot 2025-12-06 185558" src="https://github.com/user-attachments/assets/1c927f41-7371-49e2-9060-6013982c25f3" />
-<img width="320" height="510" alt="Screenshot 2025-12-07 152510" src="https://github.com/user-attachments/assets/d2840e63-0e7f-46bc-af99-766bb15be580" />
-  <img width="320" height="441" alt="Screenshot 2025-12-07 152333" src="https://github.com/user-attachments/assets/1ddd4605-2376-49f2-a1db-2ade86b98419" />
- <img width="320" height="745" alt="Screenshot 2025-12-07 154602" src="https://github.com/user-attachments/assets/056ff0cd-0909-43df-b1fd-474bbc50ab98" />
-<img width="320" height="603" alt="Screenshot 2025-12-06 190939" src="https://github.com/user-attachments/assets/cef615f6-0d54-4af3-8ca5-302a07b7c851" />
-<img width="320" height="759" alt="Screenshot 2025-12-06 190245" src="https://github.com/user-attachments/assets/fb5480ac-e3c2-49ed-a923-e01bc45253c0" />
-<img width="320" height="892" alt="Screenshot 2025-12-07 155353" src="https://github.com/user-attachments/assets/492e8f5a-bd3d-47a6-b15e-65fa58404c34" />
-<img width="320" height="866" alt="Screenshot 2025-12-07 155416" src="https://github.com/user-attachments/assets/1ed70fde-df75-4ad9-9099-62214280c84d" />
-<img width="640" height="786" alt="Screenshot 2025-12-07 155448" src="https://github.com/user-attachments/assets/a1c61eef-d75a-4107-a1bc-71b1d75d4a9f" />
+  <img width="320"  alt="Screenshot 2025-12-07 151654" src="https://github.com/user-attachments/assets/2fd8af12-c7e0-4651-a6f3-dda52cf4731f" />
+  <img width="320"  alt="Screenshot 2025-12-04 163334" src="https://github.com/user-attachments/assets/2fd2d9d0-1a31-4c67-8229-111bf59b2104" />
+<img width="320"  alt="Screenshot 2025-12-06 185558" src="https://github.com/user-attachments/assets/1c927f41-7371-49e2-9060-6013982c25f3" />
+<img width="320"  alt="Screenshot 2025-12-07 152510" src="https://github.com/user-attachments/assets/d2840e63-0e7f-46bc-af99-766bb15be580" />
+  <img width="320"  alt="Screenshot 2025-12-07 152333" src="https://github.com/user-attachments/assets/1ddd4605-2376-49f2-a1db-2ade86b98419" />
+ <img width="320"  alt="Screenshot 2025-12-07 154602" src="https://github.com/user-attachments/assets/056ff0cd-0909-43df-b1fd-474bbc50ab98" />
+<img width="320"  alt="Screenshot 2025-12-06 190939" src="https://github.com/user-attachments/assets/cef615f6-0d54-4af3-8ca5-302a07b7c851" />
+<img width="320"  alt="Screenshot 2025-12-06 190245" src="https://github.com/user-attachments/assets/fb5480ac-e3c2-49ed-a923-e01bc45253c0" />
+<img width="320"  alt="Screenshot 2025-12-07 155353" src="https://github.com/user-attachments/assets/492e8f5a-bd3d-47a6-b15e-65fa58404c34" />
+<img width="320"  alt="Screenshot 2025-12-07 155416" src="https://github.com/user-attachments/assets/1ed70fde-df75-4ad9-9099-62214280c84d" />
+<img width="640" alt="Screenshot 2025-12-07 155448" src="https://github.com/user-attachments/assets/a1c61eef-d75a-4107-a1bc-71b1d75d4a9f" />
 </div>
 
 ##### OIDC Configuration (Modern Login with Gallery App)
@@ -64,14 +64,14 @@ Use the UI to add and customize apps, focusing on gallery integrations where pos
 📸 Screenshot of the configuration:
 
 <div>
-  <img width="640" height="1174" alt="oidc-sso-configuration" src="https://github.com/user-attachments/assets/0f5553fa-84ba-4ef2-9585-5ee508db27e6" />
-<img width="320" height="725" alt="Screenshot 2025-12-07 175933" src="https://github.com/user-attachments/assets/80b65951-9ba8-4ecf-8c92-d0c70a2aba03" />
-<img width="320" height="669" alt="Screenshot 2025-12-07 180018" src="https://github.com/user-attachments/assets/a9e62188-a39b-4c47-bbc2-26d503d9a8a8" />
-<img width="320" height="417" alt="Screenshot 2025-12-08 171525" src="https://github.com/user-attachments/assets/952c2732-6c96-4b35-bc93-e91fff1c30bc" />
-<img width="320" height="859" alt="Screenshot 2025-12-08 173533" src="https://github.com/user-attachments/assets/03bf8ab7-39c0-40aa-985d-84f690b7091c" />
-<img width="320" height="647" alt="Screenshot 2025-12-08 173558" src="https://github.com/user-attachments/assets/e83c2b02-be9e-460f-bd1a-6290e0cadfe6" />
-<img width="320" height="696" alt="Screenshot 2025-12-08 173721" src="https://github.com/user-attachments/assets/ece50bb0-0f15-444e-9fdf-42627bcafc14" />
-<img width="320" height="724" alt="Screenshot 2025-12-11 160732" src="https://github.com/user-attachments/assets/92ae8f84-125f-438e-95fd-33dd181686b3" />
+  <img width="640"  alt="oidc-sso-configuration" src="https://github.com/user-attachments/assets/0f5553fa-84ba-4ef2-9585-5ee508db27e6" />
+<img width="320"  alt="Screenshot 2025-12-07 175933" src="https://github.com/user-attachments/assets/80b65951-9ba8-4ecf-8c92-d0c70a2aba03" />
+<img width="320"  alt="Screenshot 2025-12-07 180018" src="https://github.com/user-attachments/assets/a9e62188-a39b-4c47-bbc2-26d503d9a8a8" />
+<img width="320"  alt="Screenshot 2025-12-08 171525" src="https://github.com/user-attachments/assets/952c2732-6c96-4b35-bc93-e91fff1c30bc" />
+<img width="320" alt="Screenshot 2025-12-08 173533" src="https://github.com/user-attachments/assets/03bf8ab7-39c0-40aa-985d-84f690b7091c" />
+<img width="320"  alt="Screenshot 2025-12-08 173558" src="https://github.com/user-attachments/assets/e83c2b02-be9e-460f-bd1a-6290e0cadfe6" />
+<img width="320"  alt="Screenshot 2025-12-08 173721" src="https://github.com/user-attachments/assets/ece50bb0-0f15-444e-9fdf-42627bcafc14" />
+<img width="320"  alt="Screenshot 2025-12-11 160732" src="https://github.com/user-attachments/assets/92ae8f84-125f-438e-95fd-33dd181686b3" />
 </div>
 
 
@@ -104,21 +104,21 @@ Use the UI to add and customize apps, focusing on gallery integrations where pos
 📸 Screenshot of the configuration:
 
 <div>
-  <img width="320" height="639" alt="Screenshot 2025-12-14 165710" src="https://github.com/user-attachments/assets/30d35684-2c06-4807-b0f1-12b7e3ec6597" />
-<img width="320" height="401" alt="Screenshot 2025-12-15 132401" src="https://github.com/user-attachments/assets/6f34b6a5-8f90-4269-8ca4-fb0ca4e6fe97" />
-  <img width="320" height="645" alt="Screenshot 2025-12-14 170734" src="https://github.com/user-attachments/assets/f17b93cb-2eff-4026-9a97-76c409e62e18" />
-<img width="320" height="415" alt="Screenshot 2025-12-14 170746" src="https://github.com/user-attachments/assets/c7f7acfb-55ba-4091-b6aa-a7ecda894b9b" />
-  <img width="320" height="687" alt="Screenshot 2025-12-14 170923" src="https://github.com/user-attachments/assets/76238b15-d31b-4311-be8d-6a1524f57439" />
-  <img width="320" height="495" alt="Screenshot 2025-12-15 165102" src="https://github.com/user-attachments/assets/84cf5d9e-af41-45cc-8f78-bb2f0ae448df" />
-  <img width="320" height="668" alt="Screenshot 2025-12-15 135443" src="https://github.com/user-attachments/assets/e7a8f381-460c-4132-af6e-dbeeba4fb1b0" />
-  <img width="320" height="728" alt="Screenshot 2025-12-15 153034" src="https://github.com/user-attachments/assets/010f482a-f733-41a7-b0cf-39d6ee9f0b77" />
-<img width="320" height="764" alt="Screenshot 2025-12-15 153049" src="https://github.com/user-attachments/assets/7a13f6f2-ed51-4c55-8525-60129b22cbc8" />
+  <img width="320"  alt="Screenshot 2025-12-14 165710" src="https://github.com/user-attachments/assets/30d35684-2c06-4807-b0f1-12b7e3ec6597" />
+<img width="320" alt="Screenshot 2025-12-15 132401" src="https://github.com/user-attachments/assets/6f34b6a5-8f90-4269-8ca4-fb0ca4e6fe97" />
+  <img width="320"  alt="Screenshot 2025-12-14 170734" src="https://github.com/user-attachments/assets/f17b93cb-2eff-4026-9a97-76c409e62e18" />
+<img width="320"  alt="Screenshot 2025-12-14 170746" src="https://github.com/user-attachments/assets/c7f7acfb-55ba-4091-b6aa-a7ecda894b9b" />
+  <img width="320"  alt="Screenshot 2025-12-14 170923" src="https://github.com/user-attachments/assets/76238b15-d31b-4311-be8d-6a1524f57439" />
+  <img width="320"  alt="Screenshot 2025-12-15 165102" src="https://github.com/user-attachments/assets/84cf5d9e-af41-45cc-8f78-bb2f0ae448df" />
+  <img width="320"  alt="Screenshot 2025-12-15 135443" src="https://github.com/user-attachments/assets/e7a8f381-460c-4132-af6e-dbeeba4fb1b0" />
+  <img width="320"  alt="Screenshot 2025-12-15 153034" src="https://github.com/user-attachments/assets/010f482a-f733-41a7-b0cf-39d6ee9f0b77" />
+<img width="320"  alt="Screenshot 2025-12-15 153049" src="https://github.com/user-attachments/assets/7a13f6f2-ed51-4c55-8525-60129b22cbc8" />
 
-  <img width="320" height="910" alt="Screenshot 2025-12-15 164612" src="https://github.com/user-attachments/assets/b25ba291-0c36-437d-991a-ea12c6a61c46" />
-<img width="320" height="838" alt="Screenshot 2025-12-15 134508" src="https://github.com/user-attachments/assets/9bc925e0-bd0c-4b68-818e-02e72862c08a" />
-<img width="320" height="1080" alt="Screenshot (223)" src="https://github.com/user-attachments/assets/85806507-b2f8-4d52-ba88-3bff37938ca4" />
-<img width="320" height="554" alt="Screenshot 2025-12-15 152333" src="https://github.com/user-attachments/assets/13f06129-7175-43c0-92d2-a96c4af90817" />
-<img width="640" height="820" alt="Screenshot 2025-12-15 143215" src="https://github.com/user-attachments/assets/c30856f7-c4d0-44e6-b546-50c22bd5eaa8" />
+  <img width="320"  alt="Screenshot 2025-12-15 164612" src="https://github.com/user-attachments/assets/b25ba291-0c36-437d-991a-ea12c6a61c46" />
+<img width="320"  alt="Screenshot 2025-12-15 134508" src="https://github.com/user-attachments/assets/9bc925e0-bd0c-4b68-818e-02e72862c08a" />
+<img width="320"  alt="Screenshot (223)" src="https://github.com/user-attachments/assets/85806507-b2f8-4d52-ba88-3bff37938ca4" />
+<img width="320"  alt="Screenshot 2025-12-15 152333" src="https://github.com/user-attachments/assets/13f06129-7175-43c0-92d2-a96c4af90817" />
+<img width="640"  alt="Screenshot 2025-12-15 143215" src="https://github.com/user-attachments/assets/c30856f7-c4d0-44e6-b546-50c22bd5eaa8" />
 </div>
 
 ##### Comparison Table:
