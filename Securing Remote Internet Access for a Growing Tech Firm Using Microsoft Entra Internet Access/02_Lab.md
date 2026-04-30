@@ -15,10 +15,10 @@ Following the steps below, I will be implementing the solution in my Entra envir
       📸 Screenshots of configurations on Traffic Forwarding
       
       <div>
-      <img width="420" height="608" alt="Screenshot 2026-02-10 145749" src="https://github.com/user-attachments/assets/9c19c7ff-9bed-40e0-aea1-d55ab808d7db" />
-      <img width="420" height="613" alt="Screenshot 2026-02-10 150015" src="https://github.com/user-attachments/assets/20a1942a-9acf-4917-a050-5d38ee03af9d" />
-      <img width="420" height="609" alt="Screenshot 2026-02-10 150050" src="https://github.com/user-attachments/assets/0c12159f-5896-4664-8756-3f00307c652f" />
-      <img width="420" height="597" alt="Screenshot 2026-02-10 150922" src="https://github.com/user-attachments/assets/38e8dea1-9533-491d-8f25-87d88bf7ce01" />
+      <img width="420"  alt="Screenshot 2026-02-10 145749" src="https://github.com/user-attachments/assets/9c19c7ff-9bed-40e0-aea1-d55ab808d7db" />
+      <img width="420"  alt="Screenshot 2026-02-10 150015" src="https://github.com/user-attachments/assets/20a1942a-9acf-4917-a050-5d38ee03af9d" />
+      <img width="420"  alt="Screenshot 2026-02-10 150050" src="https://github.com/user-attachments/assets/0c12159f-5896-4664-8756-3f00307c652f" />
+      <img width="420"  alt="Screenshot 2026-02-10 150922" src="https://github.com/user-attachments/assets/38e8dea1-9533-491d-8f25-87d88bf7ce01" />
       </div>
 
 2. **Install and Verify the Global Secure Access Client (Device Phase)**
@@ -32,12 +32,12 @@ Following the steps below, I will be implementing the solution in my Entra envir
       📸 Screenshots of global secure verification on client device
       
       <div>
-         <img width="420" height="593" alt="Screenshot 2026-02-10 154824" src="https://github.com/user-attachments/assets/69a8f761-6c5c-4340-9d1f-93b5cc28202b" />
-         <img width="420" height="768" alt="Screenshot (23)" src="https://github.com/user-attachments/assets/0db73897-7383-4927-984f-5c43f2e5e461" />
-           <img width="420" height="200" alt="Screenshot 2026-02-12 154209" src="https://github.com/user-attachments/assets/93fd1f84-8f94-46e4-8985-c10f24a37cbd" />
-            <img width="420" height="768" alt="Screenshot (31)" src="https://github.com/user-attachments/assets/5d03c07d-c4e5-487c-85d4-f92300a5b0a7" />
-         <img width="420" height="652" alt="Screenshot 2026-02-12 133357" src="https://github.com/user-attachments/assets/4f02f63b-16af-4fb1-b9e8-351961eb404f" />
-         <img width="420" height="526" alt="Screenshot 2026-02-12 151641" src="https://github.com/user-attachments/assets/8ea888f9-de89-4e5d-b943-481f665fb407" />
+         <img width="420"  alt="Screenshot 2026-02-10 154824" src="https://github.com/user-attachments/assets/69a8f761-6c5c-4340-9d1f-93b5cc28202b" />
+         <img width="420"  alt="Screenshot (23)" src="https://github.com/user-attachments/assets/0db73897-7383-4927-984f-5c43f2e5e461" />
+           <img width="420"  alt="Screenshot 2026-02-12 154209" src="https://github.com/user-attachments/assets/93fd1f84-8f94-46e4-8985-c10f24a37cbd" />
+            <img width="420"  alt="Screenshot (31)" src="https://github.com/user-attachments/assets/5d03c07d-c4e5-487c-85d4-f92300a5b0a7" />
+         <img width="420"  alt="Screenshot 2026-02-12 133357" src="https://github.com/user-attachments/assets/4f02f63b-16af-4fb1-b9e8-351961eb404f" />
+         <img width="420" alt="Screenshot 2026-02-12 151641" src="https://github.com/user-attachments/assets/8ea888f9-de89-4e5d-b943-481f665fb407" />
       </div>
 
 
@@ -57,12 +57,12 @@ Following the steps below, I will be implementing the solution in my Entra envir
       📸 Screenshots of Web Content Filtering Policies
 
      <div>
-         <img width="420" height="607" alt="Screenshot 2026-02-12 162059" src="https://github.com/user-attachments/assets/ea0ec1c2-5f99-40b1-83ff-8779188d7fc5" />
-         <img width="420" height="616" alt="Screenshot 2026-02-12 162333" src="https://github.com/user-attachments/assets/ced68e09-a44b-45ac-b476-bace4b897693" />
-           <img width="420" height="611" alt="Screenshot 2026-02-12 163131" src="https://github.com/user-attachments/assets/5611656e-d540-466f-98f3-9199ff17e2ed" /> 
-         <img width="420" height="619" alt="Screenshot 2026-02-12 163100" src="https://github.com/user-attachments/assets/667b7ec2-b410-4e94-b18a-c0da47e6577d" />
-        <img width="420" height="603" alt="Screenshot 2026-02-12 164037" src="https://github.com/user-attachments/assets/fbe54602-1cb7-4622-a1f7-7a62d58dbc2a" />
-       <img width="420" height="616" alt="Screenshot 2026-02-12 164235" src="https://github.com/user-attachments/assets/ddcad826-d656-4a96-9019-573ee3ceaca2" />
+         <img width="420"  alt="Screenshot 2026-02-12 162059" src="https://github.com/user-attachments/assets/ea0ec1c2-5f99-40b1-83ff-8779188d7fc5" />
+         <img width="420"  alt="Screenshot 2026-02-12 162333" src="https://github.com/user-attachments/assets/ced68e09-a44b-45ac-b476-bace4b897693" />
+           <img width="420"  alt="Screenshot 2026-02-12 163131" src="https://github.com/user-attachments/assets/5611656e-d540-466f-98f3-9199ff17e2ed" /> 
+         <img width="420"  alt="Screenshot 2026-02-12 163100" src="https://github.com/user-attachments/assets/667b7ec2-b410-4e94-b18a-c0da47e6577d" />
+        <img width="420"  alt="Screenshot 2026-02-12 164037" src="https://github.com/user-attachments/assets/fbe54602-1cb7-4622-a1f7-7a62d58dbc2a" />
+       <img width="420"  alt="Screenshot 2026-02-12 164235" src="https://github.com/user-attachments/assets/ddcad826-d656-4a96-9019-573ee3ceaca2" />
     </div>
 
 
@@ -78,12 +78,12 @@ Following the steps below, I will be implementing the solution in my Entra envir
       📸 Screenshots of  Web Content Filtering Verification
    
       <div>
-         <img width="420" height="768" alt="Screenshot (34)" src="https://github.com/user-attachments/assets/de92b6d0-f53d-4145-ade7-06500091aef3" />
-         <img width="420" height="768" alt="Screenshot (35)" src="https://github.com/user-attachments/assets/adea6c26-65fb-4ab4-ab50-85c75b949862" />
-          <img width="420" height="768" alt="Screenshot (39)" src="https://github.com/user-attachments/assets/072b18e7-728f-4ce4-b435-1e91a8801115" />
-         <img width="420" height="768" alt="Screenshot (37)" src="https://github.com/user-attachments/assets/ee843493-1481-43dd-b970-55dd9307877c" />
-         <img width="420" height="768" alt="Screenshot (38)" src="https://github.com/user-attachments/assets/409c47d6-924a-43e2-a5b1-b71eec98a900" />
-         <img width="420" height="768" alt="Screenshot (40)" src="https://github.com/user-attachments/assets/72f9a673-0e40-4b04-8010-191d9357d129" />
+         <img width="420"  alt="Screenshot (34)" src="https://github.com/user-attachments/assets/de92b6d0-f53d-4145-ade7-06500091aef3" />
+         <img width="420"  alt="Screenshot (35)" src="https://github.com/user-attachments/assets/adea6c26-65fb-4ab4-ab50-85c75b949862" />
+          <img width="420"  alt="Screenshot (39)" src="https://github.com/user-attachments/assets/072b18e7-728f-4ce4-b435-1e91a8801115" />
+         <img width="420"  alt="Screenshot (37)" src="https://github.com/user-attachments/assets/ee843493-1481-43dd-b970-55dd9307877c" />
+         <img width="420" alt="Screenshot (38)" src="https://github.com/user-attachments/assets/409c47d6-924a-43e2-a5b1-b71eec98a900" />
+         <img width="420"  alt="Screenshot (40)" src="https://github.com/user-attachments/assets/72f9a673-0e40-4b04-8010-191d9357d129" />
       </div>
  
 6. **Evaluate and Scale (Reflection Phase)**
