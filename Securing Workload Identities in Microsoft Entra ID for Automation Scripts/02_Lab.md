@@ -19,8 +19,8 @@
   
    📸 Screenshot
    
-   <div>
-    <img width="480" height="602" alt="Screenshot 2026-02-24 151936" src="https://github.com/user-attachments/assets/2a5838e6-3c98-429c-b3c1-283703107fc1" />
+   <div >
+    <img width="480" alt="Screenshot 2026-02-24 151936" src="https://github.com/user-attachments/assets/2a5838e6-3c98-429c-b3c1-283703107fc1" />
    </div>  
 
 4. **Create or Identify a Service Principal (App Registration)**  
@@ -35,10 +35,9 @@
     📸 Screenshots
 
    <div>
-      <img width="450" height="426" alt="Screenshot 2026-02-24 153504" src="https://github.com/user-attachments/assets/d3967274-6a18-4b3c-82e6-add9086c582d" />
-      <img width="450" height="545" alt="Screenshot 2026-02-24 153811" src="https://github.com/user-attachments/assets/76c39a1b-0859-4479-a029-e8f23d5433fa" />
-      <img width="450" height="612" alt="Screenshot 2026-02-24 154157" src="https://github.com/user-attachments/assets/58451397-b411-473e-bdc8-fef8519d7eb1" />
-
+      <img width="350"  alt="Screenshot 2026-02-24 153504" src="https://github.com/user-attachments/assets/d3967274-6a18-4b3c-82e6-add9086c582d" />
+      <img width="350"  alt="Screenshot 2026-02-24 153811" src="https://github.com/user-attachments/assets/76c39a1b-0859-4479-a029-e8f23d5433fa" />
+      <img width="350"  alt="Screenshot 2026-02-24 154157" src="https://github.com/user-attachments/assets/58451397-b411-473e-bdc8-fef8519d7eb1" />
    </div>
 
 #### Phase 1: Implement Basic CA Policy
@@ -61,9 +60,9 @@
    📸 Screenshot
 
      <div>
-      <img width="450" height="322" alt="Screenshot 2026-02-24 172336" src="https://github.com/user-attachments/assets/61977876-08d1-41d0-992f-e194f18fb6ad" />
-      <img width="450" height="376" alt="Screenshot 2026-02-24 172537" src="https://github.com/user-attachments/assets/f3d1c6ed-3d22-4a23-a8e0-df31015a9133" />
-      <img width="450" height="488" alt="Screenshot 2026-02-24 173136" src="https://github.com/user-attachments/assets/5d099fdf-0e4b-49bf-903a-fcf37303d38c" />
+      <img width="450"  alt="Screenshot 2026-02-24 172336" src="https://github.com/user-attachments/assets/61977876-08d1-41d0-992f-e194f18fb6ad" />
+      <img width="450" alt="Screenshot 2026-02-24 172537" src="https://github.com/user-attachments/assets/f3d1c6ed-3d22-4a23-a8e0-df31015a9133" />
+      <img width="450"  alt="Screenshot 2026-02-24 173136" src="https://github.com/user-attachments/assets/5d099fdf-0e4b-49bf-903a-fcf37303d38c" />
      </div>  
 
 
@@ -101,11 +100,11 @@ As discussed, tags make this enterprise-ready for TechSolutions growing automati
      📸 Screenshots
 
      <div>
-      <img width="450" height="614" alt="Screenshot 2026-02-26 121753" src="https://github.com/user-attachments/assets/5a9c201a-68de-4b45-bc62-952f8995ade6" />
-      <img width="450" height="522" alt="Screenshot 2026-02-26 124420" src="https://github.com/user-attachments/assets/89e0042f-80b5-4282-914d-c8f41213b491" />
-      <img width="450" height="609" alt="Screenshot 2026-03-12 172133" src="https://github.com/user-attachments/assets/e3359938-0652-4ec8-bc6a-40025c506363" />
-      <img width="450" height="389" alt="Screenshot 2026-03-12 173712" src="https://github.com/user-attachments/assets/4207e37b-2070-40c4-9eef-37fe7fc3d96e" />
-     <img width="450" height="427" alt="Screenshot 2026-02-26 125703" src="https://github.com/user-attachments/assets/3d9f8717-2968-44a8-a873-9fefd80ee21c" />
+      <img width="450"  alt="Screenshot 2026-02-26 121753" src="https://github.com/user-attachments/assets/5a9c201a-68de-4b45-bc62-952f8995ade6" />
+      <img width="450"  alt="Screenshot 2026-02-26 124420" src="https://github.com/user-attachments/assets/89e0042f-80b5-4282-914d-c8f41213b491" />
+      <img width="450" alt="Screenshot 2026-03-12 172133" src="https://github.com/user-attachments/assets/e3359938-0652-4ec8-bc6a-40025c506363" />
+      <img width="450" alt="Screenshot 2026-03-12 173712" src="https://github.com/user-attachments/assets/4207e37b-2070-40c4-9eef-37fe7fc3d96e" />
+     <img width="450" alt="Screenshot 2026-02-26 125703" src="https://github.com/user-attachments/assets/3d9f8717-2968-44a8-a873-9fefd80ee21c" />
      </div> 
       
 3. **Update CA Policy with Filters**  
@@ -116,8 +115,8 @@ As discussed, tags make this enterprise-ready for TechSolutions growing automati
    📸 Screenshots
 
    <div>
-   <img width="480" height="537" alt="Screenshot 2026-03-12 175446" src="https://github.com/user-attachments/assets/21c73425-ca88-4449-8054-1d6c239e7839" />
-   <img width="480" height="613" alt="Screenshot 2026-03-12 175735" src="https://github.com/user-attachments/assets/7ebec007-89fd-4710-8b94-d352f53525c6" />
+   <img width="480"  alt="Screenshot 2026-03-12 175446" src="https://github.com/user-attachments/assets/21c73425-ca88-4449-8054-1d6c239e7839" />
+   <img width="480"  alt="Screenshot 2026-03-12 175735" src="https://github.com/user-attachments/assets/7ebec007-89fd-4710-8b94-d352f53525c6" />
    </div>
    
 #### Phase 3: Testing and Validation (Critical for Success)
