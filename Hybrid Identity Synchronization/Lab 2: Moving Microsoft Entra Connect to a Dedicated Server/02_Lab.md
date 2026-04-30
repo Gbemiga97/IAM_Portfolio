@@ -39,6 +39,14 @@ On the new **SYNC01** server:
 
 The new server now runs full imports and synchronizations internally but does **not** export any changes to Entra ID or on-premises AD (perfect for safe testing).
 
+
+| Imported the Configuration to SYNC01 | Signed in with my domain account | 
+|------|--------|
+| <img src="img/06_Import-Config-to-SYC01.png" width="650"  />  | <img src="img/07_Sign-in.png" width="650" />
+| <p align="center"> **Enabled Staging Mode** </p> | <p align="center"> **Installation summary** </p> | 
+| <img src="img/08_Install.png" width="650"  />  | <img src="img/09_Configuration-summary.png" width="650" />
+
+
 **4. Verified the Staging Server**  
 On **SYNC01**:  
 - Opened **Synchronization Service Manager** (`miisclient.exe`).  
