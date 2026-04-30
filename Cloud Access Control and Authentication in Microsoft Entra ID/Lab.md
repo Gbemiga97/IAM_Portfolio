@@ -75,15 +75,15 @@ I was brought in as a Microsoft Entra ID Administrator to strengthen authenticat
 📸 **Screenshots:** 
 
 <div>
-<img width="300" height="400" alt="Screenshot 2025-10-23 131538" src="https://github.com/user-attachments/assets/b78c491c-08ca-4cb7-8a9d-44bbebcf0085" />
-<img width="300" height="400" alt="Screenshot 2025-10-23 132156" src="https://github.com/user-attachments/assets/d5905b48-aa9d-4eab-aac1-2fe4bd4a188c" />
-<img width="300" height="400" alt="Screenshot 2025-10-23 131813" src="https://github.com/user-attachments/assets/a0233b88-789b-4afd-9618-1c5db1be0ab8" />  
+<img width="300"  alt="Screenshot 2025-10-23 131538" src="https://github.com/user-attachments/assets/b78c491c-08ca-4cb7-8a9d-44bbebcf0085" />
+<img width="300"  alt="Screenshot 2025-10-23 132156" src="https://github.com/user-attachments/assets/d5905b48-aa9d-4eab-aac1-2fe4bd4a188c" />
+<img width="300"  alt="Screenshot 2025-10-23 131813" src="https://github.com/user-attachments/assets/a0233b88-789b-4afd-9618-1c5db1be0ab8" />  
 
    
 </div>  
 <div style="display: flex; justify-content: top;">
-<img width="300" height="400" alt="Screenshot 2025-10-24 171204" src="https://github.com/user-attachments/assets/ac1068f5-953e-4d24-94ee-5d8eeb95822f" />
-<img width="600" height="700" alt="Screenshot 2025-10-24 171132" src="https://github.com/user-attachments/assets/b76dd041-270e-4944-b595-66665e13a05b" />
+<img width="300"  alt="Screenshot 2025-10-24 171204" src="https://github.com/user-attachments/assets/ac1068f5-953e-4d24-94ee-5d8eeb95822f" />
+<img width="600"  alt="Screenshot 2025-10-24 171132" src="https://github.com/user-attachments/assets/b76dd041-270e-4944-b595-66665e13a05b" />
 </div>
 
 
@@ -100,23 +100,23 @@ I was brought in as a Microsoft Entra ID Administrator to strengthen authenticat
 
 📸 **Screenshot of the MFA enforcement policy and the user MFA registration prompt**
 <div>
-<img width="900" height="422" alt="Screenshot 2025-10-26 152039" src="https://github.com/user-attachments/assets/7b2fe219-3706-4453-bd22-4cffdb6b2c5d" />
-<img width="900" height="452" alt="Screenshot 2025-10-26 154921" src="https://github.com/user-attachments/assets/f518405b-3f6f-47b9-9d28-20a1d87859ec" />
-<img width="900" height="743" alt="Screenshot 2025-10-26 152224" src="https://github.com/user-attachments/assets/a9432f97-e332-439f-b544-5c1382f32324" />
-<img width="600" height="632" alt="Screenshot 2025-10-26 152731" src="https://github.com/user-attachments/assets/aca86d9c-d47a-499d-9d7b-fc968eb215b3" />
-<img width="300" height="539" alt="Screenshot 2025-10-26 155136" src="https://github.com/user-attachments/assets/c3121c93-b349-4d1a-85cb-de11272b041d" />
-<img width="300" height="430" alt="Screenshot 2025-10-26 155158" src="https://github.com/user-attachments/assets/6fe8970f-ae4d-4c24-b8fe-94b0f5628e40" />
-<img width="300" height="481" alt="Screenshot 2025-10-26 155210" src="https://github.com/user-attachments/assets/e6709b35-a493-4442-be49-e63cb29fa5f4" />
-<img width="300" height="686" alt="Screenshot 2025-10-26 155240" src="https://github.com/user-attachments/assets/bb548721-befa-4248-b0e5-677479f6d0d1" />
-<img width="300" height="653" alt="Screenshot 2025-10-26 155253" src="https://github.com/user-attachments/assets/d36d652f-f453-4f49-af11-1b3f49778f49" />
-<img width="300" height="879" alt="Screenshot 2025-10-26 155318" src="https://github.com/user-attachments/assets/47a404e1-c35e-428c-8e21-15a229018047" />
-<img width="300" height="677" alt="Screenshot 2025-10-26 160828" src="https://github.com/user-attachments/assets/47ab7492-6d12-4dae-80c0-12490d6e39af" />
-<img width="300" height="679" alt="Screenshot 2025-10-26 155416" src="https://github.com/user-attachments/assets/87795dcf-c8b6-4fb2-b738-00929eb95090" />
-<img width="300" height="552" alt="Screenshot 2025-10-26 155442" src="https://github.com/user-attachments/assets/88d29ef9-91cb-40b6-9e07-7f708e5633b0" />
-<img width="300" height="541" alt="Screenshot 2025-10-26 155906" src="https://github.com/user-attachments/assets/f2432e08-9f60-492b-9dcb-e68b7d0b3756" />
-<img width="300" height="617" alt="Screenshot 2025-10-26 155951" src="https://github.com/user-attachments/assets/e6649016-2a1c-4ba6-970a-4d196a9b19fb" />
-<img width="300" height="553" alt="Screenshot 2025-10-26 160101" src="https://github.com/user-attachments/assets/675fb1fb-a44c-41e1-aac9-af4d1cc7a98c" />
-<img width="300" height="915" alt="Screenshot 2025-10-26 160401" src="https://github.com/user-attachments/assets/a7224132-df76-4594-8a86-7495b99f5972" />
+<img width="900"  alt="Screenshot 2025-10-26 152039" src="https://github.com/user-attachments/assets/7b2fe219-3706-4453-bd22-4cffdb6b2c5d" />
+<img width="900"  alt="Screenshot 2025-10-26 154921" src="https://github.com/user-attachments/assets/f518405b-3f6f-47b9-9d28-20a1d87859ec" />
+<img width="900"  alt="Screenshot 2025-10-26 152224" src="https://github.com/user-attachments/assets/a9432f97-e332-439f-b544-5c1382f32324" />
+<img width="600"  alt="Screenshot 2025-10-26 152731" src="https://github.com/user-attachments/assets/aca86d9c-d47a-499d-9d7b-fc968eb215b3" />
+<img width="300"  alt="Screenshot 2025-10-26 155136" src="https://github.com/user-attachments/assets/c3121c93-b349-4d1a-85cb-de11272b041d" />
+<img width="300"  alt="Screenshot 2025-10-26 155158" src="https://github.com/user-attachments/assets/6fe8970f-ae4d-4c24-b8fe-94b0f5628e40" />
+<img width="300"  alt="Screenshot 2025-10-26 155210" src="https://github.com/user-attachments/assets/e6709b35-a493-4442-be49-e63cb29fa5f4" />
+<img width="300"  alt="Screenshot 2025-10-26 155240" src="https://github.com/user-attachments/assets/bb548721-befa-4248-b0e5-677479f6d0d1" />
+<img width="300"  alt="Screenshot 2025-10-26 155253" src="https://github.com/user-attachments/assets/d36d652f-f453-4f49-af11-1b3f49778f49" />
+<img width="300" alt="Screenshot 2025-10-26 155318" src="https://github.com/user-attachments/assets/47a404e1-c35e-428c-8e21-15a229018047" />
+<img width="300"  alt="Screenshot 2025-10-26 160828" src="https://github.com/user-attachments/assets/47ab7492-6d12-4dae-80c0-12490d6e39af" />
+<img width="300"  alt="Screenshot 2025-10-26 155416" src="https://github.com/user-attachments/assets/87795dcf-c8b6-4fb2-b738-00929eb95090" />
+<img width="300"  alt="Screenshot 2025-10-26 155442" src="https://github.com/user-attachments/assets/88d29ef9-91cb-40b6-9e07-7f708e5633b0" />
+<img width="300"  alt="Screenshot 2025-10-26 155906" src="https://github.com/user-attachments/assets/f2432e08-9f60-492b-9dcb-e68b7d0b3756" />
+<img width="300"  alt="Screenshot 2025-10-26 155951" src="https://github.com/user-attachments/assets/e6649016-2a1c-4ba6-970a-4d196a9b19fb" />
+<img width="300"  alt="Screenshot 2025-10-26 160101" src="https://github.com/user-attachments/assets/675fb1fb-a44c-41e1-aac9-af4d1cc7a98c" />
+<img width="300"  alt="Screenshot 2025-10-26 160401" src="https://github.com/user-attachments/assets/a7224132-df76-4594-8a86-7495b99f5972" />
 </div>
 
 ### Step 3️⃣ – Configure Conditional Access
@@ -143,9 +143,9 @@ I was brought in as a Microsoft Entra ID Administrator to strengthen authenticat
 
 **📸 Screenshot of Conditional Access policy summary.**
 <div>
-   <img width="300" height="400" alt="Screenshot 2025-10-27 125137" src="https://github.com/user-attachments/assets/4470e13a-ddce-4c89-9411-48dbe470aa98" />
-   <img width="300" height="508" alt="Screenshot 2025-10-27 125835" src="https://github.com/user-attachments/assets/f1318682-1291-4d78-a185-5d525a9c8bc4" />
-<img width="300" height="553" alt="Screenshot 2025-10-27 125850" src="https://github.com/user-attachments/assets/b10ace23-f027-443a-a659-64f904adaaed" />
+   <img width="300"  alt="Screenshot 2025-10-27 125137" src="https://github.com/user-attachments/assets/4470e13a-ddce-4c89-9411-48dbe470aa98" />
+   <img width="300" alt="Screenshot 2025-10-27 125835" src="https://github.com/user-attachments/assets/f1318682-1291-4d78-a185-5d525a9c8bc4" />
+<img width="300"  alt="Screenshot 2025-10-27 125850" src="https://github.com/user-attachments/assets/b10ace23-f027-443a-a659-64f904adaaed" />
 </div>
 
 
@@ -165,9 +165,9 @@ I was brought in as a Microsoft Entra ID Administrator to strengthen authenticat
 
 **📸 Screenshot of role assignments.**
 <div>
-   <img width="300" height="753" alt="Screenshot 2025-10-27 132838" src="https://github.com/user-attachments/assets/0ff2e2f1-625a-49cd-a19a-24e05e8810e0" />
-  <img width="300" height="759" alt="Screenshot 2025-10-27 133313" src="https://github.com/user-attachments/assets/63cf774e-517d-4403-957b-fb702a579c21" />
-<img width="300" height="761" alt="Screenshot 2025-10-27 133415" src="https://github.com/user-attachments/assets/ff4d1d4c-2d39-4692-9b77-3f75dea8c76d" />
+   <img width="300"  alt="Screenshot 2025-10-27 132838" src="https://github.com/user-attachments/assets/0ff2e2f1-625a-49cd-a19a-24e05e8810e0" />
+  <img width="300"  alt="Screenshot 2025-10-27 133313" src="https://github.com/user-attachments/assets/63cf774e-517d-4403-957b-fb702a579c21" />
+<img width="300"  alt="Screenshot 2025-10-27 133415" src="https://github.com/user-attachments/assets/ff4d1d4c-2d39-4692-9b77-3f75dea8c76d" />
 </div>
 
 ### Step 5️⃣ – Create a Custom Role
@@ -186,8 +186,8 @@ I was brought in as a Microsoft Entra ID Administrator to strengthen authenticat
 
 **📸 Screenshot of the custom role definition and assignment**
 <div>
-<img width="600" height="501" alt="Screenshot 2025-10-27 141735" src="https://github.com/user-attachments/assets/dfccdd19-481e-457f-880d-33bd5378d746" />
-<img width="300" height="756" alt="Screenshot 2025-10-27 141933" src="https://github.com/user-attachments/assets/26cbca00-9393-402a-9327-61c5f3687f8a" />
+<img width="600"  alt="Screenshot 2025-10-27 141735" src="https://github.com/user-attachments/assets/dfccdd19-481e-457f-880d-33bd5378d746" />
+<img width="300"  alt="Screenshot 2025-10-27 141933" src="https://github.com/user-attachments/assets/26cbca00-9393-402a-9327-61c5f3687f8a" />
 </div>
 
 ### Step 6️⃣ – Use Administrative Units (AUs)
@@ -201,10 +201,10 @@ I was brought in as a Microsoft Entra ID Administrator to strengthen authenticat
 **📸 Screenshot of AU and assigned users.**
 <div>
    <img width="300" height="406" alt="Screenshot 2025-10-27 142850" src="https://github.com/user-attachments/assets/d49bc749-c120-4a0c-b790-6abc66cf5cd7" />
-<img width="300" height="797" alt="Screenshot 2025-10-27 143325" src="https://github.com/user-attachments/assets/a5927d59-1e1f-41f3-8429-b5d7931cdb44" />
-<img width="300" height="747" alt="Screenshot 2025-10-27 143259" src="https://github.com/user-attachments/assets/0c780957-bead-4787-b76a-eabcc89c6199" />
- <img width="900" height="352" alt="Screenshot 2025-10-27 143429" src="https://github.com/user-attachments/assets/4119542c-ac8f-40b6-9b1b-ec874c1d6428" />
-   <img width="900" height="460" alt="Screenshot 2025-10-27 143519" src="https://github.com/user-attachments/assets/1cdec8c4-6336-4812-b1a1-01af58feea53" />
+<img width="300"  alt="Screenshot 2025-10-27 143325" src="https://github.com/user-attachments/assets/a5927d59-1e1f-41f3-8429-b5d7931cdb44" />
+<img width="300"  alt="Screenshot 2025-10-27 143259" src="https://github.com/user-attachments/assets/0c780957-bead-4787-b76a-eabcc89c6199" />
+ <img width="900"  alt="Screenshot 2025-10-27 143429" src="https://github.com/user-attachments/assets/4119542c-ac8f-40b6-9b1b-ec874c1d6428" />
+   <img width="900"  alt="Screenshot 2025-10-27 143519" src="https://github.com/user-attachments/assets/1cdec8c4-6336-4812-b1a1-01af58feea53" />
 </div>
 
 ## 🌐 Phase 3: App Registration & Access Control
@@ -220,8 +220,8 @@ I was brought in as a Microsoft Entra ID Administrator to strengthen authenticat
 
 **📸 Screenshot of the App registration overview.**
 <div>
-   <img width="300" height="600" alt="Screenshot 2025-10-28 122850" src="https://github.com/user-attachments/assets/4578021e-7cdf-400a-a782-d12940c97462" />
-   <img width="600" height="300" alt="Screenshot 2025-10-28 122933" src="https://github.com/user-attachments/assets/4278c571-a39f-4548-9f48-71df8e4b0d0a" />
+   <img width="300"  alt="Screenshot 2025-10-28 122850" src="https://github.com/user-attachments/assets/4578021e-7cdf-400a-a782-d12940c97462" />
+   <img width="600"  alt="Screenshot 2025-10-28 122933" src="https://github.com/user-attachments/assets/4278c571-a39f-4548-9f48-71df8e4b0d0a" />
 </div>
 
 ### Step 8️⃣ – Define App Roles
@@ -251,7 +251,7 @@ I was brought in as a Microsoft Entra ID Administrator to strengthen authenticat
 
 **📸 Screenshot of app roles in manifest.**
 <div>
-   <img width="600" height="400" alt="Screenshot 2025-10-28 123855" src="https://github.com/user-attachments/assets/efbc4718-7eae-4281-b75d-e2c6fb1d236a" />
+   <img width="600"  alt="Screenshot 2025-10-28 123855" src="https://github.com/user-attachments/assets/efbc4718-7eae-4281-b75d-e2c6fb1d236a" />
 </div>
 
 ### Step 9️⃣ – Assign App Roles
@@ -266,7 +266,7 @@ I was brought in as a Microsoft Entra ID Administrator to strengthen authenticat
 
 **📸 Screenshot of role assignments.**
 <div>
-  <img width="1844" height="476" alt="Screenshot 2025-10-28 124648" src="https://github.com/user-attachments/assets/c7aa7a0b-be8f-4df0-81aa-d46fba6b3c9c" />
+  <img width="1844"  alt="Screenshot 2025-10-28 124648" src="https://github.com/user-attachments/assets/c7aa7a0b-be8f-4df0-81aa-d46fba6b3c9c" />
 </div>
 
 
@@ -293,8 +293,8 @@ I was brought in as a Microsoft Entra ID Administrator to strengthen authenticat
 📸 Screenshot of jwt.ms output showing role claim (e.g., "roles": ["HR.Admin"]).
 
 <div>
-   <img width="300" height="400" alt="Screenshot 2025-10-28 134845" src="https://github.com/user-attachments/assets/95907e27-bfc0-4a45-830d-de7e220ca255" />
-   <img width="600" height="400" alt="Screenshot 2025-10-28 135531" src="https://github.com/user-attachments/assets/b0311293-56e3-4c1c-840e-97324353de1d" />
+   <img width="300"  alt="Screenshot 2025-10-28 134845" src="https://github.com/user-attachments/assets/95907e27-bfc0-4a45-830d-de7e220ca255" />
+   <img width="600"  alt="Screenshot 2025-10-28 135531" src="https://github.com/user-attachments/assets/b0311293-56e3-4c1c-840e-97324353de1d" />
 </div>
 
 ## 🛡️ Phase 4: Enable Privileged Identity Management (PIM)
@@ -309,8 +309,8 @@ I was brought in as a Microsoft Entra ID Administrator to strengthen authenticat
 **📸 Screenshot of PIM eligible assignment**
 
 <div>
-   <img width="600" height="400" alt="Screenshot 2025-10-28 142015" src="https://github.com/user-attachments/assets/909aee3c-5f6d-48c0-82fe-f448ab4ea7cb" />
-   <img width="300" height="400" alt="Screenshot 2025-10-28 142457" src="https://github.com/user-attachments/assets/ad1bd803-d33b-46de-97b4-43727428eb30" />
+   <img width="600"  alt="Screenshot 2025-10-28 142015" src="https://github.com/user-attachments/assets/909aee3c-5f6d-48c0-82fe-f448ab4ea7cb" />
+   <img width="300"  alt="Screenshot 2025-10-28 142457" src="https://github.com/user-attachments/assets/ad1bd803-d33b-46de-97b4-43727428eb30" />
 </div>
 
 ### Step 12️⃣ – Configure Activation Requirements
@@ -328,7 +328,7 @@ I was brought in as a Microsoft Entra ID Administrator to strengthen authenticat
 **📸 Screenshot of activation policy.**
 
 <div>
-   <img width="600" height="400" alt="Screenshot 2025-10-28 143406" src="https://github.com/user-attachments/assets/218a8a8c-af96-444e-8bdc-18c98b9eb0f1" />
+   <img width="600"  alt="Screenshot 2025-10-28 143406" src="https://github.com/user-attachments/assets/218a8a8c-af96-444e-8bdc-18c98b9eb0f1" />
 </div>
 
 
@@ -341,7 +341,7 @@ I was brought in as a Microsoft Entra ID Administrator to strengthen authenticat
 **📸 Screenshot of activation confirmation.**
 
 <div>
-   <img width="600" height="400" alt="Screenshot 2025-10-28 145259" src="https://github.com/user-attachments/assets/a51cfbeb-796c-4984-872b-896d51675028" />
+   <img width="600"  alt="Screenshot 2025-10-28 145259" src="https://github.com/user-attachments/assets/a51cfbeb-796c-4984-872b-896d51675028" />
 </div>
 
 ## 📊 Phase 5: Monitor & Report
@@ -354,7 +354,7 @@ I was brought in as a Microsoft Entra ID Administrator to strengthen authenticat
 **📸 Screenshot of sign-in logs showing MFA challenge and app access.**
 
 <div>
-   <img width="900" height="400" alt="Screenshot 2025-10-28 160755" src="https://github.com/user-attachments/assets/5435f619-57e4-44ff-b578-c5f74be9a90b" />
+   <img width="900"  alt="Screenshot 2025-10-28 160755" src="https://github.com/user-attachments/assets/5435f619-57e4-44ff-b578-c5f74be9a90b" />
 </div>
 
 
