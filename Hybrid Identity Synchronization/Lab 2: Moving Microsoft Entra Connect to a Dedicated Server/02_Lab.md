@@ -75,6 +75,12 @@ Once I was happy with the staging results:
 - Chose to start synchronization immediately.  
 - Clicked **Configure**.
 
+| Selected Staging Mode | Enabled Staging Mode | Configured Staging Mode |
+|------|--------|--------|
+| <img src="img/12_Staging-Mode.png" width="650"  />  | <img src="img/13_Enabled-Staging-Mode.png" width="650" />  | <img src="img/14_configure-Staging-Mode-DC01.png" width="650" /> |
+| Verified Staging Mode is Disabled On DC01|||
+| <img src="img/15_StagingMode-is-True.png" width="650"  />  | <img src="img/13_Enabled-Staging-Mode.png" width="650" />  | <img src="img/14_configure-Staging-Mode-DC01.png" width="650" /> |
+
 SYNC01 is now the active server. Synchronization resumed with minimal (or zero) downtime.
 
 **6. Post-Migration Cleanup & Verification**  
