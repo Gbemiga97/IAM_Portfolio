@@ -95,6 +95,11 @@ SYNC01 is now the active server. Synchronization resumed with minimal (or zero) 
 - Took snapshots of both VMs.  
 - (Later) I can decommission or repurpose DC01’s Entra Connect installation.
 
+| Started Synchronization on SYC01 | SYC01 showing healthy in Entra Adnin | 
+|------|--------|
+| <img src="img/18_Forced-full-synce-on-SYC01.png" width="650"  />  | <img src="img/19_SYC01-Healthy.png" width="650" />
+
+
 **Key Takeaways from This Migration**  
 - Zero-downtime move thanks to staging mode.  
 - Cleaner, more secure architecture with Entra Connect on a dedicated member server.  
