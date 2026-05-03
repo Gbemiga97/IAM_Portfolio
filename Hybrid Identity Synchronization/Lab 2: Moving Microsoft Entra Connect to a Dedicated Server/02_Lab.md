@@ -95,7 +95,7 @@ SYNC01 is now the active server. Synchronization resumed with minimal (or zero) 
 - Took snapshots of both VMs.  
 - (Later) I can decommission or repurpose DC01’s Entra Connect installation.
 
-| Started Synchronization on SYC01 | SYC01 showing healthy in Entra Adnin | 
+| Started Synchronization on SYC01 | SYNC01 showing healthy in Entra Adnin | 
 |------|--------|
 | <img src="img/18_Forced-full-synce-on-SYC01.png" width="650"  />  | <img src="img/19_SYC01-Healthy.png" width="650" />
 
@@ -106,11 +106,6 @@ SYNC01 is now the active server. Synchronization resumed with minimal (or zero) 
 - Ready for future configuration testing (e.g., new attribute flows or filtering) without risking production sync.  
 - The process reinforced why dedicated servers are best practice — I can now patch/reboot SYNC01 independently without touching my domain controller.
 
-**Repository Updates for Part 2**  
-- Added folder `Part2-Migration/` with:  
-  - Screenshots of SYNC01 creation, export/import process, staging mode switches.  
-  - Updated `scripts/` with `export-config.ps1` and `verify-staging.ps1`.  
-  - This README section.
 
 The hybrid identity lab is now more production-like. My 12 test users, groups, Password Hash Sync, Seamless SSO, and Hybrid Join continue to work seamlessly from the new dedicated server.
 
