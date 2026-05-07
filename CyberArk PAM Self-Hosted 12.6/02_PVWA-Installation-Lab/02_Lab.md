@@ -24,6 +24,10 @@ I started with a clean Windows Server 2019 virtual machine. A few things had to 
   
   If the `SKU` value shows **528040** or higher, you're good to go.
 
+    <div>
+    <img src="./img/01_NET-Framework.png"  />
+  </div>
+
 ---
 
 ### 3. Running the Prerequisites Script (Pre-Installation)
@@ -54,7 +58,7 @@ CyberArk provides a PowerShell script that automatically sets up everything the 
 7. **Rebooted the server** before proceeding
 
   <div>
-    <img src="./img/01_Prerequisites-Script.png"  />
+    <img src="./img/02_Prerequisites-Script.png"  />
   </div>
 
 > 💡 **Tip:** Always reboot after the prerequisites script. Skipping this step can cause unexpected issues during the actual installation.
