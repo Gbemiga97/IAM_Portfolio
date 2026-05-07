@@ -53,6 +53,10 @@ CyberArk provides a PowerShell script that automatically sets up everything the 
 6. After it completed, I opened **IIS Manager** (search "IIS" in Start Menu) and confirmed that **IIS version 10** was installed and showing — this confirms the web server is ready
 7. **Rebooted the server** before proceeding
 
+  <div>
+    <img src="./img/01_Prerequisites-Script.png"  />
+  </div>
+
 > 💡 **Tip:** Always reboot after the prerequisites script. Skipping this step can cause unexpected issues during the actual installation.
 
 ---
