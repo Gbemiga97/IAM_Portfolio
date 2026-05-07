@@ -58,8 +58,13 @@ CyberArk provides a PowerShell script that automatically sets up everything the 
 7. **Rebooted the server** before proceeding
 
   <div>
-    <img src="./img/02_Prerequisites-Script.png"  />
+   
   </div>
+
+  | Selected the View Configuraton | Exported the Configuration from DC01 | 
+  |------|--------|
+  |  <img src="img/02_Prerequisites-Script.png" width="650"  />  | <img src="img/03_IIS.png" width="650" />
+
 
 > 💡 **Tip:** Always reboot after the prerequisites script. Skipping this step can cause unexpected issues during the actual installation.
 
