@@ -57,9 +57,7 @@ CyberArk provides a PowerShell script that automatically sets up everything the 
 6. After it completed, I opened **IIS Manager** (search "IIS" in Start Menu) and confirmed that **IIS version 10** was installed and showing — this confirms the web server is ready
 7. **Rebooted the server** before proceeding
 
-  <div>
-   
-  </div>
+
 
   | Selected the View Configuraton | Exported the Configuration from DC01 | 
   |------|--------|
@@ -121,6 +119,13 @@ After rebooting, I ran a quick sanity check:
    The CyberArk PVWA login page appeared — this confirmed the web application was running correctly.
 
 3. Logged in with the Vault Administrator credentials to verify the connection to the Vault was working end-to-end
+
+
+
+  | IIS manager. | PVWA web application running | 
+  |------|--------|
+  |  <img src="img/08_ IIS-Manager.png" width="650"  />  | <img src="img/09_PVWA-Login.png" width="650" />
+
 
 > 💡 **Use Chrome or Edge for testing, not Internet Explorer.** CyberArk 12.6 works best with modern browsers.
 
