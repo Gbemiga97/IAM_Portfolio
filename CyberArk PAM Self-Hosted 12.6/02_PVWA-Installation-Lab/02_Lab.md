@@ -82,24 +82,31 @@ With the server prepped and rebooted, I was ready to run the main PVWA installer
 3. Accepted the License Agreement and clicked **Next**
 4. Entered my name and company name in the **Customer Information** window
 5. Left the **destination folder** as the default (easiest path for a first install) and clicked **Next**
-6. Chose **"Full Password Vault Web Access"** as the setup type (not the Mobile option)
-7. In the **Web Application Details** window, I configured:
+6. In the **Web Application Details** window, I configured:
    - **Site Name:** `Default Web Site`
    - **Application Name:** `PasswordVault`
    - **Authentication Types:** Selected **CyberArk, LDAP, and Windows** — this keeps things simple and covers the most common login methods. Other methods like RADIUS or PKI can be added later
    - **Default Authentication:** Set to `CyberArk`
    
-8. In the **Vault Connection Details** window, I entered:
+7. In the **Vault Connection Details** window, I entered:
    - The **IP address** of the CyberArk Vault server
    - The **port number** (default is **1858**)
    - The **PVWA URL** — for example: `https://pvwa.yourdomain.com/PasswordVault`
    
    > 💡 **This step is critical.** The PVWA URL must be accurate because it's written into the PVWA's configuration file and controls how the Vault communicates back. A typo here causes connection failures later.
 
-9. Entered the **Vault Administrator username and password** to allow the installer to create the necessary Safes and user accounts inside the Vault
-10. Clicked through the remaining screens and let the installation complete
-11. Clicked **Finish**
-12. **Restarted the server**
+8. Entered the **Vault Administrator username and password** to allow the installer to create the necessary Safes and user accounts inside the Vault
+9. Clicked through the remaining screens and let the installation complete
+10. Clicked **Finish**
+11. **Restarted the server**
+
+  | Entered my company's name | Web Application Details | 
+  |------|--------|
+  |  <img src="img/04_Cpmpanies-name.png" width="650"  />  | <img src="img/05_Web-app-details.png" width="650" />
+  | <p align="center"> **Vault Connection details** </p> | <p align="center"> **Vault Server username and password details** </p> |
+  |  <img src="img/06_Vault-Connect-details.png" width="650"  />  | <img src="img/07_Vault-server-user-details.png" width="650" />
+
+
 
 ---
 
