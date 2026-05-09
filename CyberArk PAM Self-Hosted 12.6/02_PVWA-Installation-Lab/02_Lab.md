@@ -59,9 +59,9 @@ CyberArk provides a PowerShell script that automatically sets up everything the 
 
 
 
-  | Selected the View Configuraton | Exported the Configuration from DC01 | 
+  | <img src="img/02_Prerequisites-Script.png" width="650"  />  |  <img src="img/03_IIS.png" width="650" />| 
   |------|--------|
-  |  <img src="img/02_Prerequisites-Script.png" width="650"  />  | <img src="img/03_IIS.png" width="650" />
+  | *Navigated to the Prerequisites script from PowerShell and ran it* | *Confirmed that **IIS version 10** was installed and showing* |
 
 
 > 💡 **Tip:** Always reboot after the prerequisites script. Skipping this step can cause unexpected issues during the actual installation.
@@ -98,11 +98,11 @@ With the server prepped and rebooted, I was ready to run the main PVWA installer
 10. Clicked **Finish**
 11. **Restarted the server**
 
-  | Entered my company's name | Web Application Details | 
+  | <img src="img/04_Cpmpanies-name.png" width="650"  /> | <img src="img/05_Web-app-details.png" width="650" /> | 
   |------|--------|
-  |  <img src="img/04_Cpmpanies-name.png" width="650"  />  | <img src="img/05_Web-app-details.png" width="650" />
-  | <p align="center"> **Vault Connection details** </p> | <p align="center"> **Vault Server username and password details** </p> |
+  |  *Entered my company's name*   | *Web Application Details* |
   |  <img src="img/06_Vault-Connect-details.png" width="650"  />  | <img src="img/07_Vault-server-user-details.png" width="650" />
+  | *Vault Connection details* |  *Vault Server username and password details* |
 
 
 
@@ -122,9 +122,10 @@ After rebooting, I ran a quick sanity check:
 
 
 
-  | IIS manager. | PVWA web application running | 
-  |------|--------|
   |  <img src="img/08_ IIS-Manager.png" width="650"  />  | <img src="img/09_PVWA-Login.png" width="650" />
+  |------|--------|
+  | *IIS manager* | *PVWA web application running* | 
+  
 
 
 > 💡 **Use Chrome or Edge for testing, not Internet Explorer.** CyberArk 12.6 works best with modern browsers.
