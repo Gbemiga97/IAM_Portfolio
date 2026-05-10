@@ -13,8 +13,14 @@ I started with a clean **Windows Server 2019** virtual machine named `WIN-CPM`, 
 Test-NetConnection -ComputerName <VaultIP> -Port 1858
 ```
   If `TcpTestSucceeded` returns `True`, the path is open. If not, a firewall rule needs to be added before proceeding.
-
+  
 - **CPM placement matters:** The CPM should be positioned close to the target systems it will manage (the servers whose passwords it rotates). This reduces network latency during password change operations.
+
+
+<div>
+  <img src="img/01_Connection-test.png" />
+</div>
+
 
 ---
 
