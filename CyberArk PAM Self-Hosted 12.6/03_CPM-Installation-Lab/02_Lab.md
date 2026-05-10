@@ -34,11 +34,6 @@ Install both versions:
 
 Both are available from Microsoft's official download page. Install x64 first, then x86, and confirm both complete without errors.
 
-<div>
-  <img src="img/02_CPM-Preinstallation.png" />
-</div>
-
-
 > 💡 **Why both?** CyberArk's CPM plugins include both 32-bit and 64-bit components. Missing either version will cause plugin failures later even if the core service appears to be running.
 
 ---
@@ -60,6 +55,10 @@ CyberArk provides a PowerShell pre-installation script that prepares the server 
 6. **Rebooted the server** before proceeding
 
 The pre-installation script handles low-level system preparation tasks so the server is in the correct state for the CPM installer.
+
+<div>
+  <img src="img/02_CPM-Preinstallation.png" />
+</div>
 
 > 💡 **Tip:** Always reboot after this script completes, even if it doesn't explicitly ask you to. Skipping the reboot is a common source of installer failures.
 
