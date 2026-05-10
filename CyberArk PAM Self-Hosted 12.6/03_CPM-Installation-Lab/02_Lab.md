@@ -34,6 +34,11 @@ Install both versions:
 
 Both are available from Microsoft's official download page. Install x64 first, then x86, and confirm both complete without errors.
 
+<div>
+  <img src="img/02_CPM-Preinstallation.png" />
+</div>
+
+
 > 💡 **Why both?** CyberArk's CPM plugins include both 32-bit and 64-bit components. Missing either version will cause plugin failures later even if the core service appears to be running.
 
 ---
