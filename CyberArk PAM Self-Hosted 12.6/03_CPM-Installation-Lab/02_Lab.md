@@ -140,7 +140,7 @@ After confirming the services were running locally, I logged into PVWA to verify
 This confirmed that the CPM (`PasswordManager`) had successfully registered with the Vault and was actively communicating with PVWA.
 
 <div>
-  <img src="img/07_CPM-verified-in-PVWA.png" width="700" height="400" />
+  <img src="img/07_CPM-verified-in-PVWA.png"   />
 </div>
 
 > 💡 **Note:** The CPM and Accounts Discovery section on the System Health page is the most reliable way to confirm the CPM connection end-to-end. A solid green bar with "1 Connected" means the CPM service is running, the Vault connection is healthy, and PVWA can see it — all three in one view.
