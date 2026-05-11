@@ -114,7 +114,7 @@ After rebooting, I ran a quick sanity check:
 
 1. Opened **IIS Manager** and confirmed the `PasswordVault` application was listed under `Default Web Site`
 2. Opened **Google Chrome** on the PVWA server and navigated to:
-   `https://localhost/PasswordVault`
+   `https://win-pvwa.pitythefool.com/PasswordVault`
    
    The CyberArk PVWA login page appeared — this confirmed the web application was running correctly.
 
@@ -122,7 +122,7 @@ After rebooting, I ran a quick sanity check:
 
 
 
-  |  <img src="img/08_ IIS-Manager.png" width="650"  />  | <img src="img/09_PVWA-Login.png" width="650" />
+  |  <img src="img/08_ IIS-Manager.png" width="650"  />  | <img src="img/09_PVWA-Login-page.png" width="650" />
   |------|--------|
   | *IIS manager* | *PVWA web application running* | 
   
