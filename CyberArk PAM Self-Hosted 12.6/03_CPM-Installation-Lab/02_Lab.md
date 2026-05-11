@@ -178,6 +178,10 @@ gpupdate /force
 
 This forces the new CPM Group Policy settings to apply immediately rather than waiting for the next scheduled refresh. Without this, the CPM service accounts may not have the correct "Logon as a service" rights, and the services will fail to start after the next reboot.
 
+<div>
+  <img src="img/08_PasswordManager.png" />
+</div>
+
 ---
 
 ### 8. Post-Installation: Creating a Trusted Network Area
