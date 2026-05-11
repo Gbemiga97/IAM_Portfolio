@@ -113,7 +113,11 @@ After rebooting, the first thing to check is whether the CPM Windows services st
 | **CyberArk Password Manager** | The core CPM engine that manages and rotates passwords |
 | **CyberArk Central Policy Manager Scanner** | Scans for accounts that need attention (verification, reconciliation) |
 
-If either service is stopped, right-click → **Start**. If it immediately stops again, the Vault connection details entered during installation were likely incorrect.
+<div>
+  <img src="img/06_Verified-CPM-Running.png" />
+</div>
+
+> 💡 **Note:** If either service is stopped, right-click → **Start**. If it stops again immediately, the Vault connection details entered during installation were likely incorrect.
 
 ---
 
@@ -127,7 +131,7 @@ After confirming the services were running locally, I logged into PVWA to verify
 
 1. Opened Chrome and navigated to `https://win-pvwa.pitythefool.com/PasswordVault`
 2. Logged in with the Vault Administrator credentials
-3. Went to **Administration** → **System Health**
+3. Went to **System Health**
 4. Located the **CPM and Accounts Discovery** section on the System Health dashboard
 5. Confirmed the following:
    - **App User Instances (1)** — showing **1 Connected** with a solid green bar
@@ -135,7 +139,9 @@ After confirming the services were running locally, I logged into PVWA to verify
 
 This confirmed that the CPM (`PasswordManager`) had successfully registered with the Vault and was actively communicating with PVWA.
 
-
+<div>
+  <img src="img/07_CPM-verified-in-PVWA.png" width="700" height="400" />
+</div>
 
 > 💡 **Note:** The CPM and Accounts Discovery section on the System Health page is the most reliable way to confirm the CPM connection end-to-end. A solid green bar with "1 Connected" means the CPM service is running, the Vault connection is healthy, and PVWA can see it — all three in one view.
 
