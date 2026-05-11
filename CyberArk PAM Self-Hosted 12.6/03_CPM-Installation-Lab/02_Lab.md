@@ -94,6 +94,11 @@ With the server rebooted and prerequisites in place, I ran the main CPM installe
 11. Clicked **Finish**
 12. **Restarted the server**
 
+
+| <img src="img/03_Customer-info.png"  /> | <img src="img/04_Vault-connection.png" /> | <img src="img/05_Vault-admin-info.png"  />  |
+|---|---|---| 
+| *Entered my company's name* | *Connected the **CPM** to the **VAULT** so it can build an enviroment in the vault* | Entered my admin credentials to log on to the vault |
+
 ---
 
 ### 5. Verifying the CPM Service is Running
