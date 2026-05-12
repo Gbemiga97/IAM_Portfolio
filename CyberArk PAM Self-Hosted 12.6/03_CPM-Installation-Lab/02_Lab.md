@@ -178,10 +178,6 @@ gpupdate /force
 
 This forces the new CPM Group Policy settings to apply immediately rather than waiting for the next scheduled refresh. Without this, the CPM service accounts may not have the correct "Logon as a service" rights, and the services will fail to start after the next reboot.
 
-<div>
-  <img src="img/08_PasswordManager.png" />
-</div>
-
 ---
 
 ### 8. Post-Installation: Creating a Trusted Network Area
@@ -196,6 +192,10 @@ This is a security step that locks the CPM's Vault user down so it can **only** 
 6. Save and close
 
 This means even if someone obtained the CPM's credentials, they could not use them to log into the Vault from any machine other than the legitimate CPM server. It's a small configuration that makes a big security difference.
+
+<div>
+  <img src="img/08_PasswordManager.png" />
+</div>
 
 ---
 
