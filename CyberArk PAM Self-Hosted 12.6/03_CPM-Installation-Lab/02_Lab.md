@@ -184,18 +184,18 @@ This forces the new CPM Group Policy settings to apply immediately rather than w
 
 This is a security step that locks the CPM's Vault user down so it can **only** log into the Vault from the CPM server — nowhere else.
 
-1. On the **Vault server**, open **PrivateArk Client** and log in as Administrator
+1. On the **Vault server**, I opened **PrivateArk Client** and log in as Administrator
 2. Go to **Tools** → **Administrative Tools** → **Users and Groups**
 3. Find the `PasswordManager` user (created automatically during CPM installation)
 4. Go to the **Trusted Network Areas** tab
-5. Add a new Network Area containing **only the CPM server's IP address** (e.g., `192.168.100.12`)
-6. Save and close
+5. Added a new Network Area containing **only the CPM server's IP address** (e.g., `192.168.100.12`) and added the network area to the `PasswordManager` user.
 
 This means even if someone obtained the CPM's credentials, they could not use them to log into the Vault from any machine other than the legitimate CPM server. It's a small configuration that makes a big security difference.
 
-<div>
-  <img src="img/08_PasswordManager.png" />
-</div>
+| <img src="img/08_PM-Created.png"  /> | <img src="img/09_CPM-server-net.png" /> | <img src="img/10_Assigned-to-PM.png"  />  |
+|---|---|---| 
+| *The Vault server showing PassworManager created automatically* | *Added a new newwork area containing the **CPM Server*** | Assigned the network to the Password Manager user |
+
 
 ---
 
