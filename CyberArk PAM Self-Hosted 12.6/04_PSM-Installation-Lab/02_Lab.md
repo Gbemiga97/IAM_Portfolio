@@ -164,13 +164,18 @@ During installation, CyberArk automatically creates several users, groups, and S
 | `PSM` | Stores the PSM server's credential files and user accounts |
 | Recording Safes | Created automatically when the first session recording is uploaded to the Vault |
 
-> 💡 **Why this matters:** If the PSM service fails to start after installation, the first thing to check is whether these accounts and Safes were created in the Vault. If they weren't, the Vault connection during installation failed silently and the registration step needs to be re-run.
+
+| <img src="img/10_PSM-Accounts.png" width="650"  /> | <img src="img/11_PSM-Group.png"  width="650"  /> | <img src="img/12_PSM-Safe.png"  width="650"  />  |
+|---|---|---|
+| *Users account created in the Local Windows Account* | *Group Created on the PSM serve* | *PSM safe created in the Vault* |
+
+> 💡 **Why this matters:** If the PSM service fails to start after installation, the first thing to check is whether these accounts and Safes were created in the Vault. If they weren't, the Vault connection failed silently during installation, and the registration step needs to be rerun.
 
 ---
 
 ### 6. Running iisreset on the PVWA Server
 
-This is a step that is easy to miss but important — after PSM installs and registers itself, the PVWA server needs to be refreshed to pick up the new PSM configuration.
+This is an easy-to-miss but important step — after PSM installs and registers itself, the PVWA server needs to be refreshed to pick up the new PSM configuration.
 
 On the **PVWA server** (`WIN-PVWA`), opened PowerShell as Administrator and ran:
 
@@ -198,9 +203,13 @@ Get-Content "C:\Program Files (x86)\CyberArk\PSM\Logs\PSMTrace.log" -Tail 50
 
 This log records exactly what the PSM service attempted on startup and where it failed.
 
+<div>
+  <img src="img/13_PSM-service-running.png" width="500" height="400"  /> 
+</div>
+
 ---
 
-### 8. Activating and Verifying PSM in PVWA
+### 8.Verified PSM in PVWA
 
 After confirming the service was running, I logged into PVWA to activate and verify the PSM.
 
@@ -212,17 +221,9 @@ After confirming the service was running, I logged into PVWA to activate and ver
 4. Located the **PSM** section on the dashboard
 5. The PSM server should appear — confirmed it showed as **Connected** with a green status indicator
 
-**Activating the PSM:**
-
-A newly installed PSM appears in PVWA in an inactive state and must be manually activated before it can broker sessions.
-
-1. Went to **Administration** → **Configuration Options** → **Privileged Session Management** → **Configured PSM Servers**
-2. The PSM server (`PSMServer`) appeared in the list
-3. Selected it and clicked **Activate**
-4. Confirmed the status changed to **Active**
-
-Once activated, PVWA will begin routing privileged session requests through this PSM server.
-
+<div>
+  <img src="img/14_Verified_PSM-in_PVWA.png" width="500" height="400"  /> 
+</div>
 ---
 
 ### 9. Post-Hardening: Important Considerations
