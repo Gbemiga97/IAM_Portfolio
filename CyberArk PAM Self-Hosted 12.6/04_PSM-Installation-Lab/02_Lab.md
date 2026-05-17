@@ -27,6 +27,10 @@ Test-NetConnection -ComputerName <PVWAIP> -Port 443
 
 Both must return `TcpTestSucceeded : True` before proceeding.
 
+<div>
+  <img src="img/01_Network-connectivity.png" width="500"  height="400"/>
+</div>
+
 > 💡 **Important:** PSM must be able to reach **both** the Vault and PVWA. Unlike CPM which primarily connects to the Vault, PSM connects to the PVWA API Gateway to receive session requests and return status information. A firewall blocking port 443 to PVWA will cause PSM to install but fail to receive any connection requests.
 
 ---
@@ -50,6 +54,10 @@ PSM uses Windows RDS as its session brokering engine. When a user launches a ses
 9. Clicked **Deploy** and waited for all three RDS roles to install
 10. The server rebooted automatically
 
+<div>
+  <img src="img/02_RDS-Installed.png" width="500"  height="400" />
+</div>
+
 > ⚠️ **Critical:** Select **"Remote Desktop Services installation"** as the installation type — not "Role-based or feature-based installation." Selecting the wrong type and manually checking individual RDS checkboxes will not configure RDS correctly for PSM, and the session brokering will not work.
 
 **After the reboot — creating the RDS Session Collection:**
@@ -62,6 +70,10 @@ PSM uses Windows RDS as its session brokering engine. When a user launches a ses
 6. Added only the administrator account currently logged in (so I could still connect to test)
 7. On the **User Profile Disks** page, **unchecked "Enable user profile disks"**
 8. Clicked **Create** and waited for the collection to be created
+
+| <img src="img/03_Added-only-admin.png"  /> | <img src="img/04_RDS-session-collection-created.png" /> | 
+|---|---|
+| *Removed Users  and added just the admin account I'm logged in as* | *Created an RDS Session Collection* | 
 
 ---
 
@@ -80,6 +92,10 @@ With RDS configured and the server rebooted, I ran the PSM prerequisites script.
 
 5. Waited for the script to complete and confirmed no failures in the output
 6. **Rebooted the server**
+
+<div>
+  <img src="img/05_Ran-Prerequisites.png" width="500"  height="400"  />
+</div>
 
 > 💡 **Note:** The PSM prerequisites script uses a different execution syntax compared to the PVWA and CPM scripts — it uses `Execute-Stage.ps1` with a config XML file as the parameter rather than a single standalone script. This is normal for PSM 12.6.
 
@@ -107,9 +123,9 @@ With the server rebooted and RDS confirmed, I ran the main PSM installer.
 
 9. On the **API Gateway Connection Details** window, entered:
    - **Protocol:** `https`
-   - **Hostname:** `pvwa.pitythefool.com`
+   - **Hostname:** `win-pvwa.pitythefool.com`
 
-   > 💡 **This step is unique to PSM.** Unlike PVWA and CPM, PSM requires the PVWA URL at installation time because PSM connects to the PVWA API Gateway to receive session brokering instructions. The format it uses internally is `https://pvwa.pitythefool.com/PasswordVault/api`. If this is entered incorrectly, PSM installs successfully but cannot receive any session requests from PVWA.
+   > 💡 **This step is unique to PSM.** Unlike PVWA and CPM, PSM requires the PVWA URL at installation time because PSM connects to the PVWA API Gateway to receive session brokering instructions. The format it uses internally is `https://win-pvwa.pitythefool.com/PasswordVault/api`. If this is entered incorrectly, PSM installs successfully but cannot receive any session requests from PVWA.
 
 10. On the **Authentication Options** page — left PKI and SAML unchecked (not used in this lab environment)
 11. On the **Ticketing System** page — left unchecked (no ticketing system integrated)
@@ -117,6 +133,13 @@ With the server rebooted and RDS confirmed, I ran the main PSM installer.
 
 13. Clicked **Finish** to complete the installation
 14. **Rebooted the server**
+
+| <img src="img/06_Vault-connection-details.png"  /> | <img src="img/07_Username&Password.png" /> | 
+|---|---|
+| *Entered the Vault Details to connect* | *Entered the Vault Username and Password (Vault Administrator)* | 
+| <img src="img/08_API-Gateway.png"  /> | <img src="img/09_PSM-Installing.png"  /> |
+| *Entered the PVWA API gateway to connect* | *PSM Installation Progress* |
+
 
 ---
 
