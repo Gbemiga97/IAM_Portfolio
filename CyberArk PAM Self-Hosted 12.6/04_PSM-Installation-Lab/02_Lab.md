@@ -206,7 +206,7 @@ After confirming the service was running, I logged into PVWA to activate and ver
 
 **Checking System Health:**
 
-1. Opened Chrome and navigated to `https://pvwa.pitythefool.com/PasswordVault`
+1. Opened Chrome and navigated to `https://win-pvwa.pitythefool.com/PasswordVault`
 2. Logged in with Vault Administrator credentials
 3. Went to **Administration** → **System Health**
 4. Located the **PSM** section on the dashboard
