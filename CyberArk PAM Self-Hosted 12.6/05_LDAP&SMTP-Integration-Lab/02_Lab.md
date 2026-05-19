@@ -34,7 +34,7 @@ Run the following PowerShell script on your **Domain Controller** as a **Domain 
 Import-Module ActiveDirectory -ErrorAction Stop
 
 # Define domain and base settings
-$domainDN = "DC=lab,DC=local"
+$domainDN = "DC=pitythefool,DC=com"
 $password = ConvertTo-SecureString "Cyberark1!" -AsPlainText -Force
 
 # 1. Create Organizational Units
@@ -75,7 +75,7 @@ $bindUser = "cyberarkbind"
 if (-not (Get-ADUser -Filter "SamAccountName -eq '$bindUser'" -ErrorAction SilentlyContinue)) {
     New-ADUser -Name "CyberArk Bind Account" `
                -SamAccountName $bindUser `
-               -UserPrincipalName "$bindUser@lab.local" `
+               -UserPrincipalName "$bindUser@pitythefool.com" `
                -Path "OU=CyberArk_ServiceAccounts,$domainDN" `
                -AccountPassword $password `
                -Enabled $true `
@@ -95,7 +95,7 @@ foreach ($user in $testUsers) {
     if (-not (Get-ADUser -Filter "SamAccountName -eq '$($user.Name)'" -ErrorAction SilentlyContinue)) {
         New-ADUser -Name "$($user.GivenName) $($user.Surname)" `
                    -SamAccountName $user.Name `
-                   -UserPrincipalName "$($user.Name)@lab.local" `
+                   -UserPrincipalName "$($user.Name)@pitythefool.com" `
                    -GivenName $user.GivenName `
                    -Surname $user.Surname `
                    -Path "OU=CyberArk_Users,$domainDN" `
@@ -110,7 +110,7 @@ foreach ($user in $testUsers) {
 }
 
 Write-Host "`n=== Active Directory Setup Completed Successfully! ===" -ForegroundColor Cyan
-Write-Host "Bind User: cyberarkbind@lab.local | Password: Cyberark1!" -ForegroundColor Yellow
+Write-Host "Bind User: cyberarkbind@pitythefool.com | Password: Cyberark1!" -ForegroundColor Yellow
 ```
 
 **How to Run**:
