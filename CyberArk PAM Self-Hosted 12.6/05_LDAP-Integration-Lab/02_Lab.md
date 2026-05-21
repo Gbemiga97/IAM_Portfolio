@@ -130,6 +130,11 @@ The completed mapping looked like this:
 | Auditors | `CyberArk Auditors` |
 | Users | `CyberArk Users` |
 
+
+|  <img src="img/04_Domain-Defination.png"  /> | Mapped AD Group | |
+|---|---| |
+| Vault Admins | `CyberArk Vault Admins` | |
+
 > 💡 **You can skip group mappings and add them later.** If you don't have all four AD groups ready, you can map what you have and add the remaining mappings after the wizard completes. The domain configuration will still save correctly.
 
 Clicked **Next** to proceed.
