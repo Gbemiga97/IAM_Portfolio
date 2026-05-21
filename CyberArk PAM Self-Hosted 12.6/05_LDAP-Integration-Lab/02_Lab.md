@@ -162,16 +162,20 @@ CyberArk stored the LDAP configuration in the `LDAPConf.xml` file inside the `Va
 
 ---
 
-### 7. Enabled LDAP as an Authentication Method in PVWA
+### 7. Confirmed LDAP is Enabled as an Authentication Method in PVWA
 
 Configuring the LDAP domain is only half the work. I also needed to confirm that **LDAP** was enabled as a login method in PVWA's authentication settings — otherwise the LDAP login option would not appear on the login screen.
 
-1. In PVWA, went to **Administration** → **Configuration Options**
+1. In PVWA, went to **Administration** → **Configuration Options** → **Options**
 2. Expanded **Authentication Methods**
 3. Located **LDAP** in the list
 4. Confirmed it was set to **Enabled: Yes**
 
 If LDAP was showing as disabled, I would have clicked it, changed Enabled to **Yes**, and clicked **Apply**.
+
+<div>
+   <img src="img/12_LDAP-Confirmed-Enabled.png" width="500" height="400" />
+</div>
 
 > 💡 **This step is easy to overlook.** The LDAP domain can be fully configured but if the authentication method is disabled, users will not see the LDAP login option on the PVWA login screen and will assume the integration is broken.
 
@@ -184,16 +188,20 @@ With the domain configured and LDAP authentication enabled, I tested whether a d
 1. Opened a new browser tab and navigated to `https://win-pvwa.pitythefool.com/PasswordVault`
 2. On the PVWA login screen, clicked **"Change authentication method"** at the bottom left
 3. Selected **LDAP** from the available options
-4. Entered the credentials of a domain user who was a member of the `CyberArk Vault Admins` AD group:
-   - **Username:** `administrator` (domain administrator account)
+4. Entered the credentials of a domain user who was a member of the `CyberArk Auditors` AD group:
+   - **Username:** `pamauditor01` (domain administrator account)
    - **Password:** domain password
 5. Clicked **Sign In**
 
 The login succeeded and PVWA loaded with the Administrator's full Vault Admin permissions — confirming that:
 - The Bind Account successfully authenticated to AD
 - CyberArk queried the user's group membership
-- The Directory Mapping correctly matched `CyberArk Vault Admins` → Vault Admin role
+- The Directory Mapping correctly matched `CyberArk auditor` → Vault auditor role
 - A Vault user was automatically provisioned for this AD account
+
+|  <img src="img/13_Selected-LDAP.png" width="650"  /> | <img src="img/14_Username&Password.png" width="650" /> | <img src="img/15_TestUser-successfully-Login.png" width="650" /> |
+|---|---|---| 
+| *Selected `LDAP` as the sign in option* | *Entered the `pamauditor01` AD username and password* | *PVWA showing the user successfully logged in with the domain controller credentials* |
 
 ---
 
