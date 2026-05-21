@@ -4,7 +4,7 @@
 
 Before touching PVWA, I had to create the necessary objects in Active Directory first. Everything is done on the **Domain Controller** using **Active Directory Users and Computers (ADUC)**.
 
-**Step 1a — Create the LDAP Bind Account**
+**Step 1a: Created the LDAP Bind Account**
 
 This is the service account CyberArk will use to connect to and query AD.
 
@@ -13,7 +13,7 @@ This is the service account CyberArk will use to connect to and query AD.
 3. Right-clicked → **New** → **User**
 4. Filled in the details:
    - **First name:** `CyberArk`
-   - **Last name:** `Bind`
+   - **Last name:** `Bind Account`
    - **User logon name:** `cyberarkbindaccount`
 5. Clicked **Next** and set a strong password
 6. Checked **"Password never expires"** — critical, as explained above
@@ -22,7 +22,7 @@ This is the service account CyberArk will use to connect to and query AD.
 
 > 💡 **Tip:** Keep the bind account credentials documented securely. If this password ever changes and is not updated in CyberArk's LDAP configuration, all LDAP logins will fail immediately.
 
-**Step 1b — Create the Four CyberArk AD Security Groups**
+**Step 1b: Created the Four CyberArk AD Security Groups**
 
 These four groups are what CyberArk will map its role levels against. Each group corresponds to a different level of access in CyberArk.
 
@@ -35,15 +35,18 @@ In **ADUC**, right-clicked the **Users** container → **New** → **Group** for
 | `CyberArk Auditors` | Global | Security | Read-only access to audit logs and sessions |
 | `CyberArk Users` | Global | Security | Standard end-user access to request accounts |
 
-After creating all four groups, I added the relevant domain user accounts to each group based on their intended role. For testing purposes I added my administrator account to **CyberArk Vault Admins**.
+After creating all four groups, I added the relevant domain user accounts to each group based on their intended role. For testing purposes, I added my administrator account to **CyberArk Vault Admins**.
 
+| <img src="img/01_bind-account.png" /> | <img src="img/02_CyberArk-groups.png" /> | 
+|---|---|
+| *Created `CyberArk bind account` for integration*  | *Gour groups created in AD* | 
 > 💡 **Why four groups?** CyberArk's role model maps directly to these four levels. You don't need to create them all at once — start with Vault Admins and Users. But having all four from the beginning means your LDAP mapping is future-proof as your team grows.
 
 ---
 
-### 2. Navigating to LDAP Integration in PVWA
+### 2. Navigated to LDAP Integration in PVWA
 
-1. Opened Chrome and logged into PVWA at `https://pvwa.pitythefool.com/PasswordVault` using the internal **Administrator** account
+1. Opened Chrome and logged into PVWA at `https://win-pvwa.pitythefool.com/PasswordVault` using the internal **Administrator** account
 2. Clicked **User Provisioning** in the left navigation panel
 3. Clicked **LDAP Integration**
 4. The LDAP Integration page opened — currently empty since no domain had been configured yet
@@ -51,7 +54,7 @@ After creating all four groups, I added the relevant domain user accounts to eac
 
 ---
 
-### 3. Step 1 of the Wizard — Define Domain
+### 3. Step 1 of the Wizard: Defined the Domain
 
 This is where I told CyberArk the basic details of the Active Directory domain it will connect to.
 
@@ -61,17 +64,17 @@ Fields I filled in:
 |---|---|---|
 | **Domain Name** | `pitythefool.com` | The FQDN of the AD domain |
 | **Domain NetBIOS Name** | `PITYTHEFOOL` | The short-form domain name used in `DOMAIN\Username` format |
-| **Bind Account Username** | `svc_cyberark_bind` | The dedicated service account created in Step 1a |
+| **Bind Account Username** | `cyberarkbindaccount` | The dedicated service account created in Step 1a |
 | **Bind Account Password** | `<password set in AD>` | CyberArk uses this to authenticate to AD for queries |
 | **Bind Account Domain** | `pitythefool.com` | The domain the bind account belongs to |
 
-> ⚠️ **The Bind Account username format matters.** Enter it as just the username (`svc_cyberark_bind`), not in `DOMAIN\username` or UPN (`svc_cyberark_bind@pitythefool.com`) format unless the wizard specifically asks for it. Using the wrong format is a common cause of connection failures at the next step.
+> ⚠️ **The Bind Account username format matters.** Enter it as just the username (`cyberarkbindaccount`), not in `DOMAIN\username` or UPN (`cyberarkbindaccount@pitythefool.com`) format unless the wizard specifically asks for it. Using the wrong format is a common cause of connection failures at the next step.
 
 Clicked **Next** to proceed.
 
 ---
 
-### 4. Step 2 of the Wizard — Select Domain Controllers
+### 4. Step 2 of the Wizard: Selected Domain Controllers
 
 On this screen, CyberArk automatically detected the available Domain Controllers in the `pitythefool.com` domain.
 
@@ -86,7 +89,7 @@ Clicked **Next** to proceed.
 
 ---
 
-### 5. Step 3 of the Wizard — Create Directory Mapping
+### 5. Step 3 of the Wizard: Created Directory Mapping
 
 This is the most important step — where the AD groups created in Step 1b are linked to CyberArk's role levels.
 
@@ -124,7 +127,7 @@ Clicked **Next** to proceed.
 
 ---
 
-### 6. Step 4 of the Wizard — Review and Save
+### 6. Step 4 of the Wizard: Review and Save
 
 The final wizard screen showed a summary of all the configuration:
 - Domain name and NetBIOS name
@@ -140,7 +143,7 @@ CyberArk stored the LDAP configuration in the `LDAPConf.xml` file inside the `Va
 
 ---
 
-### 7. Enabling LDAP as an Authentication Method in PVWA
+### 7. Enabled LDAP as an Authentication Method in PVWA
 
 Configuring the LDAP domain is only half the work. I also needed to confirm that **LDAP** was enabled as a login method in PVWA's authentication settings — otherwise the LDAP login option would not appear on the login screen.
 
