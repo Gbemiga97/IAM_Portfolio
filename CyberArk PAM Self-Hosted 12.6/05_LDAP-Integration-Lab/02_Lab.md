@@ -75,7 +75,7 @@ Fields I filled in:
 Clicked **Next** to proceed.
 
 <div>
-   <img src="img/" width="500" height="400" />
+   <img src="img/04_Domain-Defination.png" width="500" height="400" />
 </div>
 
 ---
@@ -89,7 +89,11 @@ On this screen, CyberArk automatically detected the available Domain Controllers
 3. Clicked **Connect**
 4. CyberArk used the Bind Account credentials to test the connection — a green success indicator confirmed the connection to AD was working
 
-> 💡 **If the connection test fails here:** The most common causes are a wrong Bind Account password, a firewall blocking LDAP port **389** (or LDAPS port **636** for secure connections) between the PVWA server and the Domain Controller, or the Bind Account being locked out. Check all three before assuming a configuration error.
+<div>
+   <img src="img/05_connected-to-AD.png" width="500" height="400" />
+</div>
+
+> 💡 **If the connection test fails here:** The most common causes are a wrong Bind Account password, a firewall blocking LDAP port 389 (or LDAPS port 636 for secure connections) between the PVWA server and the Domain Controller, or the Bind Account being locked out. If using port 636 (LDAPS), the Domain Controller's SSL certificate must also be imported to the Vault before the connection will succeed, which was done here:<a href="https://github.com/Gbemiga97/IAM_Portfolio/blob/main/CyberArk%20PAM%20Self-Hosted%2012.6/05_LDAP-Integration-Lab/03_TroubleShooting-log.md">TroubleShooting-Log.md</a>. Check all of these before assuming a configuration error.
 
 Clicked **Next** to proceed.
 
