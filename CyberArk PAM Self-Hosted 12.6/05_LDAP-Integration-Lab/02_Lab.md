@@ -1,4 +1,3 @@
-https://github.com/Gbemiga97/IAM_Portfolio/blob/main/CyberArk%20PAM%20Self-Hosted%2012.6/05_LDAP-Integration-Lab/03_TroubleShooting-log.md
 ## What I Did (Step-by-Step)
 
 ### 1. Created the Required Active Directory Objects
@@ -89,9 +88,9 @@ On this screen, CyberArk automatically detected the available Domain Controllers
 3. Clicked **Connect**
 4. CyberArk used the Bind Account credentials to test the connection — a green success indicator confirmed the connection to AD was working
 
-<div>
-   <img src="img/05_connected-to-AD.png" width="500" height="400" />
-</div>
+| <img src="img/05_connected-to-AD.png" width="650"  /> | <img src="img/06_Connected-to-AD-succesfully.png" width="650"  /> |
+|---|---|
+| *The page showing the domain controller to be selected and the error shown above fixed in <a href="https://github.com/Gbemiga97/IAM_Portfolio/blob/main/CyberArk%20PAM%20Self-Hosted%2012.6/05_LDAP-Integration-Lab/03_TroubleShooting-log.md">TroubleShooting-Log.md</a>* | *Notification of domain controller connected successfully with CyberArk*|
 
 > 💡 **If the connection test fails here:** The most common causes are a wrong Bind Account password, a firewall blocking LDAP port 389 (or LDAPS port 636 for secure connections) between the PVWA server and the Domain Controller, or the Bind Account being locked out. If using port 636 (LDAPS), the Domain Controller's SSL certificate must also be imported to the Vault before the connection will succeed, which was done here:<a href="https://github.com/Gbemiga97/IAM_Portfolio/blob/main/CyberArk%20PAM%20Self-Hosted%2012.6/05_LDAP-Integration-Lab/03_TroubleShooting-log.md">TroubleShooting-Log.md</a>. Check all of these before assuming a configuration error.
 
@@ -101,7 +100,7 @@ Clicked **Next** to proceed.
 
 ### 5. Step 3 of the Wizard: Created Directory Mapping
 
-This is the most important step — where the AD groups created in Step 1b are linked to CyberArk's role levels.
+This is the most important step where the AD groups created in Step 1b are linked to CyberArk's role levels.
 
 The wizard presented four role slots to map:
 
@@ -139,7 +138,7 @@ Clicked **Next** to proceed.
 
 ### 6. Step 4 of the Wizard: Review and Save
 
-The final wizard screen showed a summary of all the configuration:
+The final wizard screen showed a summary of all the configurations:
 - Domain name and NetBIOS name
 - Bind account username
 - Domain Controller selected
@@ -172,7 +171,7 @@ If LDAP was showing as disabled, I would have clicked it, changed Enabled to **Y
 
 With the domain configured and LDAP authentication enabled, I tested whether a domain user could log in.
 
-1. Opened a new browser tab and navigated to `https://pvwa.pitythefool.com/PasswordVault`
+1. Opened a new browser tab and navigated to `https://win-pvwa.pitythefool.com/PasswordVault`
 2. On the PVWA login screen, clicked **"Change authentication method"** at the bottom left
 3. Selected **LDAP** from the available options
 4. Entered the credentials of a domain user who was a member of the `CyberArk Vault Admins` AD group:
