@@ -1,6 +1,6 @@
 ## What I Did (Step-by-Step)
 
-### 1. Creating the Required Active Directory Objects
+### 1. Created the Required Active Directory Objects
 
 Before touching PVWA, I had to create the necessary objects in Active Directory first. Everything is done on the **Domain Controller** using **Active Directory Users and Computers (ADUC)**.
 
