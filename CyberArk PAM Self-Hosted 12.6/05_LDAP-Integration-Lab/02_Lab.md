@@ -131,9 +131,9 @@ The completed mapping looked like this:
 | Users | `CyberArk Users` |
 
 
-|  <img src="img/04_Domain-Defination.png"  /> | Mapped AD Group | |
-|---|---| |
-| Vault Admins | `CyberArk Vault Admins` | |
+|  <img src="img/07_Vault-admins-defined.png" width="650"  /> | <img src="img/08_Safe-manager-view.png" width="650" /> | <img src="img/09_Defined-all.png" width="650" /> |
+|---|---|---| 
+| *Vault Admins group mapped* | *Safe Manager group user `pamsafemanager01` previously created in AD* | *Domain mapping completed with the four roles* |
 
 > 💡 **You can skip group mappings and add them later.** If you don't have all four AD groups ready, you can map what you have and add the remaining mappings after the wizard completes. The domain configuration will still save correctly.
 
@@ -150,6 +150,11 @@ The final wizard screen showed a summary of all the configurations:
 - All four group mappings
 
 Reviewed each entry for accuracy and clicked **Save**.
+
+
+|  <img src="img/10_summary.png" width /> | <img src="img/11_Directory-mapping-confirmation.png"  /> | 
+|---|---|
+| *Summary of the Directory mapping* | *The LDAP page updated to the Directory Mapping and also an option to add mapping* | 
 
 CyberArk stored the LDAP configuration in the `LDAPConf.xml` file inside the `VaultInternal` Safe — this happens automatically in the background. The LDAP domain now appeared on the LDAP Integration page.
 
