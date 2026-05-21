@@ -14,7 +14,7 @@ This is the service account CyberArk will use to connect to and query AD.
 4. Filled in the details:
    - **First name:** `CyberArk`
    - **Last name:** `Bind`
-   - **User logon name:** `svc_cyberark_bind`
+   - **User logon name:** `cyberarkbindaccount`
 5. Clicked **Next** and set a strong password
 6. Checked **"Password never expires"** — critical, as explained above
 7. Left **"User must change password at next logon"** unchecked
