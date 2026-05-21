@@ -1,3 +1,4 @@
+https://github.com/Gbemiga97/IAM_Portfolio/blob/main/CyberArk%20PAM%20Self-Hosted%2012.6/05_LDAP-Integration-Lab/03_TroubleShooting-log.md
 ## What I Did (Step-by-Step)
 
 ### 1. Created the Required Active Directory Objects
@@ -52,6 +53,10 @@ After creating all four groups, I added the relevant domain user accounts to eac
 4. The LDAP Integration page opened — currently empty since no domain had been configured yet
 5. Clicked **New Domain** to begin the configuration wizard
 
+<div>
+   <img src="img/03_LDAP-Integration-page.png" width="500" height="400" />
+</div>
+
 ---
 
 ### 3. Step 1 of the Wizard: Defined the Domain
@@ -60,17 +65,18 @@ This is where I told CyberArk the basic details of the Active Directory domain i
 
 Fields I filled in:
 
-| Field | Value | Why |
-|---|---|---|
-| **Domain Name** | `pitythefool.com` | The FQDN of the AD domain |
-| **Domain NetBIOS Name** | `PITYTHEFOOL` | The short-form domain name used in `DOMAIN\Username` format |
-| **Bind Account Username** | `cyberarkbindaccount` | The dedicated service account created in Step 1a |
-| **Bind Account Password** | `<password set in AD>` | CyberArk uses this to authenticate to AD for queries |
-| **Bind Account Domain** | `pitythefool.com` | The domain the bind account belongs to |
-
-> ⚠️ **The Bind Account username format matters.** Enter it as just the username (`cyberarkbindaccount`), not in `DOMAIN\username` or UPN (`cyberarkbindaccount@pitythefool.com`) format unless the wizard specifically asks for it. Using the wrong format is a common cause of connection failures at the next step.
+| Field | Value |
+|---|---|
+| **Domain Name** | `pitythefool.com` |
+| **Bind Account Username** | `cyberarkbindaccount@pitythefool.com` | 
+| **Bind Account Password** | `<password set in AD>` |
+| **Domain Base Context** | `dc=pitythefool,dc=com` |
 
 Clicked **Next** to proceed.
+
+<div>
+   <img src="img/" width="500" height="400" />
+</div>
 
 ---
 
