@@ -49,7 +49,7 @@ After creating all four groups, I added the relevant domain user accounts to eac
 1. Opened Chrome and logged into PVWA at `https://win-pvwa.pitythefool.com/PasswordVault` using the internal **Administrator** account
 2. Clicked **User Provisioning** in the left navigation panel
 3. Clicked **LDAP Integration**
-4. The LDAP Integration page opened — currently empty since no domain had been configured yet
+4. The LDAP Integration page opened, currently empty since no domain had been configured yet
 5. Clicked **New Domain** to begin the configuration wizard
 
 <div>
@@ -86,11 +86,11 @@ On this screen, CyberArk automatically detected the available Domain Controllers
 1. The wizard displayed a list of detected Domain Controllers
 2. Selected `WIN-6B5GOGITF83.pitythefool.com` from the list
 3. Clicked **Connect**
-4. CyberArk used the Bind Account credentials to test the connection — a green success indicator confirmed the connection to AD was working
+4. CyberArk used the Bind Account credentials to test the connection. 
 
 | <img src="img/05_connected-to-AD.png" width="650"  /> | <img src="img/06_Connected-to-AD-succesfully.png" width="650"  /> |
 |---|---|
-| *The page showing the domain controller to be selected and the error shown above fixed in <a href="https://github.com/Gbemiga97/IAM_Portfolio/blob/main/CyberArk%20PAM%20Self-Hosted%2012.6/05_LDAP-Integration-Lab/03_TroubleShooting-log.md">TroubleShooting-Log.md</a>* | *Notification of domain controller connected successfully with CyberArk*|
+| *The page showing the domain controller to be selected and the error shown above fixed in <a href="https://github.com/Gbemiga97/IAM_Portfolio/blob/main/CyberArk%20PAM%20Self-Hosted%2012.6/05_LDAP-Integration-Lab/03_TroubleShooting-log.md">TroubleShooting-Log.md</a>* | *A green success indicator confirmed the connection to AD was working*|
 
 > 💡 **If the connection test fails here:** The most common causes are a wrong Bind Account password, a firewall blocking LDAP port 389 (or LDAPS port 636 for secure connections) between the PVWA server and the Domain Controller, or the Bind Account being locked out. If using port 636 (LDAPS), the Domain Controller's SSL certificate must also be imported to the Vault before the connection will succeed, which was done here:<a href="https://github.com/Gbemiga97/IAM_Portfolio/blob/main/CyberArk%20PAM%20Self-Hosted%2012.6/05_LDAP-Integration-Lab/03_TroubleShooting-log.md">TroubleShooting-Log.md</a>. Check all of these before assuming a configuration error.
 
@@ -177,7 +177,7 @@ If LDAP was showing as disabled, I would have clicked it, changed Enabled to **Y
    <img src="img/12_LDAP-Confirmed-Enabled.png" width="500" height="400" />
 </div>
 
-> 💡 **This step is easy to overlook.** The LDAP domain can be fully configured but if the authentication method is disabled, users will not see the LDAP login option on the PVWA login screen and will assume the integration is broken.
+> 💡 **This step is easy to overlook.** The LDAP domain can be fully configured, but if the authentication method is disabled, users will not see the LDAP login option on the PVWA login screen and will assume the integration is broken.
 
 ---
 
@@ -201,7 +201,7 @@ The login succeeded and PVWA loaded with the Administrator's full Vault Admin pe
 
 |  <img src="img/13_Selected-LDAP.png" width="650"  /> | <img src="img/14_Username&Password.png" width="650" /> | <img src="img/15_TestUser-successfully-Login.png" width="650" /> |
 |---|---|---| 
-| *Selected `LDAP` as the sign in option* | *Entered the `pamauditor01` AD username and password* | *PVWA showing the user successfully logged in with the domain controller credentials* |
+| *Selected `LDAP` as the sign-in option* | *Entered the `pamauditor01` AD username and password* | *PVWA showing the user successfully logged in with the domain controller credentials* |
 
 ---
 
@@ -221,9 +221,9 @@ This means **user lifecycle is managed entirely through Active Directory** once 
 
 ## Key Concepts I Focused On
 
-- **Bind Account Security:** The Bind Account only needs read access to AD — it should never be given Domain Admin or any elevated privileges. Least privilege applies to service accounts just as much as to human accounts.
+- **Bind Account Security:** The Bind Account only needs read access to Active Directory; it should never be given Domain Admin or any elevated privileges. Least privilege applies to service accounts just as much as to human accounts.
 - **Password Never Expires:** Setting the Bind Account password to never expire is not a security shortcut — it is a deliberate operational decision. The alternative is a recurring outage every time the password expires. The account's read-only scope means the risk is minimal and acceptable.
-- **Directory Mapping is the Access Control Layer:** The AD groups are not just organisational labels — they are the mechanism that determines what every LDAP user can and cannot do in CyberArk. Managing AD group membership *is* managing CyberArk access.
+- **Directory Mapping is the Access Control Layer:** The AD groups are not just organisational labels; they are the mechanism that determines what every LDAP user can and cannot do in CyberArk. Managing AD group membership *is* managing CyberArk access.
 - **LDAP vs LDAPS:** This lab used standard LDAP (port 389). In a production environment, **LDAPS** (port 636) with a valid SSL certificate should be used to encrypt the authentication traffic between PVWA and the Domain Controller. Sending credentials over unencrypted LDAP is not acceptable in a real environment.
 - **Never Edit LDAPConf.xml Directly:** All LDAP configuration must go through the PVWA wizard. The file is managed by CyberArk and direct edits can silently corrupt it.
 
@@ -231,23 +231,23 @@ This means **user lifecycle is managed entirely through Active Directory** once 
 
 ## What I Learned
 
-- How CyberArk's Transparent User Management model works — and why managing CyberArk access through AD group membership is significantly more maintainable than managing internal Vault users manually
-- The difference between the Bind Account (which queries AD) and the AD groups (which control access) — these are two distinct concepts that are easy to confuse initially
-- Why the LDAP authentication method must be explicitly enabled in PVWA in addition to configuring the domain — two separate settings that must both be correct for the login option to appear
+- How CyberArk's Transparent User Management model works, and why managing CyberArk access through AD group membership is significantly more maintainable than managing internal Vault users manually
+- The difference between the Bind Account (which queries AD) and the AD groups (which control access). These are two distinct concepts that are easy to confuse initially
+- Why the LDAP authentication method must be explicitly enabled in PVWA, in addition to configuring the domain, requires two separate settings that must both be correct for the login option to appear
 - **Most importantly:** I learned that LDAP integration is where CyberArk transitions from a standalone PAM tool to an integrated enterprise security platform. Once connected to AD, CyberArk inherits the organisation's identity governance — joiners, movers, and leavers are all handled automatically through existing HR and IT processes rather than requiring separate administration in CyberArk.
 
 ---
 
 ## Conclusion: Why This Lab Matters
 
-LDAP integration is not an optional add-on — it is what makes CyberArk operationally viable in an enterprise environment. Managing individual internal Vault users at scale is not realistic. Connecting CyberArk to Active Directory means the organisation's existing identity management processes automatically govern who has access, at what level, and for how long.
+LDAP integration is not an optional add-on; it is what makes CyberArk operationally viable in an enterprise environment. Managing individual internal Vault users at scale is not realistic. Connecting CyberArk to Active Directory means the organisation's existing identity management processes automatically govern who has access, at what level, and for how long.
 
 Through this project, I gained confidence in:
 
 1. **Active Directory Administration:** Creating and managing service accounts, security groups, and understanding how directory queries work in an enterprise identity environment.
 2. **LDAP Protocol Fundamentals:** Understanding how Bind Accounts work, what Base DNs are, and how LDAP queries traverse directory structures to find users and groups.
 3. **CyberArk Role Architecture:** Understanding the four core CyberArk role levels (Vault Admins, Safe Managers, Auditors, Users) and how Directory Mapping bridges them to the organisation's existing group structure.
-4. **Enterprise Identity Integration:** Understanding that PAM solutions do not exist in isolation — they must integrate with the organisation's identity infrastructure to be manageable and auditable at scale.
+4. **Enterprise Identity Integration:** Understanding that PAM solutions do not exist in isolation, they must integrate with the organisation's identity infrastructure to be manageable and auditable at scale.
 
 ---
 
