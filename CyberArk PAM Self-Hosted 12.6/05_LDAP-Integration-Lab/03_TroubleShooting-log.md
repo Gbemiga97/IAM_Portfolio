@@ -3,11 +3,11 @@ The error message is actually very specific about exactly what needs to be fixed
 
 ---
 
-## Fix 1 — Import the Domain Controller's SSL Certificate to the Vault
+## Fix 1: Import the Domain Controller's SSL Certificate to the Vault
 
 Since port 636 (LDAPS) is being used, the Vault needs to trust the Domain Controller's SSL certificate. Without it the secure connection is rejected.
 
-**Step 1 — Export the certificate from the Domain Controller:**
+**Step 1: Export the certificate from the Domain Controller:**
 
 1. On the **Domain Controller** (`WIN-6B5GOGITF83`), open PowerShell as Administrator and run:
 ```powershell
@@ -36,7 +36,7 @@ Start-Service -Name "CyberArk Vault"
 
 ---
 
-## Fix 2 — Add the Domain Controller to the Vault's Hosts File
+## Fix 2: Add the Domain Controller to the Vault's Hosts File
 
 The Vault server cannot use DNS to resolve hostnames — it has no DNS server configured by design (part of its security isolation). This means you must manually tell the Vault where the Domain Controller lives by adding it to the Windows hosts file **on the Vault server**.
 
@@ -52,11 +52,11 @@ C:\Windows\System32\drivers\etc\hosts
 ```
 5. Save and close the file
 
-> 💡 This is why the error specifically says *"Verify that each of the domain controllers was added to the Vault's hosts file"* — it is a known requirement for every DC the Vault will communicate with.
+> 💡 This is why the error specifically says *"Verify that each of the domain controllers was added to the Vault's hosts file"*. It is a known requirement for every DC that the Vault will communicate with.
 
 ---
 
-## After Both Fixes — Retry the Connection
+## After Both Fixes, Retry the Connection
 
 Go back to PVWA → **User Provisioning** → **LDAP Integration** → **New Domain**, go through Step 1 again (Define Domain), and when you reach Step 2 with `WIN-6B5GOGITF83.pitythefool.com` selected, click **Connect** again. The connection should succeed this time.
 
