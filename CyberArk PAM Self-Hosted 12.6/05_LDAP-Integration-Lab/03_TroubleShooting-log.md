@@ -1,63 +1,111 @@
 
-The error message is actually very specific about exactly what needs to be fixed. There are **two things** both required because the connection is using port **636 (LDAPS — secure connection)**:
 
 ---
 
-## Fix 1: Import the Domain Controller's SSL Certificate to the Vault
+```markdown
+# CyberArk PAM - LDAP Integration Troubleshooting Log
 
-Since port 636 (LDAPS) is being used, the Vault needs to trust the Domain Controller's SSL certificate. Without it the secure connection is rejected.
-
-**Step 1: Export the certificate from the Domain Controller:**
-
-1. On the **Domain Controller** (`WIN-6B5GOGITF83`), open PowerShell as Administrator and run:
-```powershell
-certutil -ca.cert C:\DCcert.cer
-```
-This exports the CA certificate to `C:\DCcert.cer`
-
-2. Copy `DCcert.cer` to the **Vault server**
-
-**Step 2 — Import the certificate into the Vault:**
-
-1. On the **Vault server**, copy `DCcert.cer` into the Vault's Server directory:
-```
-C:\Program Files (x86)\PrivateArk\Server\
-```
-2. Open PowerShell as Administrator on the Vault server and run:
-```powershell
-certutil -addstore -f "Root" "C:\Program Files (x86)\PrivateArk\Server\DCcert.cer"
-```
-3. Restart the **CyberArk Vault** service:
-```powershell
-Stop-Service -Name "CyberArk Vault"
-Start-Service -Name "CyberArk Vault"
-```
-
+**Domain**: `awesome.lab`  
+**Environment**: CyberArk PAM Self-Hosted 12.6  
+**Date**: May 2026  
+**Status**: Successfully Completed
 
 ---
 
-## Fix 2: Add the Domain Controller to the Vault's Hosts File
+## Overview
+This document records all issues encountered during LDAP integration and the solutions applied.
 
-The Vault server cannot use DNS to resolve hostnames — it has no DNS server configured by design (part of its security isolation). This means you must manually tell the Vault where the Domain Controller lives by adding it to the Windows hosts file **on the Vault server**.
+---
 
-1. RDP into the **Vault server** (`192.168.100.11`)
-2. Open **Notepad as Administrator**
-3. Open the file:
-```
+## Issue 1: "Failed to contact the domain"
+
+**Error Message**:  
+"Failed to contact the domain. This can happen because: Domain name, Bind username, Bind user password or Domain base context is incorrect."
+
+**Cause**:  
+LDAPS (SSL) was enabled but the Domain Controller certificate was not trusted by the PVWA / Vault.
+
+**Solution**:
+- Unchecked **"Use Secure connection (SSL)"** to use plain LDAP (port 389) first.
+- Successfully connected after switching to non-SSL.
+
+**Status**: ✅ Resolved (Temporary workaround)
+
+---
+
+## Issue 2: "Failed to connect to the domain controllers"
+
+**Error Message**:  
+"Could not establish a connection to the selected domain controllers. Verify that each of the domain controllers was added to the Vault's hosts file."
+
+**Cause**:  
+The CyberArk Vault does not fully rely on Windows DNS for LDAP connections.
+
+**Solution**:
+On the **Vault Server**, edited the hosts file:
+
+```text
 C:\Windows\System32\drivers\etc\hosts
 ```
-4. Add this line at the bottom:
-```
-192.168.100.10    WIN-6B5GOGITF83.pitythefool.com
-```
-5. Save and close the file
 
-> 💡 This is why the error specifically says *"Verify that each of the domain controllers was added to the Vault's hosts file"*. It is a known requirement for every DC that the Vault will communicate with.
+Added the line:
+```
+192.168.225.10    DC01.awesome.lab
+```
+
+**Status**: ✅ Resolved
 
 ---
 
-## After Both Fixes, Retry the Connection
+## Issue 3: Port Connectivity Problems
 
-Go back to PVWA → **User Provisioning** → **LDAP Integration** → **New Domain**, go through Step 1 again (Define Domain), and when you reach Step 2 with `WIN-6B5GOGITF83.pitythefool.com` selected, click **Connect** again. The connection should succeed this time.
+**Tested Ports**:
+- Port 389 (LDAP) → Confirmed open and working
+- Port 636 (LDAPS) → Planned for production
 
-> 💡 **Alternative for lab use only:** If you want to skip the certificate complexity, go back to Step 1 (Define Domain) and change the port from `636` to `389`. Port 389 uses plain LDAP without SSL — you still need the hosts file fix but you can skip the certificate import. Only do this in a lab; in production, always use LDAPS (636).
+**Verification Commands** (run on Vault Server):
+
+```powershell
+Test-NetConnection -ComputerName DC01.awesome.lab -Port 389
+Test-NetConnection -ComputerName DC01.awesome.lab -Port 636
+```
+
+**Status**: ✅ Port 389 confirmed working
+
+---
+
+## Issue 4: Enabling LDAPS (Port 636) - Future Step
+
+**Steps to Enable Secure LDAPS**:
+
+1. Export Root CA certificate from Domain Controller.
+2. Import the certificate into **Trusted Root Certification Authorities** on:
+   - Vault Server
+   - PVWA Server
+3. Re-enable **"Use Secure connection (SSL)"** in LDAP Integration.
+4. Update port to **636**.
+
+**Status**: Not yet implemented (Lab currently uses LDAP 389)
+
+---
+
+## Final Configuration Summary
+
+- **Domain**: `awesome.lab`
+- **Bind User**: `cyberarkbind@awesome.lab`
+- **Base Context**: `dc=awesome,dc=lab`
+- **Connection Type**: LDAP (389) - Working
+- **Domain Controller**: `DC01.awesome.lab` (192.168.225.10)
+- **Hosts file entry**: Added on Vault
+
+---
+
+## Lessons Learned
+
+- Always add Domain Controllers to the Vault’s `hosts` file.
+- Start with non-SSL (LDAP) for initial testing.
+- Import Root CA certificate before enabling LDAPS.
+- Use `Test-NetConnection` and `ldp.exe` for troubleshooting.
+- Restart Vault services after making hosts file or certificate changes.
+
+---
