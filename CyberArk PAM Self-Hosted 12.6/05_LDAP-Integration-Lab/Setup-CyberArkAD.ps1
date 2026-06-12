@@ -124,6 +124,3 @@ foreach ($user in $testUsers) {
         Write-Host "Created User: $($user.Name) and added to $($user.Group)" -ForegroundColor Green
     }
 }
-
-Write-Host "`n=== Active Directory Setup Completed Successfully! ===" -ForegroundColor Cyan
-Write-Host "Bind User: cyberarkbind@lab.local | Password: Cyberark1!" -ForegroundColor Yellow
