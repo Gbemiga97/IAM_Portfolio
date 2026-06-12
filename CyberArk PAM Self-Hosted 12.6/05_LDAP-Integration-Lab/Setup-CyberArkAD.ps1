@@ -44,6 +44,7 @@ foreach ($group in $groups) {
 
 # 3. Create LDAP Bind Account (Read-only service account)
 $bindUser = "cyberarkbind"
+
 if (-not (Get-ADUser -Filter "SamAccountName -eq '$bindUser'" -ErrorAction SilentlyContinue)) {
     New-ADUser -Name "CyberArk Bind Account" `
                -SamAccountName $bindUser `
@@ -56,7 +57,50 @@ if (-not (Get-ADUser -Filter "SamAccountName -eq '$bindUser'" -ErrorAction Silen
     Write-Host "Created Bind Account: $bindUser" -ForegroundColor Green
 }
 
-# 4. Create Test Users
+# 4. Create Dedicated Reconcile Service Account
+$reconcileUser = "cyberark-reconcile"
+
+if (-not (Get-ADUser -Filter "SamAccountName -eq '$reconcileUser'" -ErrorAction SilentlyContinue)) {
+    New-ADUser -Name "CyberArk Reconcile Account" `
+               -SamAccountName $reconcileUser `
+               -UserPrincipalName "$reconcileUser@$domainName" `
+               -Path "OU=$ouName,$domainDN" `
+               -AccountPassword $password `
+               -Enabled $true `
+               -PasswordNeverExpires $true `
+               -Description "CyberArk CPM Reconcile Account - Password Reset"
+    Write-Host "✅ Created Reconcile Account: $reconcileUser@$domainName" -ForegroundColor Green
+} else {
+    Write-Host "Account already exists: $reconcileUser" -ForegroundColor Yellow
+}
+
+# Grant minimal reconciliation permissions on CyberArk_Users OU
+$targetOU = "OU=CyberArk_Users,$domainDN"
+$reconcileDN = "$reconcileUser@$domainName"
+
+dsacls.exe "$targetOU" /G "$reconcileDN`:CA;Reset Password;user" /I:S
+dsacls.exe "$targetOU" /G "$reconcileDN`:WD" /I:S
+dsacls.exe "$targetOU" /G "$reconcileDN`:WPRP;pwdLastSet;user" /I:S
+dsacls.exe "$targetOU" /G "$reconcileDN`:WPRP;lockoutTime;user" /I:S
+
+
+
+# 5. Create Scan Account
+$scanUser = "cyberark-scan"
+
+if (-not (Get-ADUser -Filter "SamAccountName -eq '$scanUser'" -ErrorAction SilentlyContinue)) {
+    New-ADUser -Name "CyberArk Scan Account" `
+               -SamAccountName $scanUser `
+               -UserPrincipalName "$scanUser@$domainName" `
+               -Path "OU=CyberArk_ServiceAccounts,$domainDN" `
+               -AccountPassword $password `
+               -Enabled $true `
+               -PasswordNeverExpires $true `
+               -Description "CyberArk Accounts Discovery Scan Account"
+    Write-Host "✅ Created Scan Account: $scanUser@$domainName" -ForegroundColor Green
+}
+
+# 5. Create Test Users
 $testUsers = @(
     @{Name="ca_admin01"; GivenName="CyberArk"; Surname="Admin01"; Group="CyberArk_Vault_Admins"},
     @{Name="ca_user01"; GivenName="CyberArk"; Surname="User01"; Group="CyberArk_Users"},
