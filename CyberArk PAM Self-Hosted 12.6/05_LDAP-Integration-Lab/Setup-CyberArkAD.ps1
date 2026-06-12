@@ -100,7 +100,7 @@ if (-not (Get-ADUser -Filter "SamAccountName -eq '$scanUser'" -ErrorAction Silen
     Write-Host "✅ Created Scan Account: $scanUser@$domainName" -ForegroundColor Green
 }
 
-# 5. Create Test Users
+# 6. Create Test Users
 $testUsers = @(
     @{Name="ca_admin01"; GivenName="CyberArk"; Surname="Admin01"; Group="CyberArk_Vault_Admins"},
     @{Name="ca_user01"; GivenName="CyberArk"; Surname="User01"; Group="CyberArk_Users"},
