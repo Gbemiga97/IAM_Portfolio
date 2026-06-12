@@ -65,7 +65,7 @@ if (-not (Get-ADUser -Filter "SamAccountName -eq '$reconcileUser'" -ErrorAction 
     New-ADUser -Name "CyberArk Reconcile Account" `
                -SamAccountName $reconcileUser `
                -UserPrincipalName "$reconcileUser@$domainName" `
-               -Path "OU=$ouName,$domainDN" `
+               -Path "OU=CyberArk_ServiceAccounts,$domainDN" `
                -AccountPassword $password `
                -Enabled $true `
                -PasswordNeverExpires $true `
