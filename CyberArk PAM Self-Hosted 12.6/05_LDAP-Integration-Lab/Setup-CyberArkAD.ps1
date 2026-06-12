@@ -7,6 +7,7 @@ Import-Module ActiveDirectory -ErrorAction Stop
 
 # Define domain and base settings
 $domainDN = "DC=lab,DC=local"
+$domainName = "lab.local"
 $password = ConvertTo-SecureString "Cyberark1!" -AsPlainText -Force
 
 # 1. Create Organizational Units
@@ -48,7 +49,7 @@ $bindUser = "cyberarkbind"
 if (-not (Get-ADUser -Filter "SamAccountName -eq '$bindUser'" -ErrorAction SilentlyContinue)) {
     New-ADUser -Name "CyberArk Bind Account" `
                -SamAccountName $bindUser `
-               -UserPrincipalName "$bindUser@lab.local" `
+               -UserPrincipalName "$bindUser@$domainName" `
                -Path "OU=CyberArk_ServiceAccounts,$domainDN" `
                -AccountPassword $password `
                -Enabled $true `
