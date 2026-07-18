@@ -6,15 +6,18 @@
 Import-Module ActiveDirectory -ErrorAction Stop
 
 # Define domain and base settings
-$domainDN = "DC=lab,DC=local"
-$domainName = "lab.local"
+$domainDN = "DC=pitythefool,DC=com"
+$domainName = "pitythefool.com"
 $password = ConvertTo-SecureString "Cyberark1!" -AsPlainText -Force
 
 # 1. Create Organizational Units
 $ous = @(
     "CyberArk_Users",
     "CyberArk_Admins",
-    "CyberArk_ServiceAccounts"
+    "CyberArk_ServiceAccounts",
+    "CyberArk_Auditors",
+    "CyberArk_SafeManagers",
+    "CyberArk_Groups"
 )
 
 foreach ($ou in $ous) {
@@ -28,8 +31,11 @@ foreach ($ou in $ous) {
 
 # 2. Create Security Groups
 $groups = @(
-    @{Name="CyberArk_Vault_Admins"; Path="OU=CyberArk_Admins,$domainDN"},
-    @{Name="CyberArk_Users"; Path="OU=CyberArk_Users,$domainDN"}
+    @{Name="CyberArk_Vault_Admins"; Path="OU=CyberArk_Groups,$domainDN"},
+    @{Name="CyberArk_ServiceACcounts"; Path="OU=CyberArk_Groups,$domainDN"},
+    @{Name="CyberArk_SafeManagers"; Path="OU=CyberArk_Groups,$domainDN"},
+    @{Name="CyberArk_Auditors"; Path="OU=CyberArk_Groups,$domainDN"},
+    @{Name="CyberArk_Users"; Path="OU=CyberArk_Groups,$domainDN"}
 )
 
 foreach ($group in $groups) {
@@ -104,6 +110,8 @@ if (-not (Get-ADUser -Filter "SamAccountName -eq '$scanUser'" -ErrorAction Silen
 # 6. Create Test Users
 $testUsers = @(
     @{Name="ca_admin01"; GivenName="CyberArk"; Surname="Admin01"; Group="CyberArk_Vault_Admins"},
+    @{Name="ca_audit01"; GivenName="CyberArk"; Surname="Auditor01"; Group="CyberArk_Auditors"},
+    @{Name="ca_safem01"; GivenName="CyberArk"; Surname="SafeManager01"; Group="CyberArk_SafeManagers"},
     @{Name="ca_user01"; GivenName="CyberArk"; Surname="User01"; Group="CyberArk_Users"},
     @{Name="ca_user02"; GivenName="CyberArk"; Surname="User02"; Group="CyberArk_Users"}
 )
@@ -112,7 +120,7 @@ foreach ($user in $testUsers) {
     if (-not (Get-ADUser -Filter "SamAccountName -eq '$($user.Name)'" -ErrorAction SilentlyContinue)) {
         New-ADUser -Name "$($user.GivenName) $($user.Surname)" `
                    -SamAccountName $user.Name `
-                   -UserPrincipalName "$($user.Name)@lab.local" `
+                   -UserPrincipalName "$($user.Name)@$domainName" `
                    -GivenName $user.GivenName `
                    -Surname $user.Surname `
                    -Path "OU=CyberArk_Users,$domainDN" `
